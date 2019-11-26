@@ -1,0 +1,5 @@
+id,nome,sobrenome,cpf,email,senha,cep,endereco,num,bairro,cidade,uf
+1,Ryan,Simoes,518.052.088-61,mlgsmoke01@gmail.com,20eabe5d64b0e216796e834f52d61fd0b70332fc,11671-450,"R: SÃ£o Marcos",68,"Morro do AlgodÃ£o",Caraguatatuba,SP
+2,lucius,Muniz,00000000,luciusmuniz519@gmail.com,9a811e6110e24c67c8090410efe44230bde370ce,11670000,"JosÃ© Caetano de Oliveira",775,"Barranco Alto",Caraguatatuba,SP
+3,NatÃ£,Girotto,478.502.518-22,natatidioligirotto@gmail.com,53051b09a24d7263fc967ca9cf53ecc1d2db41bc,11672-340,"Av. Thereza Albino Chacon",515,"Jardim Palmeiras",Caraguatatuba,SP
+4,"Flavio Henrique",Bitencourt,22872689878,flavio.bitencourt@aluno.ifsp.edu.br,c472cca384dd4198acf8b8688b9fea9f58e94e7e,11675715,"Rua Clementino dos Santos Gomes",175,"Rio do Ouro",Caraguatatuba,SP

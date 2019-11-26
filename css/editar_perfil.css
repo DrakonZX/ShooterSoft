@@ -1,0 +1,254 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Guntur', sans-serif;
+}
+.overlay
+{
+  text-align: center;
+}
+.nometext
+{
+    margin-right: 380px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.nometext2
+{
+    margin-right: 360px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nometext3
+{
+    margin-right: 390px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.nometext4
+{
+    margin-right: 350px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.nometext5
+{
+
+    margin-top: 70px;
+    margin-right: 320px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.nometext6
+{
+    margin-right: 315px;
+    font-size: 16px;
+    font-weight: bold;
+}
+img
+{
+  height: 150px;
+  width: 450px;
+  margin-left: 20px;
+  margin-top: 20px;  
+}
+
+.erro{
+  color: green;
+}
+.cadas h2
+{
+    text-align: center;
+    margin-top: 40px;
+    border-top: 2px solid;
+}
+button {
+  margin-top: 50px;
+  height: 50px;
+  width: 120px;
+  color: #161C08;
+  font-size:16px;
+  border: 2px solid #161C08;
+  border-radius: 10px;
+  background-color:#99B159;
+  font-weight: bold;
+  margin-left: 235px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #161C08;
+  color: #99B159;
+  border-color: #99B159;
+  transition-duration: 0.5s;
+}
+.background
+{
+    background-image: url(../img/498829.jpg);
+    height: 300px;
+}
+.respon
+{
+    margin: 0 auto;
+    max-width: 1280px;
+}
+textarea:focus, input:focus
+{
+    outline: none;
+}
+.side
+{
+    width: 600px;
+    border: 1px solid;
+    margin-left: 350px;
+    margin-top: 50px;
+    border-radius: 11px;
+    margin-top: -130px;
+    background-color: white;
+}
+.side input
+{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 5px solid #99B159;
+    margin-left: 80px;
+    height: 40px;
+    width: 400px;
+}
+.side input:hover
+{
+    border-color: #7DDD00;
+    transition-duration: 0.5s;
+}
+.side a
+{
+    text-decoration: none;
+    padding: 5px 5px 5px 5px;
+    background-color: white;
+    color: black;
+    border: 5px solid #99B159;
+    margin-left: 5px;
+}
+.side a:hover
+{
+    border: 2px solid #7DDD00;
+    background-color: #161C08;
+    color: #99B159;
+    transition-duration: 0.4s;
+}
+label
+{
+    margin-left: 80px;
+}
+.cobertura-top
+{
+    background-color: #41510f;
+    height: 60px;
+    text-align: center;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+.cobertura-top img
+{
+    margin-left: 0px;
+    margin-top: -40px;
+    height: 100px;
+}
+.container {
+  text-align: center;
+  width: 100%;
+  background-image: url(../img/498829.jpg);
+  margin-top: 100px;
+  border-top: 3px solid #7DDD00;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.container .col {
+  width: 421px;
+  text-align: center;
+}
+
+.container .row {
+  display: flex;
+}
+
+.container a {
+  color: #E8FFC6;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.container i {
+  font-size: 30px;
+  color: #7DDD00;
+  border-radius: 50%;
+  padding: 20px;
+  border: 2px solid #7DDD00;
+}
+
+.container i:hover {
+  background-color: #7DDD00;
+  color: #161C08;
+  transition-duration: 0.4s;
+  border: 2px solid #161C08;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+.container p
+{
+  color: #E8FFC6;
+  font-size: 20px;
+}
+.container h4{
+  color: #7DDD00;
+  border-bottom: 1px solid #7DDD00;
+}
+
+
+.links a
+{
+  color: #7DDD00;
+}
+.links i{
+  background-color: #161C08;
+}
+.copyright
+{
+  background-image: url(../img/498829.jpg);
+  border-top: 2px solid #7DDD00;
+  border-bottom: 2px solid #7DDD00;
+  text-align: center;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment:
+
+}
+.copyright h5
+{
+  color: #E8FFC6;
+  font-size: 14px;
+}
+.links1 i{
+  color: #7DDD00;
+  background-color: #161C08;
+}
+.links1{
+  margin:0;
+  width: 300px;
+}
+.link-3{
+  margin-left: 20px;
+}
+
+.overlay input{
+  margin-left: -20px;
+}

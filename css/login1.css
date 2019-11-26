@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Hind Guntur', sans-serif;
+}
+
+.cont input {
+  border: 5px solid #99B159;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  height: 40px;
+  width: 300px;
+  background-color: white;
+}
+
+.cont input:hover {
+  border-color: #7DDD00;
+  transition-duration: 0.4s;
+}
+
+.cont {
+  text-align: center;
+  background-color: white;
+  padding-top: 50px;
+}
+
+.nada {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+header {
+  background-image: url(../img/498829.jpg);
+  width: 100%;
+  height: 300px;
+}
+
+button {
+  margin-top: 50px;
+  height: 50px;
+  width: 100px;
+  color: #E8FFC6;
+  font-size:16px;
+  border: 2px solid #41510F;;
+  border-radius: 10px;
+  background-color:#161C08;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color:  #E8FFC6;
+  color: #161C08;
+  border-color: #7DDD00;
+  transition-duration: 0.5s;
+}
+
+.background {
+  margin: -30px 400px 0 400px;
+}
+
+.cont label {
+  margin-left: -265px;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+.cont a {
+  vertical-align: bottom;
+  margin-left: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+.cobertura-top {
+  background-color: #41510f;
+  height: 60px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: -50px;
+}
+
+.cobertura-top img {
+  margin-left: 0px;
+  margin-top: -40px;
+  height: 100px;
+}
+
+.cont {
+  border: 1px solid #161C08;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  margin-bottom: 50px;
+}
+.logo{
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.logo img{
+  height: 150px;
+}
