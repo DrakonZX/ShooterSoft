@@ -329,97 +329,92 @@ header {
   text-align: center;
   padding: 20px 0 20px 0;
 }
-
-
+.footer{
+  margin: auto;
+  bottom: 0;
+  padding: 0;
+}
 .container {
   text-align: center;
   width: 100%;
-  background-image: url(../img/498829.jpg);
+  background-color:#131600;
   margin-top: 100px;
-  border-top: 3px solid #7DDD00;
+  border-top: 3px solid #89BF00;
   background-attachment: fixed;
   background-size: cover;
   background-position: bottom;
 }
-
-.container .col {
-  width: 421px;
-  text-align: center;
+.container-2{
+  background-color: #E8FFC6;
 }
-
+.container-2 .cont{
+  width: 28%;
+  display: inline-block;
+  margin-left: 45px;
+  margin-top: 20px;
+}
 .container .row {
   display: flex;
 }
-
+.row{
+  margin-left: -100px;
+}
+.footer_risco{
+  height: 2px;
+  width: 100%;
+  background-color: #F9360E;
+  margin-top: 50px;
+}
+.footer_img{
+  text-align: right;
+  background-color: #CCE0AF;
+}
+.footer_img h3{
+  margin-left: 430px;
+  border-bottom: 3px solid #F9360E;
+  width: 400px;
+  text-align: center;
+}
+.footer_img img{
+  height: 300px;
+  width: 540px;
+  margin-right: 50px;
+}
 .container a {
-  color: #E8FFC6;
   text-decoration: none;
   font-size: 18px;
+  margin-left:100px;
 }
 
 .container i {
   font-size: 30px;
-  color: #7DDD00;
+  color: #89BF00;
   border-radius: 0%;
   padding: 20px;
-  border: 2px solid #7DDD00;
+  width: 80px;
 }
 
 .container i:hover {
-  background-color: #7DDD00;
   color: #161C08;
   transition-duration: 0.4s;
-  border: 2px solid #161C08;
 }
-
-.container a:hover {
-  text-decoration: underline;
+.cont h3{
+  text-align: center;
+  color: #F9360E;
 }
-.container p
+.copy
 {
-  color: #E8FFC6;
-  font-size: 20px;
-}
-.container h4{
-  color: #7DDD00;
-  border-bottom: 1px solid #7DDD00;
-}
-
-
-.links a
-{
-  color: #7DDD00;
-}
-.links i{
-  background-color: #161C08;
-}
-.copyright
-{
-  background-image: url(../img/498829.jpg);
-  border-top: 2px solid #7DDD00;
-  border-bottom: 2px solid #7DDD00;
+  background-color: #131600;
+  border-top:3px solid #89BF00;
+  border-bottom: 3px solid #89BF00;
   text-align: center;
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment:
-
-}
-.copyright h5
-{
   color: #E8FFC6;
-  font-size: 14px;
 }
-.links1 i{
-  color: #7DDD00;
-  background-color: #161C08;
-}
-.links1{
-  margin:0;
-  width: 300px;
-}
-.link-3{
-  margin-left: 20px;
+.copy a{
+  color: #89BF00;
 }
 /* PERFIL  */
 .perfil{
