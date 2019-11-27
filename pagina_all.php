@@ -171,10 +171,10 @@ $data = date("Y");
                 <div class="card-body">
                   <br><br>
                   <h2 class="card-title"><?php echo $produto['nome'] ?></h2>
-                  <p style="font-size:20px;text-decoration: line-through;color:gray;" class="card-text"><?php echo "R$"." ".$produto['preco_antigo'] ?></p>
-                  <p style="font-size:30px;" class="card-text"><?php echo "R$"." ".$produto['preco'] ?></p>
-                  <p style="font-size:30px;" class="card-text"><?php echo "OU <span style='color:green;'>10x</span> DE "."<span style='color:green;'> R$ ".$produto['parcelas']."<span style='color:black;font-size:19px;'> sem juros</span></span>" ?></p><br>
-                  <a id="comprar" href="favorito.php?id=<?php echo $produto['id']?>&caminho=pagina_all.php?id=<?php echo $produto['id']?>">Comprar</a>
+                  <p style="font-size:14px;text-decoration: line-through;color:gray;" class="card-text"><?php echo "R$"." ".$produto['preco_antigo'] ?></p>
+                  <p style="font-size:20px;" class="card-text"><?php echo "R$"." ".$produto['preco'] ?></p>
+                  <p style="font-size:20px;" class="card-text"><?php echo "OU <span style='color:green;'>10x</span> DE "."<span style='color:green;'> R$ ".$produto['parcelas']."<span style='color:black;font-size:19px;'> sem juros</span></span>" ?></p><br>
+                  <a id="comprar" href="favorito.php?id=<?php echo $produto['id']?>">Comprar</a>
                 </div>
               </div>
             </div>

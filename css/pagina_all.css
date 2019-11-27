@@ -463,9 +463,7 @@ header {
   margin-left: 700px;
 }
 .card-body h2{
-  border-bottom: 2px solid gray;
   width:500px;
-  text-align: center;
 }
 .card-body a{
   padding: 10px 200px 10px 200px;
@@ -551,22 +549,7 @@ header {
 {
     clear: both;
 }
-.calcular_frete{
-  width: 310px;
-  float: none;
-  margin-top: 20px;
-  background-color: #161C08;
-  border: 3px solid #41510f;
-}
-.calcular_frete input{
-  margin-left: 120px;
-  background-color: #161C08;
-}
-.calcular_frete p{
-  margin-top: -30px;
-  background-color: #161C08;
-  width: 110px;
-}
+
 .neo
 {
     font-size:16px;
@@ -578,74 +561,6 @@ button
     color:#E8FFC6;
     background-color: #161C08;
 }
-
-/* ZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOMMMMMMMMMMMMMMMMMMMMMMMMMMM */
-/**
- * EasyZoom core styles
- */
-.easyzoom {
-	position: relative;
-
-	/* 'Shrink-wrap' the element */
-	display: inline-block;
-	*display: inline;
-	*zoom: 1;
-}
-
-.easyzoom img {
-	vertical-align: bottom;
-}
-
-.easyzoom.is-loading img {
-	cursor: progress;
-}
-
-.easyzoom.is-ready img {
-	cursor: crosshair;
-}
-
-.easyzoom.is-error  img {
-	cursor: not-allowed;
-}
-
-.easyzoom-notice {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 150;
-	width: 10em;
-	margin: -1em 0 0 -5em;
-	line-height: 2em;
-	text-align: center;
-	background: #FFF;
-	box-shadow: 0 0 10px #888;
-}
-
-.easyzoom-flyout {
-	position:absolute;
-	z-index: 100;
-	overflow: hidden;
-	background: #FFF;
-}
-
-/**
- * EasyZoom layout variations
- */
-.easyzoom--overlay .easyzoom-flyout {
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-.easyzoom--adjacent .easyzoom-flyout {
-	top: 0;
-	left: 100%;
-	width: 100%;
-	height: 100%;
-	margin-left: 20px;
-}
-
 
 @media screen and (max-width:5800px) {
   nav.menu-mobile{
