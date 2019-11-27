@@ -20,8 +20,6 @@ $data = date("Y");
   <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
   <link rel="stylesheet" href="css/pagina_all.css">
   <link type="text/css" rel="stylesheet" href="css/lightslider.css" />
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="js/lightslider.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Merriweather+Sans|Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <?php
@@ -167,8 +165,8 @@ $data = date("Y");
                   </ul>
                 </div>
                 <div class="img-square-wrapper">
-                      <img src="<?php echo $img ?>" alt=""  id="troca">
-                  </div>
+                        <img src="<?php echo $img ?>" id="troca" alt="" width="640" height="360" />
+                 </div>
                 </div>
                 <div class="card-body">
                   <br><br>
@@ -290,6 +288,7 @@ $data = date("Y");
   <script src="http://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>
+	<script src="dist/easyzoom.js"></script>
       <script>
       $('nav.menu-mobile h2').click(function()
           {
