@@ -175,14 +175,6 @@ $data = date("Y");
                   <p style="font-size:30px;" class="card-text"><?php echo "R$"." ".$produto['preco'] ?></p>
                   <p style="font-size:30px;" class="card-text"><?php echo "OU <span style='color:green;'>10x</span> DE "."<span style='color:green;'> R$ ".$produto['parcelas']."<span style='color:black;font-size:19px;'> sem juros</span></span>" ?></p><br>
                   <a id="comprar" href="favorito.php?id=<?php echo $produto['id']?>&caminho=pagina_all.php?id=<?php echo $produto['id']?>">Comprar</a>
-                  <div class="calcular_frete">
-                    <form class="" action="" method="post">
-
-                      <input type="text" name="frete" value="" placeholder="">
-                      <button type="submit" name="">OK</button>
-                      <div class="neo"><p>Calcular Frete</p></div>
-                    </form>
-                  </div>
                 </div>
               </div>
             </div>
