@@ -114,6 +114,14 @@ $data = date("Y");
 </div>
 </div>
 </div>
+<div class="carrinho">
+  <table>
+    <tr>
+      <th style="padding-left: 400px;">Produtos</th>
+      <th style="padding-left:350px;">Quantidade</th>
+      <th> Preço</th>
+    </tr>
+  </table>
   <?php
       $u_id = $usuario['id'];
       $sql = "SELECT * FROM produtos_airsoft";
@@ -127,55 +135,25 @@ $data = date("Y");
             foreach ($sql -> fetchAll() as $c) {
               $quantidade = $c['quantidade'];
               $preco = $quantidade * $p['preco'];
-              ?><div class="pb-5">
-        <div style="margin-top:100px;" class="todo_cart">
-          <div class="fundo_cart">
-            <div class="row">
-              <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-                <!-- Shopping cart table -->
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col" class="border-0 bg-light">
-                          <div class="p-2 px-3 text-uppercase">Produtos</div>
-                        </th>
-                        <th scope="col" class="border-0 bg-light">
-                          <div class="py-2 text-uppercase">Preço</div>
-                    </th>
-                    <th scope="col" class="border-0 bg-light">
-                      <div class="py-2 text-uppercase">Quantidade</div>
-                  </th>
-                    <th scope="col" class="border-0 bg-light">
-                      <div class="py-2 text-uppercase">Remover</div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row"  style="background-color: white;" class="border-0">
-                      <div  class="p-2">
-                        <img src="<?php echo $p['img'] ?>" alt="" width="70" class="img-fluid rounded shadow-sm">
-                        <div class="ml-3 d-inline-block align-middle">
-                          <h5 class="mb-0"> <a href="pagina_all.php?id=<?php echo $p['id'] ?>" class="text-dark d-inline-block align-middle"><?php echo $p['nome'] ?></a></h5><span style="color:#191d0f;" class="text-muted font-weight-normal font-italic d-block">Categoria: <?php echo $p['tipo'] ?></span>
-                        </div>
-                      </div>
-                    </th>
-                    <form action="calculo.php?id=<?php echo $c['id'] ?>" method="post">
-                      <td class="border-0 align-middle"><strong><?php echo "R$ ".$preco ?></strong></td>
-                       <td class="border-0 align-middle"><strong><input type="number" name="quantidade" value="<?php echo $quantidade ?>"><button type="submit" name="button">OK</button> </strong></td>
-                      <td class="border-0 align-middle"><a href="delete.php?id=<?php echo $c['id'] ?>" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                    </form>
-                  </tr>
-                </tbody>
+              ?>
+              <table>
+                <tr>
+                  <td><img src="<?php echo $p['img'] ?>" alt=""> </td>
+                  <td style="padding-left: 150px;width:450px;text-align:justify;"><?php echo $p['nome'] ?></td>
+                  <form class="" id="qtd_<?php echo $p['id']; ?>" action="calculo.php?id=<?php echo $p['id']; ?>" method="post">
+                    <td style="padding-left: 150px;"><select class="" name="quantidade" onchange="document.getElementById('qtd_<?php echo $p['id']; ?>').submit()">
+                      <option name='quantidade' value="1"><?php echo $quantidade ?></option>
+                      <option name='quantidade' value="1">1</option>
+                      <option name='quantidade' value="2">2</option>
+                      <option name='quantidade' value="3">3</option>
+                      <option name='quantidade' value="4">4</option>
+                    </select>
+                   </td>
+                  </form>
+                  <td style="padding-left: 320px;"><?php echo "$ ".$preco ?></td>
+                </tr>
               </table>
-            </div>
-            <!-- End -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><?php
+              <?php
             }
           }
         }
@@ -183,9 +161,10 @@ $data = date("Y");
       $sql = "SELECT * FROM carrinho WHERE cliente_id = '$u_id'";
       $sql = $pdo->query($sql);
       if ($sql -> rowCount()<1) {
-        echo "<h1 style='font-size:100px;'>Sem produtos Cadastrados</h1>";
+        echo "<h1 style='font-size:20px;'>Sem produtos Cadastrados</h1>";
       }
     ?>
+                </div>
     <!-- Footer -->
 <footer class="page-footer font-small cyan darken-3">
 

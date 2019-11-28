@@ -200,6 +200,7 @@ $data = date("Y");
     </div>
   </div>
   </div>
+</div>
   <footer class="page-footer font-small cyan darken-3">
 
     <!-- Footer Elements -->

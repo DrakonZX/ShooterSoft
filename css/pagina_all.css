@@ -561,7 +561,12 @@ button
     color:#E8FFC6;
     background-color: #161C08;
 }
-
+.carousel ul{
+  display: inline-grid;
+}
+.carousel img{
+  width: 100%;
+}
 @media screen and (max-width:5800px) {
   nav.menu-mobile{
     display: none;

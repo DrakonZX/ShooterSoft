@@ -533,6 +533,24 @@ header {
 {
     clear: both;
 }
+
+/* CARRRINONISFANIFDNSAIDNISANDISA */
+.carrinho th{
+  padding-left: 300px;
+}
+.carrinho td img{
+  height: 150px;
+  width: 150px;
+  margin-left: -80px;
+}
+.carrinho td{
+  padding-left: 180px;
+  text-align: center;
+}
+.carrinho td input{
+  width: 20px;
+  text-align: center;
+}
 @media screen and (max-width:5800px) {
   nav.menu-mobile{
     display: none;
