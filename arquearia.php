@@ -143,12 +143,10 @@ if ($sql -> rowCount() > 0) {
       <h3  class="card-title"><?php echo $produto['nome'] ?></h3>
       <p class="card-text" id="preco_avista" ><?php echo "<span style ='font-size:18px;'>R$ ".$produto['desconto']."</span><span style='color:green;'> à vista no boleto</span>" ?></p>
       <p  class="card-text" id="preco_parcelas"><?php echo "ou <span style='color:green;'>13x</span> de "."<span style='color:green;'>".$produto['parcelas']."</span>" ?></p>
-    <div class="comprar"><br><br><br>
-      <a href="pagina_all.php?id=<?php echo $produto['id'] ?>" class="btn btn-primary">Visitar</a><br>
-      <form class="favorito" action="favorito.php?id=<?php echo $produto['id']?>&caminho=arquearia" method="post">
-        <button type="submit" name="favorito"><i class="fas fa-cart-plus"></i></button>
-      </form><br>
-    </div>
+      <div class="item_links">
+          <a class="comp" href="pagina_all.php?id=<?php echo $produto['id'] ?>" role="button">Comprar</a>
+          <a class="fav"  href="favorito.php?id=<?php echo $produto['id']?>&caminho=index" name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
+      </div>
   </div>
   </div>
  </div>

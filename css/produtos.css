@@ -324,10 +324,8 @@ header {
   padding: 20px 0 20px 0;
 }
 
-.footer{
-  margin: auto;
-  bottom: 0;
-  padding: 0;
+html .footer{
+  height: 100%
 }
 .container {
   text-align: center;
@@ -416,9 +414,10 @@ header {
 .itens{
   display: inline-block;
   margin-top: 20px;
+  margin-left: 5px;
 }
 .item{
-  border: 2px solid #E8FFC6;
+  border: 2px solid #89BF00;
   margin-left:120px;
   text-align: center;
   width: 250px;
@@ -429,65 +428,42 @@ header {
 }
 .item h3{
   font-size: 14px;
-  height: 70px;
+  height: 60px;
   text-align: justify;
   border-bottom: 1px solid #E8FFC6;
+  font-weight: bold;
+  color: #131600;
+  padding-left: 10px;
 }
 .item p{
   margin: auto;
   float: left;
+  margin-left: 10px;
+  font-weight: bold;
 }
-.item:hover{
-  transition-duration: 0.5s;
-  border-color: green;
-}
-
 .card:hover{
   transition-duration: 0.5s;
   border-color: green;
 }
-.comprar a{
-  background-color: #131600;
-  border: 2px solid #41510F;
-  border-radius: 0px;
-  padding: 5px 45px 5px 45px;
-  text-decoration: none;
-  color: #E8FFC6;
+.item_links{
+  display:inline-block;
+  margin-top: 20px;
+}
+.item_links .fav{
+  background-color: #89BF00;
+  padding: 10px 20px 10px 20px;
+  margin-left: -4px;
+  border: 3px solid #1c5400;
+  color: #131600;
   font-size: 18px;
-  margin-left: 80px;
+  text-decoration: none;
 }
-.comprar a:hover{
-  border-radius: 0px;
-  background-color: #E8FFC6;
-  border-color: #7DDD00;
-  color: #161C08;
-  transition-duration: 0.2s;
-}
-.favorito i{
-  font-size: 30px;
-  background-color: #131600;
+.item_links .comp{
+  background-color: #1c5400;
+  padding: 10px 50px 10px 50px;
+  border: 3px solid #89BF00;
   color: #E8FFC6;
-  padding: 8px 8px 8px 8px;
-}
-.favorito button{
-  border-radius: 0px;
-  border: 2px solid #41510F;
-  cursor: pointer;
-  margin-left: -180px;
-  margin-top: 10px;
-}
-.favorito i:hover{
-    border-radius: 5px;
-  color: #161C08;
-  transition-duration: 0.5s;
-    background-color: #E8FFC6;
-}
-.favorito button:hover{
-  border-color: #7DDD00;
-
-}
-.favorito{
-  margin-top: -50px;
+  text-decoration: none;
 }
 .borda{
   border-top: 2.5px solid #E8FFC6;

@@ -20,8 +20,6 @@ $data = date("Y");
   <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
   <link rel="stylesheet" href="css/pagina_all.css">
   <link type="text/css" rel="stylesheet" href="css/lightslider.css" />
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="js/lightslider.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Merriweather+Sans|Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <?php
@@ -167,24 +165,16 @@ $data = date("Y");
                   </ul>
                 </div>
                 <div class="img-square-wrapper">
-                      <img src="<?php echo $img ?>" alt=""  id="troca">
-                  </div>
+                        <img src="<?php echo $img ?>" id="troca" alt="" width="640" height="360" />
+                 </div>
                 </div>
                 <div class="card-body">
                   <br><br>
                   <h2 class="card-title"><?php echo $produto['nome'] ?></h2>
-                  <p style="font-size:20px;text-decoration: line-through;color:gray;" class="card-text"><?php echo "R$"." ".$produto['preco_antigo'] ?></p>
-                  <p style="font-size:30px;" class="card-text"><?php echo "R$"." ".$produto['preco'] ?></p>
-                  <p style="font-size:30px;" class="card-text"><?php echo "OU <span style='color:green;'>10x</span> DE "."<span style='color:green;'> R$ ".$produto['parcelas']."<span style='color:black;font-size:19px;'> sem juros</span></span>" ?></p><br>
-                  <a id="comprar" href="favorito.php?id=<?php echo $produto['id']?>&caminho=pagina_all.php?id=<?php echo $produto['id']?>">Comprar</a>
-                  <div class="calcular_frete">
-                    <form class="" action="" method="post">
-
-                      <input type="text" name="frete" value="" placeholder="">
-                      <button type="submit" name="">OK</button>
-                      <div class="neo"><p>Calcular Frete</p></div>
-                    </form>
-                  </div>
+                  <p style="font-size:14px;text-decoration: line-through;color:gray;" class="card-text"><?php echo "R$"." ".$produto['preco_antigo'] ?></p>
+                  <p style="font-size:20px;" class="card-text"><?php echo "R$"." ".$produto['preco'] ?></p>
+                  <p style="font-size:20px;" class="card-text"><?php echo "OU <span style='color:green;'>10x</span> DE "."<span style='color:green;'> R$ ".$produto['parcelas']."<span style='color:black;font-size:19px;'> sem juros</span></span>" ?></p><br>
+                  <a id="comprar" href="favorito.php?id=<?php echo $produto['id']?>">Comprar</a>
                 </div>
               </div>
             </div>
@@ -210,43 +200,87 @@ $data = date("Y");
     </div>
   </div>
   </div>
-  <div class="container">
-    <div class="respon">
-      <div class="row align-items-start">
-        <div class="col">
-          <h4>Sobre nós</h4><br>
-          <p>Somos uma empresa de vendas online com o foco em armas para treino e diversão.<br>(Paintball, Airsoft e Arcos)</p>
-        </div>
-        <div class="col">
-          <div class="links1">
-            <a
-              href="https://www.google.com/maps/place/Av.+Bahia,+Microrregi%C3%A3o+de+Caraguatatuba+-+SP/@-23.6320208,-45.4259223,17z/data=!3m1!4b1!4m5!3m4!1s0x94cd6312a97556f9:0x8cacdb175a953749!8m2!3d-23.6320257!4d-45.4237336" target="_blank"
-              ><i class="fas fa-map-marker-alt"></i> Avenida Bahia.</a><br><br>
-            <a href="#" ><i class="fas fa-phone"></i> +12 3888-8888</a><br><br>
-            <a href="https://accounts.google.com/" target="_blank"><i class="far fa-envelope"></i> shootersoft5@gmail.com</a><br><br>
-          </div>
-        </div>
-        <div class="col">
-          <div class="links">
-            <h4>Links</h4><br>
-             <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-             <a href="https://www.facebook.com/ShooterSoft-113889746662685" target="_blank"><i class="fab fa-facebook-square"></i></a>
-             <a href="https://twitter.com/ShooterSoft" target="_blank"><i class="fab fa-twitter-square"></i></a><br>
-             <a href="#"><i class="fab fa-linkedin" target="_blank"></i></a>
-             <a href="https://www.instagram.com/shootersoft/?hl=pt-br" target="_blank"><i class="fab fa-instagram"></i></a>
+  <footer class="page-footer font-small cyan darken-3">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row">
+        <div class="respon">
+        <!-- Grid column -->
+        <div class="col-md-12 py-5">
+          <div class="mb-5 flex-center">
+
+            <a class="fb-ic" href="#">
+              <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <a class="tw-ic" href="#">
+              <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+
+            <a class="gplus-ic" href="#">
+              <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+
+            <a class="li-ic" href="#">
+              <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+
+            <a class="ins-ic" href="#">
+              <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+
+            <a class="pin-ic" href="#">
+              <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="copyright">
-    <h5 id="down">Shooter Soft © <?php echo $data ?> Copyright</h5>
-  </div>
+      </div>
 
+
+    </div>
+    <div class="container-2">
+      <div class="respon">
+      <div class="cont">
+        <h3>Quem somos nós ?</h3>
+        <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+      </div>
+      <div class="cont">
+        <h3>Quem somos nós ?</h3>
+        <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+      </div>
+      <div class="cont">
+        <h3>Quem somos nós ?</h3>
+        <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+      </div>
+     </div>
+
+    <div class="footer_risco"></div>
+    <div class="footer_img">
+      <div class="respon">
+      <h3>Formas de pagamento</h3>
+      <img style="height:100px;width:300px;margin-bottom:100px;margin-right:150px;" src="img/google-site-seguro.png" alt="">
+      <img src="img/credito.png" alt="">
+    </div>
+    </div>
+   </div>
+    <!-- Copyright -->
+    <div class="copy">
+      <div class="footer-copyright text-center py-3">© <?php echo $data ?> Copyright:
+        <a href="index.php"> ShooterSoft.com.br</a>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+
+  </footer>
   <!-- Fechamento Foooter -->
   <script src="http://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>
+	<script src="dist/easyzoom.js"></script>
       <script>
       $('nav.menu-mobile h2').click(function()
           {
