@@ -114,14 +114,6 @@ $data = date("Y");
 </div>
 </div>
 </div>
-<div class="carrinho">
-  <table>
-    <tr>
-      <th style="padding-left: 400px;">Produtos</th>
-      <th style="padding-left:350px;">Quantidade</th>
-      <th> Preço</th>
-    </tr>
-  </table>
   <?php
       $u_id = $usuario['id'];
       $sql = "SELECT * FROM produtos_airsoft";
@@ -132,6 +124,16 @@ $data = date("Y");
           $sql = "SELECT * FROM carrinho WHERE produto_id = $p_id and cliente_id = $u_id";
           $sql = $pdo->query($sql);
           if ($sql -> rowCount()>0) {
+            ?>
+            <div class="carrinho">
+              <table>
+                <tr>
+                  <th style="padding-left: 400px;">Produtos</th>
+                  <th style="padding-left:350px;">Quantidade</th>
+                  <th> Preço</th>
+                </tr>
+              </table>
+            <?php
             foreach ($sql -> fetchAll() as $c) {
               $quantidade = $c['quantidade'];
               $preco = $quantidade * $p['preco'];
@@ -141,16 +143,19 @@ $data = date("Y");
                   <td><img src="<?php echo $p['img'] ?>" alt=""> </td>
                   <td style="padding-left: 150px;width:450px;text-align:justify;"><?php echo $p['nome'] ?></td>
                   <form class="" id="qtd_<?php echo $p['id']; ?>" action="calculo.php?id=<?php echo $p['id']; ?>" method="post">
-                    <td style="padding-left: 150px;"><select class="" name="quantidade" onchange="document.getElementById('qtd_<?php echo $p['id']; ?>').submit()">
+                    <td style="padding-left: 150px;">
+                      <select class="" name="quantidade" onchange="document.getElementById('qtd_<?php echo $p['id']; ?>').submit()">
                       <option name='quantidade' value="1"><?php echo $quantidade ?></option>
                       <option name='quantidade' value="1">1</option>
                       <option name='quantidade' value="2">2</option>
                       <option name='quantidade' value="3">3</option>
                       <option name='quantidade' value="4">4</option>
+                      <option name='quantidade' value="5">5</option>
                     </select>
                    </td>
                   </form>
                   <td style="padding-left: 320px;"><?php echo "$ ".$preco ?></td>
+                  <td><a href="delete.php?id=<?php echo $p['id'] ?>">Trash</a></td>
                 </tr>
               </table>
               <?php

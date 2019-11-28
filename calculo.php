@@ -5,7 +5,7 @@ include_once 'conexao.php';
 if (isset($_GET['id']) && empty($_GET['id']) == false) {
   $id = addslashes($_GET['id']);
   if (isset($_POST['quantidade'])) {
-    $sql = "SELECT * FROM carrinho WHERE id = $id";
+    $sql = "SELECT * FROM carrinho WHERE produto_id = $id";
     $sql = $pdo->query($sql);
     if ($sql -> rowCount()>0) {
       foreach($sql ->fetchAll() as $c){
