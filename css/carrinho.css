@@ -542,6 +542,7 @@ header {
   height: 150px;
   width: 150px;
   margin-left: -80px;
+  border-left: 2px solid;
 }
 .carrinho td{
   padding-left: 180px;
@@ -550,6 +551,15 @@ header {
 .carrinho td input{
   width: 20px;
   text-align: center;
+}
+.carrinho{
+  text-align: center;
+}
+.divisao{
+  height: 2px;
+  background-color: black;
+  width: 80%;
+  margin-left: 200px;
 }
 @media screen and (max-width:5800px) {
   nav.menu-mobile{

@@ -113,39 +113,44 @@ $data = date("Y");
   </ul>
 </div>
 </div>
-</div>
   <?php
       $u_id = $usuario['id'];
       $sql = "SELECT * FROM produtos_airsoft";
       $sql = $pdo->query($sql);
       if ($sql ->rowCount()>0) {
+        ?>
+
+        <div class="carrinho">
+        <div class="respon">
+          <table>
+            <tr>
+                <th style="padding-left: 300px;">Produtos</th>
+                <th style="padding-left:240px;">Quantidade</th>
+                <th style="padding-left:180px;"> Preço</th>
+            </tr>
+          </table>
+        </div>
+          <div class="divisao"></div>
+        <?php
         foreach($sql ->fetchAll() as $p ){
           $p_id = $p['id'];
           $sql = "SELECT * FROM carrinho WHERE produto_id = $p_id and cliente_id = $u_id";
           $sql = $pdo->query($sql);
           if ($sql -> rowCount()>0) {
-            ?>
-            <div class="carrinho">
-              <table>
-                <tr>
-                  <th style="padding-left: 400px;">Produtos</th>
-                  <th style="padding-left:350px;">Quantidade</th>
-                  <th> Preço</th>
-                </tr>
-              </table>
-            <?php
             foreach ($sql -> fetchAll() as $c) {
               $quantidade = $c['quantidade'];
               $preco = $quantidade * $p['preco'];
               ?>
+              <div class="respon">
               <table>
                 <tr>
-                  <td><img src="<?php echo $p['img'] ?>" alt=""> </td>
+                  <div class="produto">
+                  <td><a href="pagina_all.php?id=<?php echo $p['id'] ?>"><img src="<?php echo $p['img'] ?>" alt=""></a> </td>
                   <td style="padding-left: 150px;width:450px;text-align:justify;"><?php echo $p['nome'] ?></td>
                   <form class="" id="qtd_<?php echo $p['id']; ?>" action="calculo.php?id=<?php echo $p['id']; ?>" method="post">
-                    <td style="padding-left: 150px;">
+                    <td style="padding-left: 0px;">
                       <select class="" name="quantidade" onchange="document.getElementById('qtd_<?php echo $p['id']; ?>').submit()">
-                      <option name='quantidade' value="1"><?php echo $quantidade ?></option>
+                      <option name='quantidade'><?php echo $quantidade ?></option>
                       <option name='quantidade' value="1">1</option>
                       <option name='quantidade' value="2">2</option>
                       <option name='quantidade' value="3">3</option>
@@ -154,10 +159,13 @@ $data = date("Y");
                     </select>
                    </td>
                   </form>
-                  <td style="padding-left: 320px;"><?php echo "$ ".$preco ?></td>
-                  <td><a href="delete.php?id=<?php echo $p['id'] ?>">Trash</a></td>
+                  <td style="padding-left: 220px;"><?php echo "$ ".$preco ?></td>
+                  <td style="padding-left: 100px;"><a href="delete.php?id=<?php echo $p['id'] ?>">Trash</a></td>
                 </tr>
+              </div>
               </table>
+            </div>
+              <div class="divisao"></div>
               <?php
             }
           }
@@ -169,7 +177,8 @@ $data = date("Y");
         echo "<h1 style='font-size:20px;'>Sem produtos Cadastrados</h1>";
       }
     ?>
-                </div>
+    </div>
+
     <!-- Footer -->
 <footer class="page-footer font-small cyan darken-3">
 
