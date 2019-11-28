@@ -186,82 +186,84 @@ $data = date("Y");
         echo "<h1 style='font-size:100px;'>Sem produtos Cadastrados</h1>";
       }
     ?>
-    <footer class="page-footer font-small cyan darken-3">
+    <!-- Footer -->
+<footer class="page-footer font-small cyan darken-3">
 
-      <!-- Footer Elements -->
-      <div class="container">
+  <!-- Footer Elements -->
+  <div class="container">
 
-        <!-- Grid row-->
-        <div class="row">
-          <div class="respon">
-          <!-- Grid column -->
-          <div class="col-md-12 py-5">
-            <div class="mb-5 flex-center">
+    <!-- Grid row-->
+    <div class="row">
+      <div class="respon">
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
 
-              <a class="fb-ic" href="#">
-                <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-              </a>
-              <a class="tw-ic" href="#">
-                <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-              </a>
+          <a class="fb-ic" href="#">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <a class="tw-ic" href="#">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
 
-              <a class="gplus-ic" href="#">
-                <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-              </a>
+          <a class="gplus-ic" href="#">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
 
-              <a class="li-ic" href="#">
-                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-              </a>
+          <a class="li-ic" href="#">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
 
-              <a class="ins-ic" href="#">
-                <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-              </a>
+          <a class="ins-ic" href="#">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
 
-              <a class="pin-ic" href="#">
-                <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-              </a>
-            </div>
-          </div>
-        </div>
-        </div>
-
-
-      </div>
-      <div class="container-2">
-        <div class="respon">
-        <div class="cont">
-          <h3>Quem somos nós ?</h3>
-          <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-        </div>
-        <div class="cont">
-          <h3>Quem somos nós ?</h3>
-          <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-        </div>
-        <div class="cont">
-          <h3>Quem somos nós ?</h3>
-          <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-        </div>
-       </div>
-
-      <div class="footer_risco"></div>
-      <div class="footer_img">
-        <div class="respon">
-        <h3>Formas de pagamento</h3>
-        <img style="height:100px;width:300px;margin-bottom:100px;margin-right:150px;" src="img/google-site-seguro.png" alt="">
-        <img src="img/credito.png" alt="">
-      </div>
-      </div>
-     </div>
-      <!-- Copyright -->
-      <div class="copy">
-        <div class="footer-copyright text-center py-3">© <?php echo $data ?> Copyright:
-          <a href="index.php"> ShooterSoft.com.br</a>
+          <a class="pin-ic" href="#">
+            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+          </a>
         </div>
       </div>
+    </div>
+    </div>
 
-      <!-- Copyright -->
 
-    </footer>
+  </div>
+  <div class="container-2">
+    <div class="respon">
+    <div class="cont">
+      <h3>Quem somos nós ?</h3>
+      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+    </div>
+    <div class="cont">
+      <h3>Quem somos nós ?</h3>
+      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+    </div>
+    <div class="cont">
+      <h3>Quem somos nós ?</h3>
+      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+    </div>
+   </div>
+
+  <div class="footer_risco"></div>
+  <div class="footer_img">
+    <div class="respon">
+    <h3 style="color:#E8FFC6;">Formas de pagamento</h3>
+    <img style="height:100px;width:300px;margin-bottom:100px;margin-right:150px;" src="img/google-site-seguro.png" alt="">
+    <img src="img/credito.png" alt="">
+  </div>
+  </div>
+ </div>
+  <!-- Copyright -->
+  <div class="copy">
+    <div class="footer-copyright text-center py-3">© <?php echo $data ?> Copyright:
+      <a href="index.php"> ShooterSoft.com.br</a>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+
+</footer>
+    <!-- Fechamento Foooter -->
   <script src="http://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>

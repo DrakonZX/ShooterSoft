@@ -351,13 +351,16 @@ header {
   background-position: bottom;
 }
 .container-2{
-  background-color: #E8FFC6;
+    background-image: url(../img/498829.jpg);
 }
 .container-2 .cont{
   width: 28%;
   display: inline-block;
   margin-left: 45px;
   margin-top: 20px;
+}
+.container-2 p{
+  color: #E8FFC6;
 }
 .container .row {
   display: flex;
@@ -373,7 +376,6 @@ header {
 }
 .footer_img{
   text-align: right;
-  background-color: #CCE0AF;
 }
 .footer_img h3{
   margin-left: 430px;
