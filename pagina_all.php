@@ -199,36 +199,9 @@ $data = date("Y");
         </ul>
       </div>
     </div>
-    <script>
-    $(document).ready(function() {
-      $("#content-slider").lightSlider({
-        auto: true,
-        item: 5,
-        loop: true,
-        controls: true,
-        speed: 250,
-        pause: 3000,
-        keyPress: true,
-        mode: 'slide',
-        responsive: [{
-          breakpoint: 767,
-          settings: {
-            item: 3,
-            slideMove: 1,
-            slideMargin: 6,
-          }
-        }, {
-          breakpoint: 481,
-          settings: {
-            item: 1,
-            slideMove: 1
-          }
-        }]
-      });
-
-    });
-     </script>
-     <ul style="border:2px solid red;" id="content-slider" class="content-slider">
+    <script src="js/slide.js"></script>
+     <h1 style="text-align:center;border-bottom:2px solid #89bf00;">Outos produtos</h1>
+     <ul style="border:2px solid #89bf00;margin-top:50px;" id="content-slider" class="content-slider">
      <?php
      $sql = "select * from produtos_airsoft where tipo='$produto[tipo]'";
      $sql=$pdo->query($sql);
@@ -237,7 +210,8 @@ $data = date("Y");
          ?>
           <li style="background-color:white;border-radius:50px;">
             <a style="color:#161C08;" href="pagina_all.php?id=<?php echo $outros['id'] ?>"><img style="height:150px;width:150px;margin-left:50px;margin-top:10px;" src="<?php echo $outros['img'] ?>" alt="">
-              <p style="text-align:justify;width:200px;margin-left:50px;height:60px;"><?php echo $outros['nome'] ?></p>
+              <p style="text-align:left;width:200px;margin-left:60px;height:40px;font-size:13px;opacity:1;z-index:0;border-top:2px solid #89bf00;color:#F9360E;text-decoration:none;"><?php echo $outros['nome'] ?></p>
+              <p style="text-align:justify;width:200px;margin-left:60px;font-size:14px;opacity:1;z-index:0;color:#F9360E;text-decoration:none;">R$ <?php echo $outros['avista'] ?> à vista no boleto</p>
              </a>
           </li>
          <?php

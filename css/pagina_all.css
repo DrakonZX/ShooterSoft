@@ -650,6 +650,7 @@ button
     cursor: pointer;
     display: inline-block;
     padding: 0 5px;
+    background-color: white;
 }
 .lSSlideOuter .lSPager.lSpg > li a {
     background-color: black;
@@ -665,13 +666,12 @@ button
     transition: all 0.5s linear 0s;
 }
 .lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
-    background-color: #428bca;
+    background-color: #F9360E;
 }
 .lSSlideOuter .media {
-    opacity: 0.8;
+
 }
 .lSSlideOuter .media.active {
-    opacity: 1;
 }
 /* End of pager */
 
