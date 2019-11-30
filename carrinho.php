@@ -122,17 +122,21 @@ $data = date("Y");
       }
       else {
         ?>
-        <div class="carrinho">
+   <div class="carrinho">
         <div class="respon">
+          <div class="thead">
+            <div class="movi">
           <table>
-            <tr>
-                <th style="padding-left: 300px;">Produtos</th>
-                <th style="padding-left:240px;">Quantidade</th>
-                <th style="padding-left:180px;"> Preço</th>
+             <tr>
+                <th style="padding-left:300px;">Produtos</th>
+                <th style="padding-left:160px;">Quantidade</th>
+                <th style="padding-left:90px;"> Preço</th>
             </tr>
           </table>
-          <div class="divisao"></div>
-        </div>
+          </div>
+         </div>
+       </div>
+          <div class="cont">
         <?php
       }
       $sql = "SELECT * FROM produtos_airsoft";
@@ -148,36 +152,39 @@ $data = date("Y");
               $preco = $quantidade * $p['preco'];
               $soma = $preco + $preco;
               ?>
-              <div class="respon">
-              <table>
-                <tr>
-                  <div class="produto">
-                  <td><a href="pagina_all.php?id=<?php echo $p['id'] ?>"><img src="<?php echo $p['img'] ?>" alt=""></a> </td>
-                  <td style="padding-left: 150px;width:450px;text-align:justify;"><?php echo $p['nome'] ?></td>
-                  <form class="" id="qtd_<?php echo $p['id']; ?>" action="calculo.php?id=<?php echo $p['id']; ?>" method="post">
-                    <td style="padding-left: 0px;">
-                      <select class="" name="quantidade" onchange="document.getElementById('qtd_<?php echo $p['id']; ?>').submit()">
-                      <option name='quantidade'><?php echo $quantidade ?></option>
-                      <option name='quantidade' value="1">1</option>
-                      <option name='quantidade' value="2">2</option>
-                      <option name='quantidade' value="3">3</option>
-                      <option name='quantidade' value="4">4</option>
-                      <option name='quantidade' value="5">5</option>
-                    </select>
-                   </td>
-                  </form>
-                  <td style="padding-left: 220px;"><?php echo "$ ".$preco ?></td>
-                  <td style="padding-left: 100px;"><a href="delete.php?id=<?php echo $p['id'] ?>">Trash</a></td>
-                </tr>
-              </div>
-              </table>
-              <div class="divisao"></div>
-             </div>
+                <div class="movi">
+                   <div class="respon">
+                     <table>
+                       <tr>
+                         <div class="produto">
+                         <td><a href="pagina_all.php?id=<?php echo $p['id'] ?>"><img src="<?php echo $p['img'] ?>" alt=""></a> </td>
+                         <td style="padding-left: 10px;width:250px;text-align:justify;font-size:14px;padding-right:20px;"><?php echo $p['nome'] ?></td>
+                         <form class="" id="qtd_<?php echo $p['id']; ?>" action="calculo.php?id=<?php echo $p['id']; ?>" method="post">
+                           <td style="padding-left: 50px;">
+                             <select class="" name="quantidade" onchange="document.getElementById('qtd_<?php echo $p['id']; ?>').submit()">
+                             <option name='quantidade'><?php echo $quantidade ?></option>
+                             <option name='quantidade' value="1">1</option>
+                             <option name='quantidade' value="2">2</option>
+                             <option name='quantidade' value="3">3</option>
+                             <option name='quantidade' value="4">4</option>
+                             <option name='quantidade' value="5">5</option>
+                           </select>
+                          </td>
+                         </form>
+                         <td style="padding-left: 50px;width:200px;"><?php echo "R$ ".$preco ?></td>
+                         <td style="padding-left: 50px;"><a href="delete.php?id=<?php echo $p['id'] ?>"><i class="fas fa-times"></i></a></td>
+                       </tr>
+                     </div>
+                     </table>
+                   </div>
+                 </div>
+                 <div class="divisao"></div>
               <?php
             }
           }
         }
       }
+
       $sql = "SELECT * FROM carrinho WHERE cliente_id = '$u_id'";
       $sql = $pdo->query($sql);
       if ($sql -> rowCount()>0) {
@@ -187,22 +194,21 @@ $data = date("Y");
         foreach($sql -> fetchAll() as $soma_total){
           $soma = $soma_total['SUM(soma)'];
           $avista = $soma - ($soma * 0.13);
-          $parcelas = $soma / 10;
+          $parcelas = $soma / 13;
+          $parcelas2 = number_format($parcelas,2);
         }
         ?>
+     </div>
         <div class="som_total">
-          <div class="conteudo">
-            <table>
-              <tr>
-                <th style="padding:0;">Soma total: R$ <?php echo $soma ?></th>
-                <th style="margin:0;">Preço da compra à vista: R$ <?php echo $avista ?> </th>
-                <th style="margin:0;">Preço da compra no cartão: 10x <?php echo $parcelas ?></th>
-              </tr>
-              <tr>
-                <td></td>
-                <td style="padding:0;"><a href="#">Finalizar Compra</a> </td>
-              </tr>
-            </table>
+          <div class="respon">
+            <div class="conteudo">
+                  <p>Soma total: <div class="spano"><span>R$ <?php echo $soma ?></span></div> </p>
+                  <p>Preço da compra à vista:<div class="spano"><span>R$ <?php echo $avista ?></span></div> </p>
+                  <p>Preço da compra no cartão: <div class="spano"><span>R$ <?php echo $parcelas2 ?> 13x</span></div></p>
+                  <div class="finalizar">
+                    <p><a href="finalizar.php?id=<?php echo $u_id ?>">Finalizar compra</a></p>
+                  </div>
+            </div>
           </div>
         </div>
         <?php

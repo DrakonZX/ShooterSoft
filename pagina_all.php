@@ -19,7 +19,8 @@ $data = date("Y");
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
   <link rel="stylesheet" href="css/pagina_all.css">
-  <link type="text/css" rel="stylesheet" href="css/lightslider.css" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/lightslider.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Merriweather+Sans|Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <?php
@@ -198,9 +199,53 @@ $data = date("Y");
         </ul>
       </div>
     </div>
-  </div>
-  </div>
-</div>
+    <script>
+    $(document).ready(function() {
+      $("#content-slider").lightSlider({
+        auto: true,
+        item: 5,
+        loop: true,
+        controls: true,
+        speed: 250,
+        pause: 3000,
+        keyPress: true,
+        mode: 'slide',
+        responsive: [{
+          breakpoint: 767,
+          settings: {
+            item: 3,
+            slideMove: 1,
+            slideMargin: 6,
+          }
+        }, {
+          breakpoint: 481,
+          settings: {
+            item: 1,
+            slideMove: 1
+          }
+        }]
+      });
+
+    });
+     </script>
+     <ul style="border:2px solid red;" id="content-slider" class="content-slider">
+     <?php
+     $sql = "select * from produtos_airsoft where tipo='$produto[tipo]'";
+     $sql=$pdo->query($sql);
+     if ($sql->rowCount()>0) {
+       foreach($sql->fetchAll() as $outros){
+         ?>
+          <li style="background-color:white;border-radius:50px;">
+            <a style="color:#161C08;" href="pagina_all.php?id=<?php echo $outros['id'] ?>"><img style="height:150px;width:150px;margin-left:50px;margin-top:10px;" src="<?php echo $outros['img'] ?>" alt="">
+              <p style="text-align:justify;width:200px;margin-left:50px;height:60px;"><?php echo $outros['nome'] ?></p>
+             </a>
+          </li>
+         <?php
+       }
+     }
+      ?>
+    </ul>
+
   <footer class="page-footer font-small cyan darken-3">
 
     <!-- Footer Elements -->
@@ -278,10 +323,6 @@ $data = date("Y");
 
   </footer>
   <!-- Fechamento Foooter -->
-  <script src="http://code.jquery.com/jquery-3.4.1.min.js"
-integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-crossorigin="anonymous"></script>
-	<script src="dist/easyzoom.js"></script>
       <script>
       $('nav.menu-mobile h2').click(function()
           {

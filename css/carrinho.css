@@ -23,7 +23,7 @@ html{
   list-style: none;
 }
 .menu a{
-    color: #E8FFC6;
+  color: #E8FFC6;
   text-decoration: none;
   display: block;
   cursor: pointer;
@@ -45,7 +45,7 @@ html{
 .menu > .menu-list > li:hover a {
   background: #E8FFC6;
   color:#131600;
-  border: 2px solid #131600;
+  border: 2px solid #89BF00;
 }
 .menu > .menu-list > li:hover > .sub-menu {
   display: block;
@@ -83,6 +83,7 @@ html{
 .site-content{
   padding: 20px;
 }
+
 h1{
   font-size: 22px;
   margin: 0 0 0.6em 0;
@@ -527,7 +528,6 @@ header {
   transition-duration: 0.3s;
 }
 
-/* MENU MOBILE */
 }
 .clear
 {
@@ -537,30 +537,91 @@ header {
 /* CARRRINONISFANIFDNSAIDNISANDISA */
 .carrinho th{
   padding-left: 300px;
+  color: #E8FFC6;
 }
-.carrinho td img{
-  height: 150px;
+.thead{
+  background-color: #131600;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #89BF00;
+}
+.movi td img{
+  height: 120px;
   width: 150px;
-  margin-left: -80px;
-  border-left: 2px solid black;
+  margin-left: -90px;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  border-left: 2px solid #89BF00;
+  border-right: 2px solid #89BF00;
+  padding: 0 20px 0 20px;
+}
+.movi{
+  margin-left: 100px;
 }
 .carrinho td{
   padding-left: 180px;
   text-align: center;
+  color: #131600;
+}
+.movi a{
+  font-size: 50px;
+  color: #FB5535;
 }
 .carrinho td input{
   width: 20px;
   text-align: center;
+}
+select{
+  border:none;
+  padding: 10px 10px 10px 10px;
+  border-bottom: 2px solid #89BF00;
 }
 .carrinho{
   text-align: center;
 }
 .divisao{
   height: 2px;
-  background-color: black;
+  background-color: #89BF00;
   width: 100%;
 }
-
+.som_total{
+  width: 100%;
+  text-align: left;
+}
+.conteudo{
+  margin-top: 50px;
+  border: 3px solid #89BF00;
+  border-radius: 10px;
+  background-color: #131600;
+}
+.conteudo p{
+  margin-left: 100px;
+  font-size: 20px;
+  color: #F9360E;
+  margin-top: 10px;
+}
+.spano{
+  margin-top: -70px;
+  text-align: right;
+  margin-right: 100px;
+  border-bottom: 2px solid #89BF00;
+  margin-left: 100px;
+}
+.spano span{
+  font-size: 20px;
+  color: #F9360E;
+  text-decoration: underline;
+  width: 100px;
+}
+.finalizar p a{
+  margin-left: 880px;
+  color: #131600;
+  text-decoration: none;
+  background-color: #E8FFC6;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  border:2px solid #F9360E;
+}
 @media screen and (max-width:5800px) {
   nav.menu-mobile{
     display: none;
@@ -800,10 +861,6 @@ header {
    {
      color: #E8FFC6;
      font-size: 12px;
-   }
-   .container h4{
-     color: #7DDD00;
-     border-bottom: 1px solid #7DDD00;
    }
 
    .links a
