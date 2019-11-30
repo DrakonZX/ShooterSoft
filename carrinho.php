@@ -115,11 +115,13 @@ $data = date("Y");
 </div>
   <?php
       $u_id = $usuario['id'];
-      $sql = "SELECT * FROM produtos_airsoft";
+      $sql = "SELECT * FROM carrinho WHERE cliente_id = '$u_id'";
       $sql = $pdo->query($sql);
-      if ($sql ->rowCount()>0) {
+      if ($sql -> rowCount()<1) {
+        echo "<h1 style='font-size:20px;text-align:center;'>Sem produtos Cadastrados</h1>";
+      }
+      else {
         ?>
-
         <div class="carrinho">
         <div class="respon">
           <table>
@@ -129,9 +131,13 @@ $data = date("Y");
                 <th style="padding-left:180px;"> Preço</th>
             </tr>
           </table>
-        </div>
           <div class="divisao"></div>
+        </div>
         <?php
+      }
+      $sql = "SELECT * FROM produtos_airsoft";
+      $sql = $pdo->query($sql);
+      if ($sql ->rowCount()>0) {
         foreach($sql ->fetchAll() as $p ){
           $p_id = $p['id'];
           $sql = "SELECT * FROM carrinho WHERE produto_id = $p_id and cliente_id = $u_id";
@@ -140,6 +146,7 @@ $data = date("Y");
             foreach ($sql -> fetchAll() as $c) {
               $quantidade = $c['quantidade'];
               $preco = $quantidade * $p['preco'];
+              $soma = $preco + $preco;
               ?>
               <div class="respon">
               <table>
@@ -164,8 +171,8 @@ $data = date("Y");
                 </tr>
               </div>
               </table>
-            </div>
               <div class="divisao"></div>
+             </div>
               <?php
             }
           }
@@ -173,12 +180,35 @@ $data = date("Y");
       }
       $sql = "SELECT * FROM carrinho WHERE cliente_id = '$u_id'";
       $sql = $pdo->query($sql);
-      if ($sql -> rowCount()<1) {
-        echo "<h1 style='font-size:20px;'>Sem produtos Cadastrados</h1>";
-      }
-    ?>
-    </div>
-
+      if ($sql -> rowCount()>0) {
+      $sql = "SELECT SUM(soma) from soma_total where cliente_id='$u_id'";
+      $sql = $pdo->query($sql);
+      if ($sql->rowCount()>0) {
+        foreach($sql -> fetchAll() as $soma_total){
+          $soma = $soma_total['SUM(soma)'];
+          $avista = $soma - ($soma * 0.13);
+          $parcelas = $soma / 10;
+        }
+        ?>
+        <div class="som_total">
+          <div class="conteudo">
+            <table>
+              <tr>
+                <th style="padding:0;">Soma total: R$ <?php echo $soma ?></th>
+                <th style="margin:0;">Preço da compra à vista: R$ <?php echo $avista ?> </th>
+                <th style="margin:0;">Preço da compra no cartão: 10x <?php echo $parcelas ?></th>
+              </tr>
+              <tr>
+                <td></td>
+                <td style="padding:0;"><a href="#">Finalizar Compra</a> </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <?php
+  }
+}
+     ?>
     <!-- Footer -->
 <footer class="page-footer font-small cyan darken-3">
 

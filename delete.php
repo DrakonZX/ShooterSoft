@@ -6,6 +6,8 @@
     echo $id;
     $sql = "DELETE FROM carrinho WHERE produto_id='$id'";
     $sql = $pdo->query($sql);
+    $sql = "DELETE FROM soma_total WHERE produto_id='$id'";
+    $sql = $pdo->query($sql);
     if ($sql->rowCount()>0) {
       header("Location: carrinho.php");
     }

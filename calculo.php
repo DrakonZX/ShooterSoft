@@ -17,8 +17,17 @@ if (isset($_GET['id']) && empty($_GET['id']) == false) {
             if (is_numeric($quantidade)){
               $sql = "UPDATE carrinho SET quantidade ='$quantidade' WHERE produto_id = $p[id]";
               $sql = $pdo->query($sql);
-              header("Location: carrinho.php");
+              $sql = "SELECT * FROM carrinho WHERE produto_id='$p[id]'";
+              $sql = $pdo->query($sql);
+              if ($sql->rowCount()>0) {
+                foreach($sql->fetchAll() as $cart){
+                  $preco = $cart['quantidade'] * $p['preco'];
+                  $sql = "UPDATE soma_total set soma = '$preco' WHERE produto_id='$id'";
+                  $sql = $pdo->query($sql);
+                }
+              }
             }
+            header("Location:carrinho.php");
           }
         }
       }

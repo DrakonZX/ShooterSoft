@@ -542,7 +542,7 @@ header {
   height: 150px;
   width: 150px;
   margin-left: -80px;
-  border-left: 2px solid;
+  border-left: 2px solid black;
 }
 .carrinho td{
   padding-left: 180px;
@@ -558,9 +558,9 @@ header {
 .divisao{
   height: 2px;
   background-color: black;
-  width: 80%;
-  margin-left: 200px;
+  width: 100%;
 }
+
 @media screen and (max-width:5800px) {
   nav.menu-mobile{
     display: none;
@@ -893,31 +893,4 @@ header {
 .caminho a:hover
 {
   color: green;
-}
-/*
-    A partir daqui é a mudança do carrinho então vou comentar tudo ali para cima eu vou comentar depois
- */
-/* Fundo do carrinho */
-.fundo_cart{
-  width: 60%;
-  margin-top: 50px;
-  background: #41510F;
-  margin-left: 250px;
-  border-radius: 0px;
-}
-.fundo_cart th{
-  background-color: #191d0f;
-  font-size: 18px;
-  color: #e8ffc6;
-  width: 200px;
-  text-align: center;
-  border-radius: 0px;
-}
-.fundo_cart td{
-    background-color: #191d0f;
-  width: 100px;
-  text-align: center;
-  color: #e8ffc6;
-  border: 2px dotted #41510F;
-  border-radius: 0px;
 }
