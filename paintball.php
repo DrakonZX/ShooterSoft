@@ -134,6 +134,12 @@ $data = date("Y");
           $img = $produto['img'];
       ?>
 
+      <script type="text/javascript">
+       function adicionado()
+       {
+        alert("Seu produto foi adicionado com sucesso! ");
+        }
+      </script>
       <div class="itens">
       <div class="item">
         <a href="pagina_all.php?id=<?php echo $produto['id'] ?>"><img class="card-img-top" src="<?php echo $img; ?>"></a>
@@ -143,11 +149,11 @@ $data = date("Y");
           <p  class="card-text" id="preco_parcelas"><?php echo "ou <span style='color:green;'>13x</span> de "."<span style='color:green;'>".$produto['parcelas']."</span>" ?></p>
           <div class="item_links">
               <a class="comp" href="pagina_all.php?id=<?php echo $produto['id'] ?>" role="button">Comprar</a>
-              <a class="fav"  href="favorito.php?id=<?php echo $produto['id']?>&caminho=index" name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
+              <a class="fav" style="cursor:pointer" onclick="adicionado()" href="favorito.php?id=<?php echo $produto['id'] ?>&caminho = paintball" id="link"  name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
           </div>
       </div>
       </div>
-     </div>
+      </div>
     <?php
      }
     }

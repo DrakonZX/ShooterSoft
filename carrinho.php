@@ -172,13 +172,31 @@ $data = date("Y");
                           </td>
                          </form>
                          <td style="padding-left: 50px;width:200px;"><?php echo "R$ ".$preco ?></td>
-                         <td style="padding-left: 50px;"><a href="delete.php?id=<?php echo $p['id'] ?>"><i class="fas fa-times"></i></a></td>
+                         <td style="padding-left: 50px;"><a style="cursor:pointer" onclick="au(<?php echo $p['id'] ?>)"  ><i class="fas fa-times"></i></a></td>
                        </tr>
                      </div>
                      </table>
                    </div>
                  </div>
                  <div class="divisao"></div>
+                 <script type="text/javascript">
+                 function au(id)
+                 {
+                    var conf = confirm("Certeza disso de que quer remover esse produto? ");
+                    if (conf == true) {
+                      window.location='delete.php?id='+id+ '';
+                      return true;
+                    }
+                  }
+                  function limpar(id)
+                  {
+                     var conf = confirm("Certeza disso de limpar todo o carrinho ? ");
+                     if (conf == true) {
+                       window.location='delete.php?delete_id='+id+ '';
+                       return true;
+                     }
+                   }
+                 </script>
               <?php
             }
           }
@@ -199,14 +217,15 @@ $data = date("Y");
         }
         ?>
      </div>
+        <br> <a style="cursor:pointer" onclick="limpar(<?php echo $u_id ?>)" class="limpar">Limpar o carrinho</a>
         <div class="som_total">
           <div class="respon">
-            <div class="conteudo">
+            <div class="conteu">
                   <p>Soma total: <div class="spano"><span>R$ <?php echo $soma ?></span></div> </p>
                   <p>Preço da compra à vista:<div class="spano"><span>R$ <?php echo $avista ?></span></div> </p>
                   <p>Preço da compra no cartão: <div class="spano"><span>R$ <?php echo $parcelas2 ?> 13x</span></div></p>
                   <div class="finalizar">
-                    <p><a href="finalizar.php?id=<?php echo $u_id ?>">Finalizar compra</a></p>
+                    <p><a style="cursor:pointer" href="finalizar.php?id=<?php echo $u_id ?>">Finalizar compra</a></p>
                   </div>
             </div>
           </div>
@@ -293,6 +312,7 @@ $data = date("Y");
 
 </footer>
     <!-- Fechamento Foooter -->
+
   <script src="http://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>

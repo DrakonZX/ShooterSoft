@@ -588,13 +588,13 @@ select{
   width: 100%;
   text-align: left;
 }
-.conteudo{
+.conteu{
   margin-top: 50px;
   border: 3px solid #89BF00;
   border-radius: 10px;
   background-color: #131600;
 }
-.conteudo p{
+.conteu p{
   margin-left: 100px;
   font-size: 20px;
   color: #F9360E;
@@ -621,6 +621,56 @@ select{
   padding: 10px 20px 10px 20px;
   border-radius: 20px;
   border:2px solid #F9360E;
+}
+.limpar{
+  color: #131600;
+  border-bottom: 3px solid #89BF00;
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 850px;
+  padding-top: 50px;
+}
+/* PERFIL  */
+.perfil{
+  float: right;
+  border: 2px solid #7DDD00;
+  height: 120px;
+  width: 250px;
+  margin-top: 21px;
+  background: #E8FFC6;
+  border-radius: 0px;
+}
+.img img{
+  margin-top: 14px;
+  border: 2px solid #161C08;
+  height: 90px;
+  width: 90px;
+  margin-left: 14px;
+}
+.perfil .conteudo{
+  margin-left: 146px;
+  margin-top: -107px;
+  color: #161C08;
+  width: 120px;
+}
+.conteudo a{
+  color: #161C08;
+}
+
+/* Caminho */
+.caminho
+{
+  margin-left: 20px;
+}
+.caminho a
+{
+  color: Black;
+  font-size: 19px;
+  text-decoration: none;
+}
+.caminho a:hover
+{
+  color: green;
 }
 @media screen and (max-width:5800px) {
   nav.menu-mobile{
@@ -908,46 +958,4 @@ select{
      width: 260px;
      margin-left: 60px;
    }
-}
-/* PERFIL  */
-.perfil{
-  float: right;
-  border: 2px solid #7DDD00;
-  height: 140px;
-  width: 250px;
-  margin-top: 20px;
-  background: #E8FFC6;
-  border-radius: 0px;
-}
-.img img{
-  margin-top: 18px;
-  border: 2px solid #161C08;
-  height: 100px;
-  width: 100px;
-  margin-left: 10px;
-}
-.perfil .conteudo{
-  margin-left: 120px;
-  margin-top: -130px;
-  color: #161C08;
-  width: 120px;
-}
-.conteudo a{
-  color: #161C08;
-}
-
-/* Caminho */
-.caminho
-{
-  margin-left: 20px;
-}
-.caminho a
-{
-  color: Black;
-  font-size: 19px;
-  text-decoration: none;
-}
-.caminho a:hover
-{
-  color: green;
 }
