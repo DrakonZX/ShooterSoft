@@ -21,9 +21,11 @@ $data = date("Y");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
-  <link rel="stylesheet" href="css/produtos.css">
+  <link rel="stylesheet" href="css/pagina_all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Merriweather+Sans|Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
   <title>Acessórios Airsoft -  ShooterSoft</title>
 </head>
 
@@ -123,26 +125,73 @@ $data = date("Y");
     <div class="caminho">
        <table>
          <tr>
-           <th> <a href="index.php">Home</a> > </th>
-           <th> <a href="<?php echo $nsei['categoria_caminho'] ?>"><?php echo $nsei['tipo'] ?></a> > </th>
-           <th> <a href="<?php echo $nsei['caminho'] ?>"><?php echo $nsei['categoria'] ?></a> >  </th>
+           <th> <a href="index.php">Home</a> <i class="fas fa-angle-right"></i> </th>
+           <th> <a href="<?php echo $nsei['categoria_caminho'] ?>"><?php echo $nsei['tipo'] ?></a> <i class="fas fa-angle-right"></i> </th>
+           <th> <a href="<?php echo $nsei['caminho'] ?>"><?php echo $nsei['categoria'] ?></a> <i class="fas fa-angle-right"></i>  </th>
            <th> <a href="pagina_all?id=<?php echo $nsei['id'] ?>"><?php echo $nsei['nome'] ?></a> </th>
          </tr>
        </table>
+       <div class="caminho-div"></div>
     </div>
+          <script type="text/javascript">
+            function img00() {
+              document.getElementById("troca").src = "<?php echo $nsei['img'] ?>";
+            }
+
+            function img01() {
+              document.getElementById("troca").src = "<?php echo $nsei['img2'] ?>";
+            }
+
+            function img02() {
+              document.getElementById("troca").src = "<?php echo $nsei['img3'] ?>";
+            }
+          </script>
         <div class="itens">
           <div class="itens-img">
             <div class="outras-img">
-              <img style="height:150px;width:150px;" src="<?php echo $nsei['img'] ?>" alt="">
-              <img style="height:150px;width:150px;" src="<?php echo $nsei['img2'] ?>" alt="">
-              <img style="height:150px;width:150px;" src="<?php echo $nsei['img3'] ?>" alt="">
+              <img src="<?php echo $nsei['img'] ?>" onclick="img00();" alt=""><br>
+              <img src="<?php echo $nsei['img2'] ?>"  onclick="img01();" alt=""><br>
+              <img src="<?php echo $nsei['img3'] ?>" onclick="img02();" alt="">
             </div>
-            <img src="<?php echo $nsei['img'] ?>" alt="">
+            <div class="principal-img">
+              <img src="<?php echo $nsei['img'] ?>" id="troca" alt="">
+            </div>
           </div>
           <div class="itens-cont">
-
+            <h3><?php echo $nsei['nome'] ?></h3>
+            <p><span>R$ <?php echo $nsei['preco_antigo'] ?></span></p>
+            <p class="preco">R$ <?php echo $nsei['preco'] ?></p>
+            <p class="avista">R$ <?php echo $nsei['avista'] ?> À VISTA  OU</p>
+            <p class="parcelas"><span>10X DE </span> R$ <?php echo $nsei['parcelas'] ?> <span> SEM JUROS</span></p>
+            <div class="itens-comprar">
+              <a href="favorito.php?id=<?php echo $nsei['id'] ?>">Comprar</a>
+            </div>
           </div>
         </div>
+        <div class="tipo">
+          <h3>Outros produtos do tipo <span>"<?php echo $nsei['tipo'] ?>"</span> </h3>
+        </div>
+        <div class="demo">
+          <ul id="slider">
+            <?php
+            $sql = "select * from produtos_airsoft where tipo = '$nsei[tipo]'";
+            $sql = $pdo->query($sql);
+            if ($sql->rowCount()>0) {
+              foreach($sql->fetchAll() as $slider){
+                ?>
+                <li class="slide">
+                  <a href="pagina_all.php?id=<?php echo $slider['id'] ?>" class="linkzada" ><img src="<?php echo $slider['img'] ?>" alt="" >
+                  <p style="margin-top:10px; font-size:14px;border-top:2px solid #1c5400;padding-top:10px;"><?php echo $slider['nome'] ?></p>
+                  <p style="font-size:17px;">à vista no boleto R$ <span><?php echo $slider['avista'] ?></span> </p>
+                  </a>
+                </li>
+                <?php
+              }
+            }
+             ?>
+          </ul>
+        </div>
+
            <!--Fechamento TODOS OS ITENS -->
       </div>
     </div>
@@ -225,9 +274,8 @@ $data = date("Y");
 
 </footer>
     <!-- Fechamento Foooter -->
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script><script  src="js/slider.js"></script>
         <script>
         $('nav.menu-mobile h2').click(function()
             {
