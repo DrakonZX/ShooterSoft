@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Dez-2019 às 16:09
+-- Generation Time: 02-Dez-2019 às 16:22
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.1
 
@@ -36,6 +36,14 @@ CREATE TABLE `carrinho` (
   `produto_id` int(11) NOT NULL,
   `cliente_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `carrinho`
+--
+
+INSERT INTO `carrinho` (`id`, `quantidade`, `produto_id`, `cliente_id`) VALUES
+(3, 5, 15, 1),
+(4, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -77,7 +85,8 @@ INSERT INTO `datas` (`id`, `data`, `email`, `hora`, `estado`) VALUES
 (6, '2019-11-30', 'TheDrakonZXD@gmail.com', '00:07:06', 'logado'),
 (7, '2019-11-30', 'TheDrakonZXD@gmail.com', '13:50:46', 'logado'),
 (8, '2019-12-01', 'TheDrakonZXD@gmail.com', '12:44:54', 'logado'),
-(9, '2019-12-01', 'TheDrakonZXD@gmail.com', '19:10:33', 'logado');
+(9, '2019-12-01', 'TheDrakonZXD@gmail.com', '19:10:33', 'logado'),
+(10, '2019-12-02', 'TheDrakonZXD@gmail.com', '13:13:30', 'logado');
 
 -- --------------------------------------------------------
 
@@ -170,8 +179,16 @@ CREATE TABLE `soma_total` (
   `id` int(11) NOT NULL,
   `cliente_id` int(11) NOT NULL,
   `produto_id` int(11) NOT NULL,
-  `soma` decimal(6,2) NOT NULL
+  `soma` decimal(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `soma_total`
+--
+
+INSERT INTO `soma_total` (`id`, `cliente_id`, `produto_id`, `soma`) VALUES
+(4, 1, 15, '9999.99'),
+(5, 1, 2, '999.00');
 
 -- --------------------------------------------------------
 
@@ -262,7 +279,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `compras`
@@ -274,7 +291,7 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT for table `datas`
 --
 ALTER TABLE `datas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `filtro`
@@ -286,7 +303,7 @@ ALTER TABLE `filtro`
 -- AUTO_INCREMENT for table `soma_total`
 --
 ALTER TABLE `soma_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `usuario`
