@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Dez-2019 às 16:22
+-- Generation Time: 05-Dez-2019 às 16:03
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.1
 
@@ -42,8 +42,11 @@ CREATE TABLE `carrinho` (
 --
 
 INSERT INTO `carrinho` (`id`, `quantidade`, `produto_id`, `cliente_id`) VALUES
-(3, 5, 15, 1),
-(4, 1, 2, 1);
+(13, 1, 2, 1),
+(14, 1, 6, 1),
+(15, 1, 3, 1),
+(16, 1, 4, 1),
+(17, 1, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -86,7 +89,8 @@ INSERT INTO `datas` (`id`, `data`, `email`, `hora`, `estado`) VALUES
 (7, '2019-11-30', 'TheDrakonZXD@gmail.com', '13:50:46', 'logado'),
 (8, '2019-12-01', 'TheDrakonZXD@gmail.com', '12:44:54', 'logado'),
 (9, '2019-12-01', 'TheDrakonZXD@gmail.com', '19:10:33', 'logado'),
-(10, '2019-12-02', 'TheDrakonZXD@gmail.com', '13:13:30', 'logado');
+(10, '2019-12-02', 'TheDrakonZXD@gmail.com', '13:13:30', 'logado'),
+(11, '2019-12-04', 'TheDrakonZXD@gmail.com', '21:50:40', 'logado');
 
 -- --------------------------------------------------------
 
@@ -130,17 +134,14 @@ CREATE TABLE `produtos_airsoft` (
   `mais_vendidos` int(2) NOT NULL,
   `promocao` int(2) NOT NULL,
   `promocao_preco` decimal(6,2) NOT NULL,
-  `peso` decimal(5,2) NOT NULL,
+  `peso` decimal(8,2) NOT NULL,
   `sistema` varchar(20) NOT NULL,
   `disparo` varchar(20) NOT NULL,
-  `gas` varchar(20) NOT NULL,
   `calibre` varchar(20) NOT NULL,
   `comprimento` decimal(5,2) NOT NULL,
-  `altura` decimal(5,2) NOT NULL,
   `mira` varchar(20) NOT NULL,
-  `bateria` varchar(20) NOT NULL,
-  `material` varchar(20) NOT NULL,
-  `texto_carac` varchar(1500) NOT NULL,
+  `bateria` varchar(100) NOT NULL,
+  `material` varchar(100) NOT NULL,
   `tipo` varchar(200) NOT NULL,
   `caminho` varchar(100) NOT NULL,
   `caminho_categoria` varchar(100) NOT NULL,
@@ -152,22 +153,22 @@ CREATE TABLE `produtos_airsoft` (
 -- Extraindo dados da tabela `produtos_airsoft`
 --
 
-INSERT INTO `produtos_airsoft` (`id`, `nome`, `preco`, `preco_antigo`, `parcelas`, `avista`, `marca`, `img`, `img2`, `img3`, `categoria`, `mais_vendidos`, `promocao`, `promocao_preco`, `peso`, `sistema`, `disparo`, `gas`, `calibre`, `comprimento`, `altura`, `mira`, `bateria`, `material`, `texto_carac`, `tipo`, `caminho`, `caminho_categoria`, `slide`, `img_slide`) VALUES
-(1, 'SHOTGUN AIRSOFT MOSSBERG 500 ', '500.00', '0.00', '50.00', '315.00', 'ActionX airsoft', 'img_produtos/Imagens_correta/5.jpg', 'img_produtos/Imagens_correta/5_2.jpg', 'img_produtos/Imagens_correta/5_3.jpg', 'Escopetas', 0, 0, '0.00', '14.00', 'Spring', 'Manual', '', '6mm', '98.00', '13.00', '1x Fake Red-dot', 'Não contém', 'Polímero e Metal', '', 'Airsoft', 'escopeta.php', 'airsoft.php', 0, ''),
-(2, 'RIFLE AEG M4A1 CM507', '999.00', '1350.00', '99.90', '999.00', 'slin', 'img_produtos/Imagens_correta/14.jpg', 'img_produtos/Imagens_correta/14_2.jpg', 'img_produtos/Imagens_correta/14_3.jpg', 'Rifles', 0, 1, '0.00', '15.24', 'Pressão', 'Manual', '', '4.3', '58.00', '15.00', 'Não contém', 'Não contém', 'Polimero e Metal', '', 'Airsoft', 'rifle.php', 'airsoft.php', 1, 'img/a.png'),
-(3, 'PISTOLA 247 KWC', '299.00', '499.00', '59.80', '269.00', 'slin', 'img_produtos/Imagens_correta/11.jpg', 'img_produtos/Imagens_correta/11_2.jpg', 'img_produtos/Imagens_correta/11_3.jpg', 'Pistolas', 1, 0, '0.00', '0.00', 'Pressão', 'Manual', '', '4.3', '36.00', '6.00', 'Não contém', 'Não contém', 'Polímero e Metal', '', 'Airsoft', 'pistola.php', 'airsoft.php', 1, 'img/c.png'),
-(4, 'PISTOLA 1911 GBB CO2', '999.00', '2191.00', '99.00', '899.10', 'slin', 'img_produtos/Imagens_correta/12.jpg', 'img_produtos/Imagens_correta/12_2.jpg', 'img_produtos/Imagens_correta/12_3.jpg', 'Pistolas ', 0, 0, '0.00', '0.00', 'Gás CO2', 'Manual', '', '4.3', '46.00', '7.00', 'Não contém', 'Contém', 'Polímero e Metal', '', 'Airsoft', 'pistola.php', 'airsoft.php', 0, ''),
-(5, 'PISTOLA GLOCK GBB  GREEN GAS R17', '999.00', '1320.00', '99.00', '899.00', 'slin', 'img_produtos/Imagens_correta/13.jpg', 'img_produtos/Imagens_correta/13_2.jpg', 'img_produtos/Imagens_correta/13_3.jpg', 'Pistolas ', 1, 1, '0.00', '0.00', 'Gás CO2', '', '', '', '0.00', '0.00', '', '', '', '', 'Airsoft', 'pistola.php', 'airsoft.php', 0, ''),
-(6, 'BERETTA AEP UMAREX', '890.00', '1250.00', '89.00', '801.00', 'slin', 'img_produtos/Imagens_correta/10.jpg', 'img_produtos/Imagens_correta/10_2.jpg', 'img_produtos/Imagens_correta/10_3.jpg', 'Pistolas', 0, 0, '0.00', '0.00', '', '', '', '', '0.00', '0.00', '', '', '', '', 'Airsoft', 'pistola.php', 'airsoft.php', 0, ''),
-(7, 'SNIPER GREEN GAS G86B', '3799.00', '4591.20', '379.00', '3419.10', 'slin', 'img_produtos/Imagens_correta/16.jpg', 'img_produtos/Imagens_correta/16_2.jpg', 'img_produtos/Imagens_correta/16_3.jpg', 'Rifles', 1, 1, '0.00', '0.00', '', '', '', '', '0.00', '0.00', '', '', '', '', 'Airsoft', 'rifle.php', 'airsoft.php', 1, 'img/b.png'),
-(8, 'RIFLE M62', '719.10', '1199.00', '79.90', '719.10', 'slin', 'img_produtos/Imagens_correta/15.jpg', 'img_produtos/Imagens_correta/15_2.jpg', 'img_produtos/Imagens_correta/15_3.jpg', 'Rifles', 0, 0, '0.00', '0.00', '', '', '', '', '0.00', '0.00', '', '', '', '', 'Airsoft', 'rifle.php', 'airsoft.php', 0, ''),
-(9, 'MARCADOR PAINTBALL RIFLE LASER TAG EAGLE  EYE SYSTEM – PRETO', '4850.40', '0.00', '485.04', '4122.84', 'slin', 'img_produtos/Imagens_correta/8.jpg', 'img_produtos/Imagens_correta/8_2.jpg', '', 'Marcadores', 0, 1, '0.00', '0.00', '', '', '', '', '0.00', '0.00', '', '', '', '', 'Paintball', 'paintball.php', 'paintball.php', 0, ''),
-(10, 'MARCADOR PAINTBALL PISTOLA RAP4 DESERT EAGLE - PRETO', '1527.00', '0.00', '152.74', '1298.26', 'slin', 'img_produtos/Imagens_correta/7_3.jpg', 'img_produtos/Imagens_correta/7.jpg', 'img_produtos/Imagens_correta/7_2.jpg', 'Marcadores', 0, 0, '0.00', '0.00', '', '', '', '', '0.00', '0.00', '', '', '', '', 'Paintball', 'paintball.php', 'paintball.php', 0, ''),
-(11, 'ESCOPETA M300 WESSON', '259.00', '0.00', '51.00', '233.10', 'slin', 'img_produtos/Imagens_correta/6.jpg', 'img_produtos/Imagens_correta/6_2.jpg', 'img_produtos/Imagens_correta/6_3.jpg', 'Escopetas', 1, 1, '0.00', '0.00', '', '', '', '', '0.00', '0.00', '', '', '', '', 'Airsoft', 'escopeta.php', 'airsoft.php', 0, ''),
-(12, 'CILINDRO AIRSOFT CO2 - 12G', '6.29', '8.30', '6.29', '5.32', 'slin', 'img_produtos/Imagens_correta/1.jpg', 'img_produtos/Imagens_correta/1_2.jpg', '', 'Acessórios', 1, 0, '0.00', '0.00', '', '', '', '', '0.00', '0.00', '', '', '', '', 'Airsoft', 'acessorios_airsoft.php', 'airsoft.php', 0, ''),
-(13, 'MUNIÇÃO AIRSOFT TOKYO MARUI BBS 0.25g - 1300 UNIDADES', '62.91', '0.00', '6.29', '53.47', 'slin', 'img_produtos/Imagens_correta/2.jpg', '', '', 'Acessórios', 1, 1, '0.00', '0.00', '', '', '', '', '0.00', '0.00', '', '', '', '', 'Airsoft', 'acessorios_airsoft.php', 'airsoft.php', 0, ''),
-(14, 'ARCO CRUZ JANDÃO CROSSBOW HWXR - 33 35 - 60 180', '2839.94', '0.00', '283.99', '2413.94', 'slin', 'img_produtos/Imagens_correta/3.jpg', 'img_produtos/Imagens_correta/3_2.jpg', 'img_produtos/Imagens_correta/3_3.jpg', 'Arcos', 0, 0, '0.00', '0.00', '', '', '', '', '0.00', '0.00', '', '', '', '', 'Arquearia', 'arquearia.php', 'arquearia.php', 0, ''),
-(15, 'BALESTRA CHACE SUN JANDÃO 2009F - 176', '2404.56', '0.00', '240.56', '2043.88', 'slin', 'img_produtos/Imagens_correta/4.jpg', 'img_produtos/Imagens_correta/4.2jpg', 'img_produtos/Imagens_correta/4_3.jpg', 'Balestras', 0, 0, '0.00', '0.00', '', '', '', '', '0.00', '0.00', '', '', '', '', 'Arquearia', 'arquearia.php', 'arquearia.php', 0, '');
+INSERT INTO `produtos_airsoft` (`id`, `nome`, `preco`, `preco_antigo`, `parcelas`, `avista`, `marca`, `img`, `img2`, `img3`, `categoria`, `mais_vendidos`, `promocao`, `promocao_preco`, `peso`, `sistema`, `disparo`, `calibre`, `comprimento`, `mira`, `bateria`, `material`, `tipo`, `caminho`, `caminho_categoria`, `slide`, `img_slide`) VALUES
+(1, 'SHOTGUN AIRSOFT MOSSBERG 500 ', '500.00', '0.00', '50.00', '315.00', 'ActionX airsoft', 'img_produtos/Imagens_correta/5.jpg', 'img_produtos/Imagens_correta/5_2.jpg', 'img_produtos/Imagens_correta/5_3.jpg', 'Escopetas', 0, 0, '0.00', '560.00', 'Pressão', 'Pump', '6mm', '56.00', '1x Fake Red-dot', '', 'Polímero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Escopetas&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
+(2, 'RIFLE AEG M4A1 CM507', '999.00', '1350.00', '99.90', '999.00', 'slin', 'img_produtos/Imagens_correta/14.jpg', 'img_produtos/Imagens_correta/14_2.jpg', 'img_produtos/Imagens_correta/14_3.jpg', 'Rifles', 0, 1, '0.00', '15.24', 'Pressão', 'Automático', '6mm', '79.00', 'Não contém', '', 'Polimero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Rifles&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 1, 'img/a.png'),
+(3, 'PISTOLA 247 KWC', '299.00', '499.00', '59.80', '269.00', 'slin', 'img_produtos/Imagens_correta/11.jpg', 'img_produtos/Imagens_correta/11_2.jpg', 'img_produtos/Imagens_correta/11_3.jpg', 'Pistolas', 1, 0, '0.00', '560.00', 'Pressão', 'Semi-automático', '4.5mm', '18.00', 'Não contém', '', 'Polímero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Pistolas&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 1, 'img/c.png'),
+(4, 'PISTOLA 1911 GBB CO2', '999.00', '2191.00', '99.00', '899.10', 'slin', 'img_produtos/Imagens_correta/12.jpg', 'img_produtos/Imagens_correta/12_2.jpg', 'img_produtos/Imagens_correta/12_3.jpg', 'Pistolas ', 0, 0, '0.00', '580.00', 'Gás CO2', 'Manual', '6mm', '23.00', 'Não contém', '', 'Polímero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Pistolas&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
+(5, 'PISTOLA GLOCK GBB  GREEN GAS R17', '999.00', '1320.00', '99.00', '899.00', 'slin', 'img_produtos/Imagens_correta/13.jpg', 'img_produtos/Imagens_correta/13_2.jpg', 'img_produtos/Imagens_correta/13_3.jpg', 'Pistolas ', 1, 1, '0.00', '708.00', 'Gás GBB', 'Semi-automático', '6mm', '26.00', 'Não contém', 'Bateria recarregavel', 'Polímero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Pistolas&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
+(6, 'BERETTA AEP UMAREX', '890.00', '1250.00', '89.00', '801.00', 'slin', 'img_produtos/Imagens_correta/10.jpg', 'img_produtos/Imagens_correta/10_2.jpg', 'img_produtos/Imagens_correta/10_3.jpg', 'Pistolas', 0, 0, '0.00', '524.00', 'Elétrico', 'Semi-automático', '6mm', '24.00', '', '', 'Polímero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Pistolas&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
+(7, 'SNIPER GREEN GAS G86B', '3799.00', '4591.20', '379.00', '3419.10', 'slin', 'img_produtos/Imagens_correta/16.jpg', 'img_produtos/Imagens_correta/16_2.jpg', 'img_produtos/Imagens_correta/16_3.jpg', 'Rifles', 1, 1, '0.00', '4030.00', 'Gás GBB', 'Single-Shot', '6mm', '127.00', 'Red-Dot', '', 'Polímero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Rifles&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 1, 'img/b.png'),
+(8, 'RIFLE M62', '719.10', '1199.00', '79.90', '719.10', 'slin', 'img_produtos/Imagens_correta/15.jpg', 'img_produtos/Imagens_correta/15_2.jpg', 'img_produtos/Imagens_correta/15_3.jpg', 'Rifles', 0, 0, '0.00', '2120.00', 'Pressão', 'Single-Shot', '6mm', '111.00', '', '', 'Polímero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Rifles&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
+(9, 'MARCADOR PAINTBALL RIFLE LASER TAG EAGLE  EYE SYSTEM – PRETO', '4850.40', '0.00', '485.04', '4122.84', 'slin', 'img_produtos/Imagens_correta/8.jpg', 'img_produtos/Imagens_correta/8_2.jpg', 'img_produtos/Imagens_correta/8_3.jpg', 'Marcadores', 0, 1, '0.00', '0.00', 'Gás CO2', '', '', '0.00', '', '', '', 'Paintball', 'pagina_produtos.php?tipo=Paintball', 'pagina_produtos.php?tipo=Paintball', 0, ''),
+(10, 'MARCADOR PAINTBALL PISTOLA RAP4 DESERT EAGLE - PRETO', '1527.00', '0.00', '152.74', '1298.26', 'slin', 'img_produtos/Imagens_correta/7_3.jpg', 'img_produtos/Imagens_correta/7.jpg', 'img_produtos/Imagens_correta/7_2.jpg', 'Marcadores', 0, 0, '0.00', '0.00', 'Gás CO2', 'Semi-Automático', '0.43mm', '0.00', '', '', '', 'Paintball', 'pagina_produtos.php?tipo=Paintball', 'pagina_produtos.php?tipo=Paintball', 0, ''),
+(11, 'ESCOPETA M300 WESSON', '800.00', '0.00', '51.00', '642.00', 'slin', 'img_produtos/Imagens_correta/6.jpg', 'img_produtos/Imagens_correta/6_2.jpg', 'img_produtos/Imagens_correta/6_3.jpg', 'Escopetas', 1, 1, '0.00', '590.00', 'Pressão', 'Pump', '6mm', '57.00', '', '', '', 'Airsoft', 'pagina_produtos.php?categoria=Escopetas&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
+(12, 'CILINDRO AIRSOFT CO2 - 12G', '6.29', '8.30', '6.29', '5.32', 'slin', 'img_produtos/Imagens_correta/1.jpg', 'img_produtos/Imagens_correta/1_2.jpg', 'img_produtos/Imagens_correta/1_3.jpg', 'Acessórios', 1, 0, '0.00', '0.00', '', '', '', '0.00', '', '', '', 'Airsoft', 'pagina_produtos.php?categoria=Acessorios&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
+(13, 'MUNIÇÃO AIRSOFT TOKYO MARUI BBS 0.25g - 1300 UNIDADES', '62.91', '0.00', '6.29', '53.47', 'slin', 'img_produtos/Imagens_correta/2.jpg', 'img_produtos/Imagens_correta/2_2.jpg', 'img_produtos/Imagens_correta/2_3.jpg', 'Acessórios', 1, 1, '0.00', '0.00', '', '', '', '0.00', '', '', '', 'Airsoft', 'pagina_produtos.php?categoria=Acessorios&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
+(14, 'ARCO CRUZ JANDÃO CROSSBOW HWXR - 33 35 - 60 180', '2839.94', '0.00', '283.99', '2413.94', 'slin', 'img_produtos/Imagens_correta/3.jpg', 'img_produtos/Imagens_correta/3_2.jpg', 'img_produtos/Imagens_correta/3_3.jpg', 'Arcos', 0, 0, '0.00', '0.00', '', '', '', '0.00', '', '', '', 'Arquearia', 'pagina_produtos.php?tipo=Arquearia', 'pagina_produtos.php?tipo=Arquearia', 0, ''),
+(15, 'BALESTRA CHACE SUN JANDÃO 2009F - 176', '2404.56', '0.00', '240.56', '2043.88', 'slin', 'img_produtos/Imagens_correta/4.jpg', 'img_produtos/Imagens_correta/4_2.jpg', 'img_produtos/Imagens_correta/4_3.jpg', 'Balestras', 0, 0, '0.00', '0.00', '', '', '', '0.00', '', '', '', 'Arquearia', 'pagina_produtos.php?tipo=Arquearia', 'pagina_produtos.php?tipo=Arquearia', 0, '');
 
 -- --------------------------------------------------------
 
@@ -187,8 +188,11 @@ CREATE TABLE `soma_total` (
 --
 
 INSERT INTO `soma_total` (`id`, `cliente_id`, `produto_id`, `soma`) VALUES
-(4, 1, 15, '9999.99'),
-(5, 1, 2, '999.00');
+(30, 1, 2, '999.00'),
+(31, 1, 6, '890.00'),
+(32, 1, 3, '299.00'),
+(33, 1, 4, '999.00'),
+(34, 1, 5, '999.00');
 
 -- --------------------------------------------------------
 
@@ -279,7 +283,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `compras`
@@ -291,7 +295,7 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT for table `datas`
 --
 ALTER TABLE `datas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `filtro`
@@ -303,7 +307,7 @@ ALTER TABLE `filtro`
 -- AUTO_INCREMENT for table `soma_total`
 --
 ALTER TABLE `soma_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `usuario`
