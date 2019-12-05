@@ -92,21 +92,21 @@
   </header>
   <div class="fundo">
   <div class="menu">
-  <ul class="menu-list">
-    <li><a href="index.php">Home</a></li>
-    <li>
-      <a href="airsoft.php">Airsoft</a>
-       <ul class="sub-menu">
-        <li><a href="pistola.php">Pistolas</a></li>
-        <li><a href="rifle.php">Rifles</a></li>
-        <li><a href="escopeta.php">Escopetas</a></li>
-           <li><a href="acessorios_airsoft.php">Acessórios</a></li>
-      </ul>
-    </li>
-    <li><a href="paintball.php">Paintball</a></li>
-    <li><a href="arquearia.php">Arquearia</a></li>
-    <li><a href="#  ">Equipe</a></li>
-  </ul>
+    <ul class="menu-list">
+      <li><a href="index.php">Home</a></li>
+      <li>
+        <a href="pagina_produtos.php?tipo=Airsoft">Airsoft</a>
+         <ul class="sub-menu">
+          <li><a href="pagina_produtos.php?categoria=Pistolas&&tipo=Airsoft">Pistolas</a></li>
+          <li><a href="pagina_produtos.php?categoria=Rifles&&tipo=Airsoft">Rifles</a></li>
+          <li><a href="pagina_produtos.php?categoria=Escopetas&&tipo=Airsoft">Escopetas</a></li>
+             <li><a href="pagina_produtos.php?categoria=Acessorios&&tipo=Airsoft">Acessórios</a></li>
+        </ul>
+      </li>
+      <li><a href="pagina_produtos.php?tipo=Paintball">Paintball</a></li>
+      <li><a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a></li>
+      <li><a href="#">Equipe</a></li>
+    </ul>
 </div>
 </div>
 </div>

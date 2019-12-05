@@ -17,21 +17,21 @@ if($button){
   // validação da senha
 	if((strlen($dados['senha'])) < 6){
 		$erro = true;
-    $_SESSION['msg'] = "<div class='alert alert-danger' role='alert' style='border:3px solid RED;text-align:center;padding:10px 0 10px 0;background-color:black;font-weight: bold;font-size:18px;color:Red;border-radius:30px;'>A senha deve ter no minímo 6 caracteres e no maximo 16</div>";
+    $_SESSION['msg'] = "<div class='alert alert-danger' role='alert' style='border:2px solid #89BF00;text-align:center;padding:10px 0 10px 0;background-color:#161C08;;font-weight: bold;font-size:18px;color:#89BF00;margin-top:0px;margin-bottom:50px;''>A senha deve ter no minímo 6 caracteres e no maximo 16</div>";
 
   }
   elseif(strlen($dados['senha']) > 16){
 		$erro = true;
-    $_SESSION['msg'] = $_SESSION['msg'] = "<div class='alert alert-danger' role='alert' style='border:3px solid RED;text-align:center;padding:10px 0 10px 0;background-color:black;font-weight: bold;font-size:18px;color:Red;border-radius:30px;'>A senha nao deve passar de 16 caracteres!</div>";
+    $_SESSION['msg'] = $_SESSION['msg'] = "<div class='alert alert-danger' role='alert' style='border:2px solid #89BF00;text-align:center;padding:10px 0 10px 0;background-color:#161C08;;font-weight: bold;font-size:18px;color:#89BF00;margin-top:0px;margin-bottom:50px;''>A senha nao deve passar de 16 caracteres!</div>";
 
   }
   elseif($dados['senha'] != $dados['conf_senha']){
       $erro = true;
-      $_SESSION['msg'] = $_SESSION['msg'] = "<div class='alert alert-danger' role='alert' style='border:3px solid RED;text-align:center;padding:10px 0 10px 0;background-color:black;font-weight: bold;font-size:18px;color:Red;border-radius:30px;'>Senhas diferentes. Tente novamente</div>";
+      $_SESSION['msg'] = $_SESSION['msg'] = "<div class='alert alert-danger' role='alert' style='border:2px solid #89BF00;text-align:center;padding:10px 0 10px 0;background-color:#161C08;;font-weight: bold;font-size:18px;color:#89BF00;margin-top:0px;margin-bottom:50px;''>Senhas diferentes. Tente novamente</div>";
 
 	}elseif(stristr($dados['senha'], "'")) {
     $erro = true;
-    $_SESSION['msg'] = $_SESSION['msg'] = "<div class='alert alert-danger' role='alert' style='border:3px solid RED;text-align:center;padding:10px 0 10px 0;background-color:black;font-weight: bold;font-size:18px;color:Red;border-radius:30px;'>Caracter ( ' ) utilizado na senha é inválido</div>";
+    $_SESSION['msg'] = $_SESSION['msg'] = "<div class='alert alert-danger' role='alert' style='border:2px solid #89BF00;text-align:center;padding:10px 0 10px 0;background-color:#161C08;;font-weight: bold;font-size:18px;color:#89BF00;margin-top:0px;margin-bottom:50px;''>Caracter ( ' ) utilizado na senha é inválido</div>";
 
   //verificando se o CEP já foi cadastrado CPF
 	}else{
@@ -40,7 +40,7 @@ if($button){
 
 		if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 			$erro = true;
-			$_SESSION['msg'] = "<h2 style='border:3px solid RED;text-align:center;padding:10px 0 10px 0;background-color:black;font-weight: bold;font-size:18px;color:Red;border-radius:30px;'>Este CPF já está sendo utilizado</h2>";
+			$_SESSION['msg'] = "<h2 style='border:2px solid #89BF00;text-align:center;padding:10px 0 10px 0;background-color:#161C08;;font-weight: bold;font-size:18px;color:#89BF00;margin-top:0px;margin-bottom:50px;''>Este CPF já está sendo utilizado</h2>";
 		}
 
     //verificando se o E-mail já foi cadastrado
@@ -48,7 +48,7 @@ if($button){
 		$resultado_usuario = mysqli_query($conexao, $result_usuario);
 		if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 			$erro = true;
-			$_SESSION['msg'] = "<h2 style='border:3px solid RED;text-align:center;padding:10px 0 10px 0;background-color:black;font-weight: bold;font-size:18px;color:Red;border-radius:30px;'>Este E-mail já está cadastrado</h2>";
+			$_SESSION['msg'] = "<h2 style='border:2px solid #89BF00;text-align:center;padding:10px 0 10px 0;background-color:#161C08;;font-weight: bold;font-size:18px;color:#89BF00;margin-top:0px;margin-bottom:50px;''>Este E-mail já está cadastrado</h2>";
 		}
 	}
 
@@ -115,7 +115,7 @@ if($button){
 			$_SESSION['msgcad'];
 			header("Location: login.php");
 		}else{
-			$_SESSION['msg'] = "<h2 style='border:3px solid RED;text-align:center;padding:10px 0 10px 0;background-color:black;font-weight: bold;font-size:18px;color:Red;border-radius:30px;'>Erro ao cadastrar o usuário</h2>";
+			$_SESSION['msg'] = "<h2 style='border:2px solid #89BF00;text-align:center;padding:10px 0 10px 0;background-color:#161C08;;font-weight: bold;font-size:18px;color:#89BF00;margin-top:0px;margin-bottom:50px;''>Erro ao cadastrar o usuário</h2>";
 		}
 	}
 }
@@ -153,8 +153,10 @@ if($button){
 
               <form method="POST" action="" enctype="multipart/form-data">
                 <br><br>
-								<label for="arquivo">Escolha uma imagem</label>
-							  <input type="file" name="arquivo" value="Selecione uma imagem"><br><br>
+								<div class="input_img">
+									<label for="arquivo">Escolha uma imagem</label>
+								  <input type="file" name="arquivo" value="Selecione uma imagem"><br><br>
+								</div>
 
 								 <label style="margin-top:100px;" for="nome">Nome</label><br>
                 <input  type="text" name="nome" placeholder="Nome" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ''; ?>" required><br><br>

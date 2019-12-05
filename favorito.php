@@ -37,7 +37,13 @@ include_once("valida.php");
           }
         }
         $erros = 0;
-        header("Location:$caminho.php");
+        if (isset($_GET['tipo'])) {
+          $path = "$caminho&tipo=$_GET[tipo]";
+          header("Location: $path");
+        }
+        else {
+          header("Location: $caminho");
+        }
       }
       else {
         $id = addslashes($_GET['id']);
