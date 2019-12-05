@@ -50,6 +50,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/editar_perfil.css">
+    <link rel="icon" type="image/png" href="img/logo_veridico.png" sizes="64x64">
   <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Merriweather+Sans|Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>

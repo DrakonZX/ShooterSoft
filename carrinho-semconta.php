@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/carrinho-semconta.css">
+      <link rel="icon" type="image/png" href="img/logo_veridico.png" sizes="64x64">
     <title>Carrinho - ShooterSoft</title>
 </head>
 <body>
    <div class="fundo">
       <div class="logo">
-    <a href="index.php"><img src="img/logo_veridico2.png" alt=""></a> 
+    <a href="index.php"><img src="img/logo_veridico2.png" alt=""></a>
       </div>
    </div>
     <header>

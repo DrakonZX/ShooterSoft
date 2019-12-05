@@ -13,6 +13,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
+  <link rel="icon" type="image/png" href="img/logo_veridico.png" sizes="64x64">
   <link rel="stylesheet" href="css/produtos.css">
   <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Merriweather+Sans|Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -108,12 +109,25 @@
       <li><a href="#">Equipe</a></li>
     </ul>
 </div>
+<div class="mobile-container">
+<div class="topnav">
+    <a href="index.php">Home</a>
+    <div id="myLinks">
+      <a href="pagina_produtos.php?tipo=Airsoft">Airsoft</a>
+      <a href="pagina_produtos.php?tipo=Paintball">Paintball</a>
+      <a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a>
+      <a href="#">Equipe</a>
+    </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<!-- End smartphone / tablet look -->
+</div>
 </div>
 </div>
   <div class="s">
     <div class="slideshow-container">
-
-
       <?php $sql = "SELECT * FROM produtos_airsoft WHERE slide='1'";
             $sql = $pdo->query($sql);
             if ($sql -> rowCount()>0) {
@@ -229,7 +243,7 @@
             <p  class="card-text" id="preco_parcelas"><?php echo "ou <span style='color:green;'>13x</span> de "."<span style='color:green;'>".$produto['parcelas']."</span>" ?></p>
             <div class="item_links">
                 <a class="comp" href="pagina_all.php?id=<?php echo $produto['id'] ?>" role="button">Comprar</a>
-                <a class="fav" style="cursor:pointer" onclick="adicionado()" href="favorito.php?id=<?php echo $produto['id'] ?>&caminho=index" id="link"  name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
+                <a class="fav" style="cursor:pointer" onclick="adicionado()" href="favorito.php?id=<?php echo $produto['id'] ?>&caminho=index.php" id="link"  name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
             </div>
         </div>
         </div>
@@ -262,7 +276,7 @@
               <p  class="card-text" id="preco_parcelas"><?php echo "ou <span style='color:green;'>13x</span> de "."<span style='color:green;'>".$produto['parcelas']."</span>" ?></p>
               <div class="item_links">
                   <a class="comp" href="pagina_all.php?id=<?php echo $produto['id'] ?>" role="button">Comprar</a>
-                  <a class="fav" style="cursor:pointer" onclick="adicionado()" href="favorito.php?id=<?php echo $produto['id'] ?>&caminho=index" id="link"  name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
+                  <a class="fav" style="cursor:pointer" onclick="adicionado()" href="favorito.php?id=<?php echo $produto['id'] ?>&caminho=index.php" id="link"  name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
               </div>
           </div>
           </div>
@@ -352,6 +366,16 @@
 
 </footer>
     <!-- Fechamento Foooter -->
+    <script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
    crossorigin="anonymous"></script>
