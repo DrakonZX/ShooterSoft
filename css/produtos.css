@@ -39,7 +39,7 @@ html{
   position: relative;
 }
 .menu > .menu-list > li > a {
-  padding: 20px;
+    padding: 20px;
   margin: 0 15px;
 }
 .menu > .menu-list > li:hover a {
@@ -122,6 +122,9 @@ header {
 
 .slideshow-container img{
   width: 100%;
+}
+.slideshow-container{
+  position: absolute;
 }
 .pesquisa {
   text-align: center;
@@ -290,7 +293,6 @@ header {
   width: auto;
   top: 50%;
   padding: 16px;
-  margin-top: 100px;
   color: black;
   font-weight: bold;
   font-size: 14px;
@@ -840,5 +842,39 @@ header {
   }
   .slide_links .comp{
     padding: 4px 20px 4px 20px;
+  }
+}
+@media only screen and (max-width:768px) {
+  .pesquisa{
+    margin-left: 280px;
+    margin-top: -50px;
+  }
+  .pesquisa input{
+    width: 400px;
+  }
+  .logo img{
+    margin-left: -130px;
+    margin-bottom: 40px;
+  }
+  .cart a{
+    margin-left: 710px;
+    margin-top: -40px;
+  }
+  .menu{
+    display: none;
+  }
+  .mobile-container{
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  .itens{
+    margin-left:-40px;
+    margin-right: 20px;
+  }
+  .container i{
+    font-size: 25px;
+    width: 2%;
+    margin-left: 0;
   }
 }

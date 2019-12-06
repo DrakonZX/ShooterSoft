@@ -97,6 +97,7 @@ textarea:focus, input:focus {
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
   margin-bottom: 50px;
+  width: 500px;
 }
 .logo{
   max-width: 1280px;

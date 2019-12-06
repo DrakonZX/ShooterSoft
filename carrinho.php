@@ -169,6 +169,9 @@ $data = date("Y");
                              <option name='quantidade' value="3">3</option>
                              <option name='quantidade' value="4">4</option>
                              <option name='quantidade' value="5">5</option>
+                             <option name='quantidade' value="6">6</option>
+                             <option name='quantidade' value="7">7</option>
+                             <option name='quantidade' value="8">8</option>
                            </select>
                           </td>
                          </form>

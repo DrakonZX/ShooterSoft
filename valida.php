@@ -20,7 +20,7 @@ if($btnLogin){
 	header('Location: index.php');
 	} else {
 	$_SESSION['nao_autenticado'] = true;
-	$_SESSION['msg'] = "<h1 style='border:2px solid #89BF00;text-align:center;padding:10px 0 10px 0;background-color:#161C08;;font-weight: bold;font-size:18px;color:#89BF00;margin-top:-50px;margin-bottom:50px;'>Login ou senha incorreto!</h1>";
+	$_SESSION['msg'] = "<h1 style='border:2px solid #F9360E;text-align:center;padding:10px 0 10px 0;background-color:#161C08;;font-weight: bold;font-size:18px;color:#F9360E;margin-top:-50px;margin-bottom:50px;'>Login ou senha incorreto!</h1>";
 	header('Location: login.php');
 	}
 
