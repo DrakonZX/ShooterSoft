@@ -1,6 +1,7 @@
 <?php
 include_once("conexao.php");
 include_once("valida.php");
+  $data = Date("Y");
 $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
   $sql = "SELECT * FROM produtos_airsoft WHERE id='$_GET[id]'";
   $sql = $pdo-> query($sql);
@@ -100,16 +101,31 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
       <li>
         <a href="pagina_produtos.php?tipo=Airsoft">Airsoft</a>
          <ul class="sub-menu">
-          <li><a href="pagina_produtos.php?categoria=Pistolas&tipo=Airsoft">Pistolas</a></li>
-          <li><a href="pagina_produtos.php?categoria=Rifles&tipo=Airsoft">Rifles</a></li>
-          <li><a href="pagina_produtos.php?categoria=Escopetas&tipo=Airsoft">Escopetas</a></li>
-             <li><a href="pagina_produtos.php?categoria=Acessorios&tipo=Airsoft">Acessórios</a></li>
+          <li><a href="pagina_produtos.php?categoria=Pistolas&&tipo=Airsoft">Pistolas</a></li>
+          <li><a href="pagina_produtos.php?categoria=Rifles&&tipo=Airsoft">Rifles</a></li>
+          <li><a href="pagina_produtos.php?categoria=Escopetas&&tipo=Airsoft">Escopetas</a></li>
+             <li><a href="pagina_produtos.php?categoria=Acessorios&&tipo=Airsoft">Acessórios</a></li>
         </ul>
       </li>
       <li><a href="pagina_produtos.php?tipo=Paintball">Paintball</a></li>
       <li><a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a></li>
       <li><a href="#">Equipe</a></li>
     </ul>
+</div>
+<div class="mobile-container">
+<div class="topnav">
+    <a href="index.php">Home</a>
+    <div id="myLinks">
+      <a href="pagina_produtos.php?tipo=Airsoft">Airsoft</a>
+      <a href="pagina_produtos.php?tipo=Paintball">Paintball</a>
+      <a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a>
+      <a href="#">Equipe</a>
+    </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<!-- End smartphone / tablet look -->
 </div>
 </div>
 </div>
@@ -285,11 +301,15 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.min.js" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js" charset="utf-8"></script>
 <script  src="js/slider.js"></script>
-    <script>
-    $('nav.menu-mobile h2').click(function()
-        {
-            $('nav.menu-mobile ul').slideToggle(); //função do jQuery
-        })
-    </script>
+<script>
+function myFunction() {
+var x = document.getElementById("myLinks");
+if (x.style.display === "block") {
+x.style.display = "none";
+} else {
+x.style.display = "block";
+}
+}
+</script>
 </body>
 </html>

@@ -115,21 +115,36 @@
      </header>
      <div class="fundo">
      <div class="menu">
-     <ul class="menu-list">
-       <li><a href="index.php">Home</a></li>
-       <li>
+       <ul class="menu-list">
+         <li><a href="index.php">Home</a></li>
+         <li>
+           <a href="pagina_produtos.php?tipo=Airsoft">Airsoft</a>
+            <ul class="sub-menu">
+             <li><a href="pagina_produtos.php?categoria=Pistolas&&tipo=Airsoft">Pistolas</a></li>
+             <li><a href="pagina_produtos.php?categoria=Rifles&&tipo=Airsoft">Rifles</a></li>
+             <li><a href="pagina_produtos.php?categoria=Escopetas&&tipo=Airsoft">Escopetas</a></li>
+                <li><a href="pagina_produtos.php?categoria=Acessorios&&tipo=Airsoft">Acessórios</a></li>
+           </ul>
+         </li>
+         <li><a href="pagina_produtos.php?tipo=Paintball">Paintball</a></li>
+         <li><a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a></li>
+         <li><a href="#">Equipe</a></li>
+       </ul>
+   </div>
+   <div class="mobile-container">
+   <div class="topnav">
+       <a href="index.php">Home</a>
+       <div id="myLinks">
          <a href="pagina_produtos.php?tipo=Airsoft">Airsoft</a>
-          <ul class="sub-menu">
-           <li><a href="pagina_produtos.php?categoria=Pistolas&tipo=Airsoft">Pistolas</a></li>
-           <li><a href="pagina_produtos.php?categoria=Rifles&tipo=Airsoft">Rifles</a></li>
-           <li><a href="pagina_produtos.php?categoria=Escopetas&tipo=Airsoft">Escopetas</a></li>
-              <li><a href="pagina_produtos.php?categoria=Acessorios&tipo=Airsoft">Acessórios</a></li>
-         </ul>
-       </li>
-       <li><a href="pagina_produtos.php?tipo=Paintball">Paintball</a></li>
-       <li><a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a></li>
-       <li><a href="#">Equipe</a></li>
-     </ul>
+         <a href="pagina_produtos.php?tipo=Paintball">Paintball</a>
+         <a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a>
+         <a href="#">Equipe</a>
+       </div>
+     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+       <i class="fa fa-bars"></i>
+     </a>
+   </div>
+   <!-- End smartphone / tablet look -->
    </div>
    </div>
    <div class="respon">
@@ -283,7 +298,7 @@
    <div class="footer_img">
      <div class="respon">
      <h3>Formas de pagamento</h3>
-     <img style="height:100px;width:300px;margin-bottom:100px;margin-right:150px;" src="img/google-site-seguro.png" alt="">
+     <img class="google" src="img/google-site-seguro.png" alt="">
      <img src="img/credito.png" alt="">
    </div>
    </div>
@@ -302,11 +317,15 @@
      <script src="http://code.jquery.com/jquery-3.4.1.min.js"
    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
    crossorigin="anonymous"></script>
-         <script>
-         $('nav.menu-mobile h2').click(function()
-             {
-                 $('nav.menu-mobile ul').slideToggle(); //função do jQuery
-             })
-         </script>
+   <script>
+function myFunction() {
+ var x = document.getElementById("myLinks");
+ if (x.style.display === "block") {
+   x.style.display = "none";
+ } else {
+   x.style.display = "block";
+ }
+}
+</script>
  </body>
  </html>

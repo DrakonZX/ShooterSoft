@@ -65,11 +65,13 @@
             <?php
           }else{
               ?>
-              <div class="cads">
-                <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
-              </div>
-              <div class="login">
-                <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+              <div class="login-cadas">
+                <div class="cads">
+                  <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
+                </div>
+                <div class="login">
+                  <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+                </div>
               </div>
               <?php
           }
@@ -379,11 +381,5 @@ function myFunction() {
    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
    crossorigin="anonymous"></script>
-       <script>
-       $('nav.menu-mobile h2').click(function()
-           {
-               $('nav.menu-mobile ul').slideToggle(); //função do jQuery
-           })
-       </script>
    </body>
    </html>

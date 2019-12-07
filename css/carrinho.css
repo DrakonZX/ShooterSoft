@@ -536,7 +536,7 @@ header {
 
 /* CARRRINONISFANIFDNSAIDNISANDISA */
 .carrinho th{
-  padding-left: 300px;
+  padding-left: 150px;
   color: #E8FFC6;
 }
 .thead{
@@ -562,6 +562,9 @@ header {
   padding-left: 180px;
   text-align: center;
   color: #131600;
+}
+.th1{
+  margin-left: 140px;
 }
 .movi a{
   font-size: 50px;
@@ -672,6 +675,45 @@ select{
 {
   color: green;
 }
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 @media only screen and (max-width: 7800px) {
   .mobile-container{
     display: none;
@@ -701,4 +743,120 @@ select{
     padding: 5px 10px 5px 10px;
     margin-left: 700px;
   }
+}
+
+@media only screen and (max-width:768px) {
+  .pesquisa{
+    margin-left: 280px;
+    margin-top: -50px;
+  }
+  .pesquisa input{
+    width: 400px;
+  }
+  .logo img{
+    margin-left: -130px;
+    margin-bottom: 40px;
+  }
+  .cart a{
+    margin-left: 710px;
+    margin-top: -40px;
+  }
+  .menu{
+    display: none;
+  }
+  .mobile-container{
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  .topnav a{
+    color: #E8FFC6;
+    background-color: #131600;
+    text-decoration: underline;
+  }
+  .topnav a.icon{
+    color:#F96F2A;
+    width: 80px;
+  }
+  .topnav a:hover{
+    color:
+  }
+  .container i{
+    font-size: 20px;
+    width: 3%;
+    margin-left: 0;
+  }
+  .container-slideshow img{
+    width: 500px;
+  }
+  .footer_img h3{
+    margin-left: 230px;
+  }
+  .container-2 p{
+    font-size: 14px;
+  }
+  .container-2 h3{
+    font-size: 16px;
+  }
+  .container-2 .cont{
+    width: 26%;
+  }
+  .perfil{
+    width: 180px;
+    height: 110px;
+  }
+  .conteudo a{
+    width: 100px;
+    margin-left: -50px;
+    font-size: 14px;
+  }
+  .conteudo h3{
+    margin-left: -50px;
+    width: 80px;
+  }
+  .carrinho th{
+    padding-left: 100px;
+  }
+  .th1{
+    margin-left: 70px;
+  }
+  .carrinho .cont{
+    margin-left: -120px;
+  }
+  .cart{
+    margin-left: -150px;
+  }
+  .limpar{
+    margin-left: 600px;
+  }
+  .finalizar p a{
+    margin-left: 400px;
+  }
+  .conteudo a{
+    width: 100px;
+    margin-left: -40px;
+    font-size: 14px;
+  }
+  .conteudo h3{
+    margin-left: -40px;
+  }
+  .perfil .conteudo{
+    margin-left: 135px;
+    width: 50px;
+    margin-top: -90px;
+  }
+  .perfil img{
+    height: 65px;
+    width: 65px;
+  }
+  .perfil{
+    margin-right: 10px;
+  }
+  .container-2 .cont{
+    width: 33.3%;
+    margin-left: -10px;
+  }
+}
+@media only screen and (max-width:425px) {
+
 }
