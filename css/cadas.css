@@ -116,3 +116,14 @@ img{
   margin-left: 20px;
   margin-top: 20px;
 }
+@media only screen and (max-width:768px) {
+  img{
+    width: 300px;
+    height: 100px;
+  }
+  .side{
+    margin-left: 150px;
+    width: 590px;
+    margin-top: -150px;
+  }
+}

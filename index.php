@@ -352,7 +352,7 @@
   <div class="footer_img">
     <div class="respon">
     <h3>Formas de pagamento</h3>
-    <img style="height:100px;width:300px;margin-bottom:100px;margin-right:150px;" src="img/google-site-seguro.png" alt="">
+    <img class="google" src="img/google-site-seguro.png" alt="">
     <img src="img/credito.png" alt="">
   </div>
   </div>

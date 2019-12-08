@@ -501,6 +501,7 @@ header {
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .borda h2{
   margin-top: -20px;
   background-color: white;
@@ -559,7 +560,7 @@ header {
   margin-left: 100px;
 }
 .carrinho td{
-  padding-left: 180px;
+  padding-left: 120px;
   text-align: center;
   color: #131600;
 }
@@ -714,6 +715,12 @@ select{
   background-color: #ddd;
   color: black;
 }
+.produto_preco{
+  padding-left: 160px;width:250px;
+}
+.google{
+  height:80px;width:300px;margin-bottom:100px;margin-right:150px;
+}
 @media only screen and (max-width: 7800px) {
   .mobile-container{
     display: none;
@@ -858,5 +865,99 @@ select{
   }
 }
 @media only screen and (max-width:425px) {
-
+  .descontos{
+    margin-top: 0;
+  }
+  .google{
+    display: none;
+  }
+  .descontos img{
+    height:50px;
+  }
+  .logo img{
+    margin-top: -10px;
+    margin-left: -280px;
+    height: 100%;
+    width: 200px;
+  }
+  .perfil{
+    height: 85px;
+    width: 180px;
+    margin-top: 10px;
+  }
+  .perfil img{
+    height: 50px;
+    width: 50px;
+  }
+  .perfil .conteudo{
+    margin-left:120px;
+  }
+  .conteudo a{
+    font-size: 12px;
+  }
+  .conteudo h3{
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  .pesquisa input{
+    margin-left: -180px;
+    width: 200px;
+  }
+  .cart{
+    margin-left: -450px;
+  }
+  .container-2 .cont{
+    margin-left: 10px;
+    width: 30%;
+  }
+  .footer_img h3{
+    margin-left: 10px;
+  }
+  .footer_img img{
+    height: 200px;
+    width: 240px;
+  }
+  .footer_img .google{
+    width: 200px;
+  }
+  .login-cadas{
+    height: 80px;
+  }
+  .carrinho th{
+    padding-left: 35px;
+  }
+  .movi td img{
+    height: 60px;
+    width: 100px;
+    margin-left: -0px;
+  }
+  .movi td{
+    padding-left:30px;
+    font-size: 12px;
+    margin-right: 50px;
+  }
+  .movi .produto_quant{
+    padding-left: 50px;
+  }
+  .movi2 {
+    margin-left: -100px;
+  }
+  .produtos .produto_nome{
+    margin: 0;
+    padding: 0;
+  }
+  .limpar{
+    margin-left: 200px;
+  }
+  .conteu p{
+    width: 400px;
+    margin-left: 0px;
+  }
+  .spano{
+    margin-left: 0px;
+    width: 400px;
+  }
+  .finalizar p a{
+    margin-left: 200px;
+  }
 }

@@ -69,11 +69,13 @@ $data = date("Y");
             <?php
           }else{
               ?>
-              <div class="cads">
-                <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
-              </div>
-              <div class="login">
-                <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+              <div class="login-cadas">
+                <div class="cads">
+                  <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
+                </div>
+                <div class="login">
+                  <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+                </div>
               </div>
               <?php
           }
@@ -142,13 +144,15 @@ $data = date("Y");
         <div class="respon">
           <div class="thead">
             <div class="movi">
-          <table class="th1">
-             <tr >
-                <th  class="produtos">Produtos</th>
-                <th  class="quant">Quantidade</th>
-                <th  class="preco"> Preço</th>
-            </tr>
-          </table>
+              <div class="movi2">
+                <table class="th1">
+                   <tr >
+                      <th  class="produtos">Produtos</th>
+                      <th  class="quant">Quantidade</th>
+                      <th  class="preco"> Preço</th>
+                  </tr>
+                </table>
+              </div>
           </div>
          </div>
        </div>
@@ -174,9 +178,9 @@ $data = date("Y");
                        <tr>
                          <div class="produto">
                          <td><a href="pagina_all.php?id=<?php echo $p['id'] ?>"><img src="<?php echo $p['img'] ?>" alt=""></a> </td>
-                         <td style="padding-left: 10px;width:250px;text-align:justify;font-size:14px;padding-right:20px;"><?php echo $p['nome'] ?></td>
+                         <td class="produto_nome" style="width:200px;"><?php echo $p['nome'] ?></td>
                          <form class="" id="qtd_<?php echo $p['id']; ?>" action="calculo.php?id=<?php echo $p['id']; ?>" method="post">
-                           <td style="padding-left: 50px;">
+                           <td class="produto_quant">
                              <select class="" name="quantidade" onchange="document.getElementById('qtd_<?php echo $p['id']; ?>').submit()">
                              <option name='quantidade'><?php echo $quantidade ?></option>
                              <option name='quantidade' value="1">1</option>
@@ -190,7 +194,7 @@ $data = date("Y");
                            </select>
                           </td>
                          </form>
-                         <td style="padding-left: 50px;width:200px;"><?php echo "R$ ".$preco ?></td>
+                         <td class="produto_preco"><?php echo "R$ ".$preco ?></td>
                          <td style="padding-left: 50px;"><a style="cursor:pointer" onclick="au(<?php echo $p['id'] ?>)"  ><i class="fas fa-times"></i></a></td>
                        </tr>
                      </div>
@@ -315,7 +319,7 @@ $data = date("Y");
   <div class="footer_img">
     <div class="respon">
     <h3 style="color:#E8FFC6;">Formas de pagamento</h3>
-    <img style="height:100px;width:300px;margin-bottom:100px;margin-right:150px;" src="img/google-site-seguro.png" alt="">
+    <img class="google" src="img/google-site-seguro.png" alt="">
     <img src="img/credito.png" alt="">
   </div>
   </div>

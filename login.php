@@ -7,6 +7,7 @@ header ('Content-type: text/html; charset=UTF-8');
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/login1.css">
+    <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
       <link rel="icon" type="image/png" href="img/logo_veridico.png" sizes="64x64">
     <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Merriweather+Sans|Roboto+Slab&display=swap" rel="stylesheet">
 

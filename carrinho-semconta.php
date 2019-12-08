@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/carrinho-semconta.css">
+    <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
       <link rel="icon" type="image/png" href="img/logo_veridico.png" sizes="64x64">
     <title>Carrinho - ShooterSoft</title>
 </head>

@@ -68,11 +68,13 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             <?php
           }else{
               ?>
-              <div class="cads">
-                <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
-              </div>
-              <div class="login">
-                <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+              <div class="login-cadas">
+                <div class="cads">
+                  <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
+                </div>
+                <div class="login">
+                  <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+                </div>
               </div>
               <?php
           }
@@ -177,13 +179,13 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         </div>
       </div>
       <div class="tipo">
-        <h3>Outros produtos do tipo <span>"<?php echo $produtos['tipo'] ?>"</span> </h3>
+        <h3>Outros produtos da categoria <span>"<?php echo $produtos['categoria'] ?>"</span> </h3>
       </div>
 
       <div class="demo">
         <ul id="lightSlider">
           <?php
-          $sql = "select * from produtos_airsoft where tipo = '$produtos[tipo]'";
+          $sql = "select * from produtos_airsoft where categoria = '$produtos[categoria]'";
           $sql = $pdo->query($sql);
           if ($sql->rowCount()>0) {
             foreach($sql->fetchAll() as $slider){
@@ -210,6 +212,32 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
           <button class="ante" type="button" id="goToPrevSlide"><i class="fas fa-angle-left"></i></button>
           <button class="prox" type="button" id="goToNextSlide"><i class="fas fa-angle-right"></i></button>
           <?php
+        }
+         ?>
+      </div>
+      <div class="sem_slide">
+        <?php
+        $sql = "select * from produtos_airsoft where categoria='$produtos[categoria]'";
+        $sql = $pdo->query($sql);
+        if ($sql->rowCount()>0) {
+          foreach($sql -> fetchAll() as $sem_slide){
+            ?>
+            <div class="itens">
+            <div class="item">
+              <a href="pagina_all.php?id=<?php echo $sem_slide['id'] ?>"><img class="card-img-top" src="<?php echo $sem_slide['img']; ?>"></a>
+              <div class="card-body">
+                <h3  class="card-title"><?php echo $sem_slide['nome'] ?></h3>
+                <p class="card-text" id="preco_avista" ><?php echo "<span style ='font-size:18px;'>R$ ".$sem_slide['avista']."</span><span style='color:green;'> à vista no boleto</span>" ?></p>
+                <p  class="card-text" id="preco_parcelas"><?php echo "ou <span style='color:green;'>13x</span> de "."<span style='color:green;'>".$sem_slide['parcelas']."</span>" ?></p>
+                <div class="item_links">
+                    <a class="comp" href="pagina_all.php?id=<?php echo $sem_slide['id'] ?>" role="button">Comprar</a>
+                    <a class="fav" style="cursor:pointer" onclick="adicionado()" href="favorito.php?id=<?php echo $sem_slide['id'] ?>&caminho=<?php echo $url ?>" id="link"  name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
+                </div>
+            </div>
+            </div>
+            </div>
+            <?php
+          }
         }
          ?>
       </div>

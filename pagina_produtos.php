@@ -87,11 +87,13 @@
                <?php
              }else{
                  ?>
-                 <div class="cads">
-                   <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
-                 </div>
-                 <div class="login">
-                   <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+                 <div class="login-cadas">
+                   <div class="cads">
+                     <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
+                   </div>
+                   <div class="login">
+                     <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+                   </div>
                  </div>
                  <?php
              }

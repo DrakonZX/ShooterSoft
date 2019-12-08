@@ -109,3 +109,13 @@ textarea:focus, input:focus {
   margin-left: 20px;
   margin-top: 20px;
 }
+@media only screen and (max-width:768px) {
+  .logo img{
+    width: 300px;
+    height: 100px;
+  }
+  .cont{
+    margin-left: -150px;
+    width: 450px;
+  }
+}

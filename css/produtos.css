@@ -956,9 +956,36 @@ header {
   .perfil{
     margin-right: 10px;
   }
-  .container-2 .cont{
-    width: 33.3%;
-    margin-left: -10px;
+  .demo{
+    display: none;
+  }
+  .principal-img img{
+    height: 200px;
+    width: 200px;
+    margin-left: -5px;
+  }
+  .principal-img{
+    width: 250px;
+    margin-top: -300px;
+    margin-left: 220px;
+  }
+  .produtos-cont{
+    margin-left: 500px;
+    margin-top: -300px;
+  }
+  .produtos-cont h3{
+    font-size: 18px;
+    width: 240px;
+  }
+  .produtos-cont a{
+    padding: 10px 90px 10px 90px;
+    margin-left: -5px;
+  }
+  .tipo h3{
+    width: 623px;
+  }
+  .descontos{
+    margin-top: 200px;
   }
 }
 @media only screen and (max-width:425px) {
@@ -975,7 +1002,7 @@ header {
     width: 200px;
   }
   .perfil{
-    height: 80px;
+    height: 85px;
     width: 180px;
     margin-top: 10px;
   }
@@ -1024,5 +1051,32 @@ header {
   }
   .login-cadas{
     height: 80px;
+  }
+  .item{
+    width: 200px;
+    height: 350px;
+    margin-left: 40px;
+  }
+  .item img{
+    height: 100px;
+    width: 100px;
+  }
+  .item .comp{
+    padding: 12px 20px 12px 20px;
+  }
+  .itens{
+    margin-right: 0;
+    margin-left: -40px;
+  }
+  .item p{
+    margin-left: 0;
+    width: 200px;
+    font-size: 14px;
+  }
+  .itens h3{
+    height: 80px;
+  }
+  .google{
+    display: none;
   }
 }
