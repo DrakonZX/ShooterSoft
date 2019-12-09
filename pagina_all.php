@@ -291,18 +291,20 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 </div>
 <div class="container-2">
 <div class="respon">
-<div class="cont">
-  <h3>Quem somos nós ?</h3>
-  <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-</div>
-<div class="cont">
-  <h3>Quem somos nós ?</h3>
-  <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-</div>
-<div class="cont">
-  <h3>Quem somos nós ?</h3>
-  <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-</div>
+  <div class="cont">
+    <h3>Quem somos nós ?</h3>
+    <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+  </div>
+  <div class="cont">
+    <h3>Quem somos nós ?</h3>
+    <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+  </div>
+  <div class="cont">
+    <div class="cont_ultimo">
+      <h3>Quem somos nós ?</h3>
+      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+    </div>
+  </div>
 </div>
 
 <div class="footer_risco"></div>

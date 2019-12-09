@@ -178,7 +178,7 @@ $data = date("Y");
                        <tr>
                          <div class="produto">
                          <td><a href="pagina_all.php?id=<?php echo $p['id'] ?>"><img src="<?php echo $p['img'] ?>" alt=""></a> </td>
-                         <td class="produto_nome" style="width:200px;"><?php echo $p['nome'] ?></td>
+                         <td class="produto_nome"><?php echo $p['nome'] ?></td>
                          <form class="" id="qtd_<?php echo $p['id']; ?>" action="calculo.php?id=<?php echo $p['id']; ?>" method="post">
                            <td class="produto_quant">
                              <select class="" name="quantidade" onchange="document.getElementById('qtd_<?php echo $p['id']; ?>').submit()">
@@ -195,9 +195,9 @@ $data = date("Y");
                           </td>
                          </form>
                          <td class="produto_preco"><?php echo "R$ ".$preco ?></td>
-                         <td style="padding-left: 50px;"><a style="cursor:pointer" onclick="au(<?php echo $p['id'] ?>)"  ><i class="fas fa-times"></i></a></td>
+                         <td><a style="cursor:pointer" onclick="au(<?php echo $p['id'] ?>)"  ><i class="fas fa-times"></i></a></td>
+                         </div>
                        </tr>
-                     </div>
                      </table>
                    </div>
                  </div>
@@ -248,7 +248,7 @@ $data = date("Y");
                   <p>Preço da compra à vista:<div class="spano"><span>R$ <?php echo $avista ?></span></div> </p>
                   <p>Preço da compra no cartão: <div class="spano"><span>R$ <?php echo $parcelas2 ?> 13x</span></div></p>
                   <div class="finalizar">
-                    <p><a style="cursor:pointer" href="finalizar.php?id=<?php echo $u_id ?>">Finalizar compra</a></p>
+                    <a style="cursor:pointer" href="finalizar.php?id=<?php echo $u_id ?>">Finalizar compra</a>
                   </div>
             </div>
           </div>
@@ -301,15 +301,15 @@ $data = date("Y");
   </div>
   <div class="container-2">
     <div class="respon">
-    <div class="cont">
+    <div class="container-2-2">
       <h3>Quem somos nós ?</h3>
       <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
     </div>
-    <div class="cont">
+    <div class="container-2-2">
       <h3>Quem somos nós ?</h3>
       <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
     </div>
-    <div class="cont">
+    <div class="container-2-2">
       <h3>Quem somos nós ?</h3>
       <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
     </div>

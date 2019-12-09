@@ -290,8 +290,10 @@
        <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
      </div>
      <div class="cont">
-       <h3>Quem somos nós ?</h3>
-       <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+       <div class="cont_ultimo">
+         <h3>Quem somos nós ?</h3>
+         <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+       </div>
      </div>
     </div>
 
@@ -319,6 +321,12 @@
      <script src="http://code.jquery.com/jquery-3.4.1.min.js"
    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
    crossorigin="anonymous"></script>
+   <script type="text/javascript">
+    function adicionado()
+    {
+     alert("Seu produto foi adicionado com sucesso! ");
+     }
+   </script>
    <script>
 function myFunction() {
  var x = document.getElementById("myLinks");

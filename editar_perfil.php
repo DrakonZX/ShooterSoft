@@ -78,34 +78,34 @@
 
 
 
-      <div class="nometext5">Trocar imagem</div><br>
+  <br><br> <label for="arquivo">Trocar nome: </label> <br>
   <input type="file" name="arquivo" value="Selecione uma imagem" ><br><br>
 
-<div class="nometext">Nome</div><br>
+<label class="nometext">Nome</label><br>
   <input type="text" name="nome" value="<?php echo $dados['nome'];?>"><br><br>
 
-<div class="nometext4">Sobrenome</div><br>
+<label class="nometext4">Sobrenome</label><br>
   <input type="text" name="sobrenome" value="<?php echo $dados['sobrenome'];?>" ><br><br>
 
-  <div class="nometext">E-mail</div><br>
+  <label class="nometext">E-mail</label><br>
   <input type="email" name="email" value="<?php echo $dados['email'];?>" ><br><br>
 
-  <div class="nometext3">CEP</div><br>
+  <label class="nometext3">CEP</label><br>
   <input type="text" name="cep" value="<?php echo $dados['cep'];?>" ><br><br>
 
-  <div class="nometext2">Endereço</div><br>
+  <label class="nometext2">Endereço</label><br>
   <input type="text" name="endereco" value="<?php echo $dados['endereco'];?>" ><br><br>
 
-  <div class="nometext6">Número da casa</div><br>
+  <label class="nometext6">Número da casa</label><br>
   <input type="text" name="preço" value="<?php echo $dados['num'];?>" ><br><br>
 
-  <div class="nometext">Bairro</div><br>
+  <label class="nometext">Bairro</label><br>
   <input type="text" name="lucro" value="<?php echo $dados['bairro'];?>"><br><br>
 
-  <div class="nometext">Cidade</div><br>
+  <label class="nometext">Cidade</label><br>
   <input type="text" name="cidade" value="<?php echo $dados['cidade'];?>"><br><br>
 
-  <div class="nometext3">UF</div><br>
+  <label class="nometext3">UF</label><br>
   <input type="text" name="icms" value="<?php echo $dados['uf'];?>" ><br><br>
     <button  type="submit" value="Confirmar">Confirmar</button>
 

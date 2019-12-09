@@ -5,56 +5,6 @@
     box-sizing: border-box;
     font-family: 'Hind Guntur', sans-serif;
 }
-.overlay
-{
-  text-align: center;
-}
-.nometext
-{
-    margin-right: 280px;
-    font-size: 16px;
-    font-weight: bold;
-}
-.nometext2
-{
-    margin-right: 260px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.nometext3
-{
-    margin-right: 300px;
-    font-size: 16px;
-    font-weight: bold;
-}
-.nometext4
-{
-    margin-right: 250px;
-    font-size: 16px;
-    font-weight: bold;
-}
-.nometext5
-{
-
-    margin-top: 70px;
-    margin-right: 220px;
-    font-size: 16px;
-    font-weight: bold;
-}
-.nometext6
-{
-    margin-right: 200px;
-    font-size: 16px;
-    font-weight: bold;
-}
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-      font-family: 'Hind Guntur', sans-serif;
-}
 
 .erro{
   color: green;
@@ -175,5 +125,63 @@ img{
     margin-left: 150px;
     width: 590px;
     margin-top: -150px;
+  }
+}
+@media only screen and (max-width:425px) {
+  .side{
+    width: 400px;
+    margin-left: 12.5px;
+  }
+  form{
+    margin-top: -20px;
+  }
+  img{
+    margin-left:45px;
+  }
+  .side input{
+    width: 300px;
+    margin-left: 20px;
+  }
+  .side label{
+    margin-left: 20px;
+  }
+  .side a{
+    padding: 0;
+    margin-left: -15px;
+    font-size: 14px;
+  }
+  button{
+    margin-left: 150px;
+  }
+}
+@media only screen and (max-width:375px) {
+  .side{
+     width: 350px;
+  }
+  img{
+    margin-left: 30px;
+  }
+  .side a{
+    margin-left: -60px;
+  }
+  button{
+    margin-left: 120px;
+  }
+}
+@media only screen and (max-width:320px) {
+  .side input{
+    width: 220px;
+  }
+  .side{
+    width: 300px;
+  }
+  button{
+    margin-left: 90px;
+  }
+  .side a{
+    margin-left: -50px;
+  }
+  img{
+    margin-left: 10px;
   }
 }

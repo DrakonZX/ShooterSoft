@@ -119,3 +119,28 @@ textarea:focus, input:focus {
     width: 450px;
   }
 }
+@media only screen and (max-width:425px) {
+  .cont{
+    width: 320px;
+    height: 450px;
+    margin-left: -345px;
+    margin-top: 50px;
+  }
+  form{
+    margin-top: -50px;
+  }
+  .logo img{
+    margin-left:45px;
+  }
+}
+@media only screen and (max-width:375px) {
+  html{
+    width: 400px;
+  }
+  .cont{
+    margin-left: -360px;
+  }
+  .logo img{
+    margin-left: 35px;
+  }
+}
