@@ -987,6 +987,15 @@ header {
   }
 }
 @media only screen and (max-width:425px) {
+  .caminho{
+    margin-left: 50px;
+  }
+  .caminho a{
+    font-size: 14px;
+  }
+  .caminho th{
+    width: 200px;
+  }
   .descontos{
     margin-top: 100px;
   }
@@ -1081,6 +1090,20 @@ header {
   .google{
     display: none;
   }
+  .outras-img{
+    margin-left: 50px;
+  }
+  .principal-img{
+    margin-left: 150px;
+  }
+  .produtos-cont{
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  .tipo h3{
+    width: 100%;
+    margin-left: 0;
+  }
 }
 @media only screen and (max-width:375px) {
   .logo img{
@@ -1121,6 +1144,16 @@ header {
     font-size: 14px;
     width: 150px;
   }
+  .principal-img img{
+    height: 160px;
+    width: 160px;
+  }
+  .principal-img{
+    width: 200px;
+  }
+  .produtos-cont{
+    margin-top: 100px;
+  }
 }
 @media only screen and (max-width:320px) {
   .logo img{
@@ -1140,5 +1173,11 @@ header {
   }
   .container-2 .cont{
     margin-left: 60px;
+  }
+  .outras-img{
+    margin-left: 20px;
+  }
+  .principal-img{
+    margin-left: 110px;
   }
 }
