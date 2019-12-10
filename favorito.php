@@ -12,8 +12,8 @@ include_once("valida.php");
 
         $sql = "SELECT * FROM produtos_airsoft WHERE id='$id'";
         $sql = $pdo->query($sql);
-
-
+        foreach ($sql ->fetchAll() as $p) {
+        }
         $sql = "SELECT * FROM usuario WHERE email LIKE '$nome'";
         $sql = $pdo-> query($sql);
 
@@ -25,15 +25,25 @@ include_once("valida.php");
           if ($sql -> rowCount() > 0) {
             $sql = "UPDATE carrinho SET quantidade = (quantidade + 1) WHERE produto_id = $id AND cliente_id = $id_usuario";
             $sql = $pdo->query($sql);
+            $sql="insert into soma_total set cliente_id='$id_usuario',produto_id = '$id', soma='$p[preco]'";
+            $sql = $pdo->query($sql);
           }
           else {
             $sql = "INSERT INTO carrinho (produto_id,cliente_id) VALUES ($id,$id_usuario)";
+            $sql = $pdo->query($sql);
+            $sql="insert into soma_total set cliente_id='$id_usuario',produto_id = '$id', soma='$p[preco]'";
             $sql = $pdo->query($sql);
             }
           }
         }
         $erros = 0;
-        header("Location:$caminho.php");
+        if (isset($_GET['tipo'])) {
+          $path = "$caminho&tipo=$_GET[tipo]";
+          header("Location: $path");
+        }
+        else {
+          header("Location: $caminho");
+        }
       }
       else {
         $id = addslashes($_GET['id']);
@@ -54,9 +64,13 @@ include_once("valida.php");
           if ($sql -> rowCount() > 0) {
             $sql = "UPDATE carrinho SET quantidade = (quantidade + 1) WHERE produto_id = $id AND cliente_id = $id_usuario";
             $sql = $pdo->query($sql);
+            $sql="insert into soma_total set cliente_id='$id_usuario',produto_id = '$id', soma='$p[preco]'";
+            $sql = $pdo->query($sql);
           }
           else {
             $sql = "INSERT INTO carrinho (produto_id,cliente_id) VALUES ($id,$id_usuario)";
+            $sql = $pdo->query($sql);
+            $sql="insert into soma_total set cliente_id='$id_usuario',produto_id = '$id', soma='$p[preco]'";
             $sql = $pdo->query($sql);
             }
           }

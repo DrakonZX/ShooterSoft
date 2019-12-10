@@ -29,9 +29,9 @@ img{
     margin-left: 350px;
     background-color: white;
     margin-top: -200px;
-    border: 3px solid #7DDD00;
+    border: 2px solid #131600;
     height: 400px;
-    border-radius: 40px;
+    border-radius: 20px;
 }
 .cads
 {
@@ -41,17 +41,16 @@ img{
 {
     font-size: 30px;
     text-decoration: none;
-    color: black;
+    color: #E8FFC6;
     padding: 10px 20px 10px 20px;
-    background-color: green;
-    border: 1px solid black;
-    border-radius: 20px;
+    background-color: #161C08;
+    border: 2px solid #E8FFC6;
 }
 .cads a:hover
 {
     background-color: black;
     color: yellowgreen;
-    border: 3px solid #7DDD00;
+    border: 1px solid #161C08;
     transition-duration: 0.5s;
 }
 .avancar
@@ -71,11 +70,45 @@ img{
 .line
 {
     height: 5px;
-    background-color: yellowgreen;
+    background-color: #161C08;
     margin-top: 20px;
 }
 .respon
 {
     margin: 0 auto;
     max-width: 1280px;
+}
+@media only screen and (max-width:768px) {
+  img{
+    width: 300px;
+    height: 100px;
+  }
+  .cart{
+    margin-left: 150px;
+    width: 590px;
+    margin-top: -200px;
+  }
+}
+@media only screen and (max-width:425px) {
+  .cart{
+    margin-left: 40px;
+    width:350px;
+    margin-top: -200px;
+  }
+}
+@media only screen and (max-width:375px) {
+  .cart{
+    margin-left: 12.5px;
+  }
+}
+@media only screen and (max-width:320px) {
+  .cart{
+    width: 300px;
+    margin-left: 10px;
+  }
+  img{
+    width: 250px;
+    height: 80px;
+    margin-left: 30px;
+  }
 }

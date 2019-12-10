@@ -50,6 +50,8 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/editar_perfil.css">
+  <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo_veridico.png" sizes="64x64">
   <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Merriweather+Sans|Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
@@ -76,34 +78,34 @@
 
 
 
-      <div class="nometext5">Trocar imagem</div><br>
+  <br><br> <label for="arquivo">Trocar nome: </label> <br>
   <input type="file" name="arquivo" value="Selecione uma imagem" ><br><br>
 
-<div class="nometext">Nome</div><br>
+<label class="nometext">Nome</label><br>
   <input type="text" name="nome" value="<?php echo $dados['nome'];?>"><br><br>
 
-<div class="nometext4">Sobrenome</div><br>
+<label class="nometext4">Sobrenome</label><br>
   <input type="text" name="sobrenome" value="<?php echo $dados['sobrenome'];?>" ><br><br>
 
-  <div class="nometext">E-mail</div><br>
+  <label class="nometext">E-mail</label><br>
   <input type="email" name="email" value="<?php echo $dados['email'];?>" ><br><br>
 
-  <div class="nometext3">CEP</div><br>
+  <label class="nometext3">CEP</label><br>
   <input type="text" name="cep" value="<?php echo $dados['cep'];?>" ><br><br>
 
-  <div class="nometext2">Endereço</div><br>
+  <label class="nometext2">Endereço</label><br>
   <input type="text" name="endereco" value="<?php echo $dados['endereco'];?>" ><br><br>
 
-  <div class="nometext6">Número da casa</div><br>
+  <label class="nometext6">Número da casa</label><br>
   <input type="text" name="preço" value="<?php echo $dados['num'];?>" ><br><br>
 
-  <div class="nometext">Bairro</div><br>
+  <label class="nometext">Bairro</label><br>
   <input type="text" name="lucro" value="<?php echo $dados['bairro'];?>"><br><br>
 
-  <div class="nometext">Cidade</div><br>
+  <label class="nometext">Cidade</label><br>
   <input type="text" name="cidade" value="<?php echo $dados['cidade'];?>"><br><br>
 
-  <div class="nometext3">UF</div><br>
+  <label class="nometext3">UF</label><br>
   <input type="text" name="icms" value="<?php echo $dados['uf'];?>" ><br><br>
     <button  type="submit" value="Confirmar">Confirmar</button>
 
@@ -111,38 +113,6 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="todos">
-<div class="container">
-  <div class="respon">
-  <div class="row align-items-start">
-    <div class="col">
-      <h4>Sobre nós</h4><br>
-      <p>Somos uma empresa de vendas online com o foco em armas para treino e diversão.<br>(Paintball, Airsoft e Arcos)</p>
-    </div>
-    <div class="col">
-      <div class="links1">
-        <a href="https://www.google.com/maps/place/Av.+Bahia,+Microrregi%C3%A3o+de+Caraguatatuba+-+SP/@-23.6320208,-45.4259223,17z/data=!3m1!4b1!4m5!3m4!1s0x94cd6312a97556f9:0x8cacdb175a953749!8m2!3d-23.6320257!4d-45.4237336" target="_blank" style="margin-left: -18px;"><i class="fas fa-map-marker-alt"></i> Avenida Bahia.</a><br><br>
-        <a href="#"><i class="fas fa-phone"></i> +12 3888-8888</a><br><br>
-        <a class="email-link" href="https://accounts.google.com/" target="_blank"><i class="far fa-envelope"></i> shootersoft5@gmail.com</a><br><br>
-      </div>
-    </div>
-    <div class="col">
-      <div class="links">
-        <h4>Links</h4><br>
-         <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-         <a href="https://www.facebook.com/ShooterSoft-113889746662685" target="_blank"><i class="fab fa-facebook-square"></i></a>
-         <a href="https://twitter.com/ShooterSoft" target="_blank"><i class="fab fa-twitter-square"></i></a><br>
-         <a href="#"><i class="fab fa-linkedin" target="_blank"></i></a>
-         <a href="https://www.instagram.com/shootersoft/?hl=pt-br" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>
-<div class="copyright">
-  <h5 id="down">Shooter Soft © <?php echo $data ?> Copyright</h5>
 </div>
 </div>
 </body>

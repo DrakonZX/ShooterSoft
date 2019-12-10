@@ -17,6 +17,7 @@ $data = date("Y");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo_veridico.png" sizes="64x64">
   <link rel="stylesheet" href="css/carrinho.css">
   <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Merriweather+Sans|Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -68,11 +69,13 @@ $data = date("Y");
             <?php
           }else{
               ?>
-              <div class="cads">
-                <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
-              </div>
-              <div class="login">
-                <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+              <div class="login-cadas">
+                <div class="cads">
+                  <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
+                </div>
+                <div class="login">
+                  <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+                </div>
               </div>
               <?php
           }
@@ -96,26 +99,71 @@ $data = date("Y");
   </header>
   <div class="fundo">
   <div class="menu">
-  <ul class="menu-list">
-    <li><a href="index.php">Home</a></li>
-    <li>
-      <a href="airsoft.php">Airsoft</a>
-       <ul class="sub-menu">
-        <li><a href="pistola.php">Pistolas</a></li>
-        <li><a href="rifle.php">Rifles</a></li>
-        <li><a href="escopeta.php">Escopetas</a></li>
-           <li><a href="acessorios_airsoft.php">Acessórios</a></li>
-      </ul>
-    </li>
-    <li><a href="paintball.php">Paintball</a></li>
-    <li><a href="arquearia.php">Arquearia</a></li>
-    <li><a href="#  ">Equipe</a></li>
-  </ul>
+    <ul class="menu-list">
+      <li><a href="index.php">Home</a></li>
+      <li>
+        <a href="pagina_produtos.php?tipo=Airsoft">Airsoft</a>
+         <ul class="sub-menu">
+          <li><a href="pagina_produtos.php?categoria=Pistolas&&tipo=Airsoft">Pistolas</a></li>
+          <li><a href="pagina_produtos.php?categoria=Rifles&&tipo=Airsoft">Rifles</a></li>
+          <li><a href="pagina_produtos.php?categoria=Escopetas&&tipo=Airsoft">Escopetas</a></li>
+             <li><a href="pagina_produtos.php?categoria=Acessorios&&tipo=Airsoft">Acessórios</a></li>
+        </ul>
+      </li>
+      <li><a href="pagina_produtos.php?tipo=Paintball">Paintball</a></li>
+      <li><a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a></li>
+      <li><a href="equipe.php">Equipe</a></li>
+    </ul>
 </div>
+<div class="mobile-container">
+<div class="topnav">
+    <a href="index.php">Home</a>
+    <div id="myLinks">
+      <a href="pagina_produtos.php?tipo=Airsoft">Airsoft</a>
+      <a href="pagina_produtos.php?tipo=Paintball">Paintball</a>
+      <a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a>
+      <a href="equipe.php">Equipe</a>
+    </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<!-- End smartphone / tablet look -->
 </div>
 </div>
   <?php
       $u_id = $usuario['id'];
+      $sql = "SELECT * FROM carrinho WHERE cliente_id = '$u_id'";
+      $sql = $pdo->query($sql);
+      if ($sql -> rowCount()<1) {
+        ?>
+        <div class="respon">
+          <h1 style='font-size:20px;text-align:center;'>Sem produtos Cadastrados</h1>
+          <a style="margin-left:550px;color:#161C08;" href="index.php">Deseja voltar para a loja</a>
+        </div>
+        <?php
+      }
+      else {
+        ?>
+   <div class="carrinho">
+        <div class="respon">
+          <div class="thead">
+            <div class="movi">
+              <div class="movi2">
+                <table class="th1">
+                   <tr >
+                      <th  class="produtos">Produtos</th>
+                      <th  class="quant">Quantidade</th>
+                      <th  class="preco"> Preço</th>
+                  </tr>
+                </table>
+              </div>
+          </div>
+         </div>
+       </div>
+          <div class="cont">
+        <?php
+      }
       $sql = "SELECT * FROM produtos_airsoft";
       $sql = $pdo->query($sql);
       if ($sql ->rowCount()>0) {
@@ -127,149 +175,204 @@ $data = date("Y");
             foreach ($sql -> fetchAll() as $c) {
               $quantidade = $c['quantidade'];
               $preco = $quantidade * $p['preco'];
-              ?><div class="pb-5">
-        <div style="margin-top:100px;" class="todo_cart">
-          <div class="fundo_cart">
-            <div class="row">
-              <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-                <!-- Shopping cart table -->
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col" class="border-0 bg-light">
-                          <div class="p-2 px-3 text-uppercase">Produtos</div>
-                        </th>
-                        <th scope="col" class="border-0 bg-light">
-                          <div class="py-2 text-uppercase">Preço</div>
-                    </th>
-                    <th scope="col" class="border-0 bg-light">
-                      <div class="py-2 text-uppercase">Quantidade</div>
-                  </th>
-                    <th scope="col" class="border-0 bg-light">
-                      <div class="py-2 text-uppercase">Remover</div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row"  style="background-color: white;" class="border-0">
-                      <div  class="p-2">
-                        <img src="<?php echo $p['img'] ?>" alt="" width="70" class="img-fluid rounded shadow-sm">
-                        <div class="ml-3 d-inline-block align-middle">
-                          <h5 class="mb-0"> <a href="pagina_all.php?id=<?php echo $p['id'] ?>" class="text-dark d-inline-block align-middle"><?php echo $p['nome'] ?></a></h5><span style="color:#191d0f;" class="text-muted font-weight-normal font-italic d-block">Categoria: <?php echo $p['tipo'] ?></span>
-                        </div>
-                      </div>
-                    </th>
-                    <form action="calculo.php?id=<?php echo $c['id'] ?>" method="post">
-                      <td class="border-0 align-middle"><strong><?php echo "R$ ".$preco ?></strong></td>
-                       <td class="border-0 align-middle"><strong><input type="number" name="quantidade" value="<?php echo $quantidade ?>"><button type="submit" name="button">OK</button> </strong></td>
-                      <td class="border-0 align-middle"><a href="delete.php?id=<?php echo $c['id'] ?>" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                    </form>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- End -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><?php
+              $soma = $preco + $preco;
+              ?>
+                <div class="movi">
+                   <div class="respon">
+                     <table>
+                       <tr>
+                         <td><a href="pagina_all.php?id=<?php echo $p['id'] ?>"><img src="<?php echo $p['img'] ?>" alt=""></a> </td>
+                         <td class="produto_nome"><p><?php echo $p['nome'] ?></p></td>
+                         <form class="" id="qtd_<?php echo $p['id']; ?>" action="calculo.php?id=<?php echo $p['id']; ?>" method="post">
+                           <td class="produto_quant">
+                             <select class="" name="quantidade" onchange="document.getElementById('qtd_<?php echo $p['id']; ?>').submit()">
+                             <option name='quantidade'><?php echo $quantidade ?></option>
+                             <option name='quantidade' value="1">1</option>
+                             <option name='quantidade' value="2">2</option>
+                             <option name='quantidade' value="3">3</option>
+                             <option name='quantidade' value="4">4</option>
+                             <option name='quantidade' value="5">5</option>
+                             <option name='quantidade' value="6">6</option>
+                             <option name='quantidade' value="7">7</option>
+                             <option name='quantidade' value="8">8</option>
+                           </select>
+                          </td>
+                         </form>
+                         <td class="produto_preco"><p><?php echo "R$ ".$preco ?></p> </td>
+                         <td><a style="cursor:pointer" onclick="au(<?php echo $p['id'] ?>)"  ><i class="fas fa-times"></i></a></td>
+                       </tr>
+                     </table>
+                   </div>
+                 </div>
+                 <div class="divisao"></div>
+                 <script type="text/javascript">
+                 function au(id)
+                 {
+                    var conf = confirm("Certeza disso de que quer remover esse produto? ");
+                    if (conf == true) {
+                      window.location='delete.php?id='+id+ '';
+                      return true;
+                    }
+                  }
+                  function limpar(id)
+                  {
+                     var conf = confirm("Certeza disso de limpar todo o carrinho ? ");
+                     if (conf == true) {
+                       window.location='delete.php?delete_id='+id+ '';
+                       return true;
+                     }
+                   }
+                 </script>
+              <?php
             }
           }
         }
       }
+
       $sql = "SELECT * FROM carrinho WHERE cliente_id = '$u_id'";
       $sql = $pdo->query($sql);
-      if ($sql -> rowCount()<1) {
-        echo "<h1 style='font-size:100px;'>Sem produtos Cadastrados</h1>";
-      }
-    ?>
-    <footer class="page-footer font-small cyan darken-3">
-
-      <!-- Footer Elements -->
-      <div class="container">
-
-        <!-- Grid row-->
-        <div class="row">
+      if ($sql -> rowCount()>0) {
+      $sql = "SELECT SUM(soma) from soma_total where cliente_id='$u_id'";
+      $sql = $pdo->query($sql);
+      if ($sql->rowCount()>0) {
+        foreach($sql -> fetchAll() as $soma_total){
+          $soma = $soma_total['SUM(soma)'];
+          $avista = $soma - ($soma * 0.13);
+          $parcelas = $soma / 13;
+          $parcelas2 = number_format($parcelas,2);
+        }
+        ?>
+     </div>
+        <br> <a style="cursor:pointer" onclick="limpar(<?php echo $u_id ?>)" class="limpar">Limpar o carrinho</a>
+        <div class="som_total">
           <div class="respon">
-          <!-- Grid column -->
-          <div class="col-md-12 py-5">
-            <div class="mb-5 flex-center">
-
-              <a class="fb-ic" href="#">
-                <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-              </a>
-              <a class="tw-ic" href="#">
-                <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-              </a>
-
-              <a class="gplus-ic" href="#">
-                <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-              </a>
-
-              <a class="li-ic" href="#">
-                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-              </a>
-
-              <a class="ins-ic" href="#">
-                <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-              </a>
-
-              <a class="pin-ic" href="#">
-                <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-              </a>
+            <div class="conteu">
+                  <p>Soma total: <div class="spano"><span>R$ <?php echo $soma ?></span></div> </p>
+                  <p>Preço da compra à vista:<div class="spano"><span>R$ <?php echo $avista ?></span></div> </p>
+                  <p>Preço da compra no cartão: <div class="spano"><span>R$ <?php echo $parcelas2 ?> 13x</span></div></p>
+                  <div class="finalizar">
+                    <a style="cursor:pointer" href="finalizar.php?id=<?php echo $u_id ?>">Finalizar compra</a>
+                  </div>
             </div>
           </div>
         </div>
+        <?php
+  }
+}
+     ?>
+    <!-- Footer -->
+<footer class="page-footer font-small cyan darken-3">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+      <div class="respon">
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <a class="fb-ic" href="https://www.facebook.com/ShooterSoft-113889746662685" target="_blank">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <a class="tw-ic" href="https://twitter.com/ShooterSoft" target="_blank">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+
+          <a class="gplus-ic" href="#" target="_blank">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+
+          <a class="li-ic" href="https://github.com/DrakonZX/ShooterSoft" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a class="ins-ic" href="https://www.instagram.com/shootersoft/?hl=pt-br" target="_blank">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+
+          <a class="pin-ic" href="equipe.php" target="_blank">
+
+            <i class="fas fa-question"></i>
+
+          </a>
+
         </div>
-
-
       </div>
-      <div class="container-2">
-        <div class="respon">
-        <div class="cont">
-          <h3>Quem somos nós ?</h3>
-          <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-        </div>
-        <div class="cont">
-          <h3>Quem somos nós ?</h3>
-          <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-        </div>
-        <div class="cont">
-          <h3>Quem somos nós ?</h3>
-          <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-        </div>
-       </div>
+    </div>
+    </div>
 
-      <div class="footer_risco"></div>
-      <div class="footer_img">
-        <div class="respon">
-        <h3>Formas de pagamento</h3>
-        <img style="height:100px;width:300px;margin-bottom:100px;margin-right:150px;" src="img/google-site-seguro.png" alt="">
-        <img src="img/credito.png" alt="">
-      </div>
-      </div>
-     </div>
-      <!-- Copyright -->
-      <div class="copy">
-        <div class="footer-copyright text-center py-3">© <?php echo $data ?> Copyright:
-          <a href="index.php"> ShooterSoft.com.br</a>
-        </div>
-      </div>
 
-      <!-- Copyright -->
+  </div>
+  <div class="container-2">
+  <div class="respon">
+    <div class="cont">
+      <div class="cont_primeiro">
+    <h3>Integrantes:</h3>
+    <h5>Flavio Henrique</h5>
+    <h5>Juliano Gomes Tosta</h5>
+    <h5>Ryan Henrique</h5>
+    <h5>Natã Tidioli</h5>
+    <h5>Lucius Muniz</h5>
+    </div>
+    </div>
+  <div class="cont">
+    <div class="cont_meio">
+      <h3>Quem somos nós ?</h3>
+      <p>Somos uma empresa<br> de armas de entreterimento<br> e caça dentre elas <br>tem airsoft, paintball<br> e arquearia.</p>
+    </div>
+  </div>
 
-    </footer>
+  <div class="cont">
+  <div class="cont_ultimo">
+  <h3>Categorias: </h3>
+  <h5>Airsoft</h5>
+  <h5>Paintball</h5>
+  <h5>Arquearia</h5>
+  <h5>Customização (em breve)</h5><br>
+  </div>
+  </div>
+  </div>
+
+  <div class="footer_risco"></div>
+
+  <div class="footer_img">
+  <div class="respon">
+  <h3>Formas de pagamento</h3>
+  <div class="google2">
+    <img class="google" src="img/google-site-seguro.png" alt=""><br>
+  </div>
+  <div class="credito2">
+     <img class="credito" src="img/imagem.webp" alt="">
+  </div>
+  </div>
+  </div>
+  </div>
+  <!-- Copyright -->
+  <div class="copy">
+    <div class="footer-copyright text-center py-3">© <?php echo $data ?> Copyright:
+      <a href="index.php"> ShooterSoft.com.br</a>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+
+</footer>
+    <!-- Fechamento Foooter -->
+
   <script src="http://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>
-      <script>
-      $('nav.menu-mobile h2').click(function()
-          {
-              $('nav.menu-mobile ul').slideToggle(); //função do jQuery
-          })
-      </script>
+<script>
+function myFunction() {
+var x = document.getElementById("myLinks");
+if (x.style.display === "block") {
+x.style.display = "none";
+} else {
+x.style.display = "block";
+}
+}
+</script>
 </body>
 </html>

@@ -97,6 +97,7 @@ textarea:focus, input:focus {
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
   margin-bottom: 50px;
+  width: 500px;
 }
 .logo{
   max-width: 1280px;
@@ -104,4 +105,42 @@ textarea:focus, input:focus {
 }
 .logo img{
   height: 150px;
+  width: 450px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+@media only screen and (max-width:768px) {
+  .logo img{
+    width: 300px;
+    height: 100px;
+  }
+  .cont{
+    margin-left: -150px;
+    width: 450px;
+  }
+}
+@media only screen and (max-width:425px) {
+  .cont{
+    width: 320px;
+    height: 450px;
+    margin-left: -345px;
+    margin-top: 50px;
+  }
+  form{
+    margin-top: -50px;
+  }
+  .logo img{
+    margin-left:45px;
+  }
+}
+@media only screen and (max-width:375px) {
+  html{
+    width: 400px;
+  }
+  .cont{
+    margin-left: -360px;
+  }
+  .logo img{
+    margin-left: 35px;
+  }
 }

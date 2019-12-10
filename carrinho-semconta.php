@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/carrinho-semconta.css">
+    <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
+      <link rel="icon" type="image/png" href="img/logo_veridico.png" sizes="64x64">
     <title>Carrinho - ShooterSoft</title>
 </head>
 <body>
    <div class="fundo">
-      <div class="logo">
-    <a href="index.php"><img src="img/logo_veridico2.png" alt=""></a> 
-      </div>
+     <div class="respon">
+       <div class="logo">
+     <a href="index.php"><img src="img/logo_veridico2.png" alt=""></a>
+       </div>
+     </div>
    </div>
     <header>
            <div class="respon">
             <div class="cart">
-                <h2>Olá! Para adicionar ao carrinho, acesse sua conta.</h2>
+                <h2>Olá! Para utilizar o carrinho é preciso fazer o login</h2>
                 <div class="line"></div>
                <div class="cads">
                 <a href="cadastro.php">Sou novo</a><br>
