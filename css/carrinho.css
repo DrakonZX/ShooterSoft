@@ -12,8 +12,8 @@ html{
   width: 100%;
   background: #131600;
   text-align: center;
-  border-top: 2px solid #E8FFC6;
-  border-bottom:  2px solid #E8FFC6;
+  border-top: 2px solid #89BF00;
+  border-bottom:  2px solid #89BF00;
 }
 .menu{
   max-width: 1280px;
@@ -225,7 +225,7 @@ header {
   margin-top: -0px;
   color: #161C08;
   position: absolute;
-  margin-left: 800px;
+  margin-left: 792px;
 }
 
 .cart i {
@@ -369,18 +369,57 @@ header {
   background-color: #F9360E;
   margin-top: 50px;
 }
-.footer_img{
-  text-align: right;
-}
+
 .footer_img h3{
   border-bottom: 3px solid #F9360E;
   width: 100%;
   text-align: center;
+  color: #E8FFC6;
 }
-.footer_img img{
-  height: 300px;
-  width: 540px;
-  margin-right: 50px;
+.google2 .google{
+  width: 150px;
+  height: 50px;
+  margin-left: -600px;
+  margin-top:100px;
+}
+.google2{
+  height: 100%;
+}
+.credito2{
+  margin-top: -80px;
+}
+.credito2 .credito{
+  width: 500px;
+  margin-left: -50px;
+  margin-top: -100px;
+  margin-bottom: 50px;
+}
+.cont_primeiro h5{
+  font-size: 16px;
+  color: #E8FFC6;
+  font-weight: lighter;
+}
+.cont_primeiro{
+  margin-left: -820px;
+  padding-top: 20px;
+  text-align: center;
+}
+.cont_meio{
+ text-align: center;
+ margin-top: -180px;
+}
+.cont_ultimo{
+ text-align: center;
+ margin-left: 800px;
+ margin-top: -210px;
+}
+.container-2 .cont h3{
+  color: #F9360E;
+}
+.cont_ultimo h5{
+  font-size: 16px;
+  color: #E8FFC6;
+  font-weight: lighter;
 }
 .container a {
   text-decoration: none;
@@ -553,7 +592,7 @@ header {
   margin-left: 100px;
 }
 .carrinho td{
-  padding-left: 80px;
+  padding-left: 60px;
   text-align: center;
   color: #131600;
 }
@@ -590,7 +629,7 @@ select{
   border: 3px solid #89BF00;
   border-radius: 10px;
   background-color: #131600;
-  height: 300px;
+  height: 320px;
 }
 .conteu p{
   margin-left: 100px;
@@ -620,7 +659,6 @@ select{
   text-decoration: none;
   background-color: #E8FFC6;
   padding: 10px 20px 10px 20px;
-  border-radius: 20px;
   border:2px solid #F9360E;
   margin-bottom: 20px;
 }
@@ -650,7 +688,7 @@ select{
   margin-left: 14px;
 }
 .perfil .conteudo{
-  margin-left: 146px;
+  margin-left: 120px;
   margin-top: -107px;
   color: #161C08;
   width: 120px;
@@ -720,9 +758,10 @@ select{
 .produto_preco{
   padding-left: 160px;width:250px;
 }
-.google{
-  height:80px;width:300px;margin-bottom:100px;margin-right:150px;
+.container i:hover{
+  color: #E8FFC6;
 }
+
 @media only screen and (max-width: 7800px) {
   .mobile-container{
     display: none;
@@ -798,6 +837,7 @@ select{
   .container-slideshow img{
     width: 500px;
   }
+
   .container-2 p{
     font-size: 14px;
   }
@@ -821,7 +861,7 @@ select{
     width: 80px;
   }
   .carrinho th{
-    padding-left: 100px;
+    padding-left: 90px;
   }
   .th1{
     margin-left: 70px;
@@ -866,13 +906,22 @@ select{
     margin-left: 0px;
     width: 100%;
   }
+  .cont_primeiro{
+    margin-left:-350px;
+  }
+  .cont_meio{
+    text-align: center;
+    margin-left: 150px;
+  }
+  .cont_ultimo{
+    margin-top: -190px;
+    text-align: center;
+    margin-left: 620px;
+  }
 }
 @media only screen and (max-width:425px) {
   .descontos{
     margin-top: 0;
-  }
-  .google{
-    display: none;
   }
   .descontos img{
     height:50px;
@@ -912,15 +961,7 @@ select{
   .container-2 .container-2-2{
     margin-left: 10px;
     width: 200px;
-  }
-
-  .footer_img img{
-    height: 200px;
-    width: 240px;
-  }
-  .footer_img .google{
-    width: 200px;
-  }
+}
   .login-cadas{
     height: 80px;
   }
@@ -936,7 +977,6 @@ select{
     padding-left:0px;
     font-size: 12px;
     margin-right: 50px;
-    width: 500px;
   }
   .movi .produto_preco{
     padding-left: 50px;
@@ -965,6 +1005,24 @@ select{
   .finalizar{
     margin-left: 50px;
   }
+  .credito2 .credito{
+    width: 300px;
+    margin-top: -50px;
+  }
+  .google2 .google{
+    margin-left: -250px;
+    margin-top: 80px;
+  }
+  .cont_primeiro{
+    margin-left: -50px;
+  }
+  .cont_meio{
+    margin-left: 300px;
+  }
+  .cont_ultimo{
+    margin-left: 100px;
+    margin-top: 50px;
+  }
 }
 @media only screen and (max-width:375px) {
   .logo img{
@@ -983,15 +1041,17 @@ select{
   .spano{
     width: 350px;
   }
-  .footer_img h3{
-    margin-left: 0;
-    width: 100%;
-  }
   .conteu p{
     width: 100%;
   }
   .finalizar a{
     margin-left: 130px;
+  }
+  .carrinho th{
+    padding-left: 25px;
+  }
+  .movi2{
+    margin-left: -100px;
   }
 }
 @media only screen and (max-width:320px) {
@@ -1003,9 +1063,6 @@ select{
   }
   .cart a{
    margin-left: 615px;
-  }
-  .footer_img h3{
-    width: 100%;
   }
   .conteu p{
     font-size: 16px;
@@ -1023,5 +1080,30 @@ select{
   }
   .conteu{
     height: 250px;
+  }
+  .movi p{
+    width: 50px;
+  }
+  .movi th{
+    font-size: 12px;
+  }
+  .movi .movi2{
+    margin-left: -120px;
+  }
+  .movi .produto_quant{
+    padding-left: 0;
+  }
+  .produto_quant select{
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+  .produto_preco p{
+    margin-left: -30px;
+  }
+  .movi td i{
+    font-size: 40px;
+  }
+  .limpar{
+    margin-left: 150px;
   }
 }

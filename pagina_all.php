@@ -158,10 +158,16 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         </script>
       <div class="produtos">
         <div class="produtos-img">
-          <div class="outras-img">
-            <img src="<?php echo $produtos['img'] ?>" onclick="img00();" alt=""><br>
-            <img src="<?php echo $produtos['img2'] ?>"  onclick="img01();" alt=""><br>
-            <img src="<?php echo $produtos['img3'] ?>" onclick="img02();" alt="">
+          <div class="img_lateral">
+            <div class="outras-img1">
+              <img src="<?php echo $produtos['img'] ?>" onclick="img00();" alt=""><br>
+              </div>
+              <div class="outras-img2">
+              <img src="<?php echo $produtos['img2'] ?>"  onclick="img01();" alt=""><br>
+              </div>
+              <div class="outras-img3">
+              <img src="<?php echo $produtos['img3'] ?>" onclick="img02();" alt="">
+            </div>
           </div>
           <div class="principal-img">
             <img src="<?php echo $produtos['img'] ?>" id="troca" alt="">
@@ -179,13 +185,13 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         </div>
       </div>
       <div class="tipo">
-        <h3>Outros produtos da categoria <span>"<?php echo $produtos['categoria'] ?>"</span> </h3>
+        <h3>Outros produtos do tipo <span>"<?php echo $produtos['tipo'] ?>"</span> </h3>
       </div>
 
       <div class="demo">
         <ul id="lightSlider">
           <?php
-          $sql = "select * from produtos_airsoft where categoria = '$produtos[categoria]'";
+          $sql = "select * from produtos_airsoft where tipo = '$produtos[tipo]'";
           $sql = $pdo->query($sql);
           if ($sql->rowCount()>0) {
             foreach($sql->fetchAll() as $slider){
@@ -204,43 +210,43 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
               <?php
             }
           }
-           ?>
+          ?>
         </ul>
         <?php
-        if ($sql->rowCount()>4) {
+        if ($sql->rowCount()>0) {
+         ?>
+        <button  type="button" id="goToPrevSlide"><i class="fas fa-angle-left"></i></button>
+        <button  type="button" id="goToNextSlide"><i class="fas fa-angle-right"></i></button>
+        <?php
+      }
+         ?>
+      </div>
+      <div class="semslide">
+      <?php
+      $sql = "SELECT * FROM produtos_airsoft WHERE tipo='$produtos[tipo]'";
+      $sql = $pdo->query($sql);
+      if ($sql->rowCount()>0) {
+        foreach ($sql->fetchAll() as $produto) {
           ?>
-          <button class="ante" type="button" id="goToPrevSlide"><i class="fas fa-angle-left"></i></button>
-          <button class="prox" type="button" id="goToNextSlide"><i class="fas fa-angle-right"></i></button>
+          <div class="itens-semslide">
+          <div class="item-semslide">
+            <a href="pagina_all.php?id=<?php echo $produto['id'] ?>"><img class="card-img-top" src="<?php echo $produto['img']; ?>"></a>
+            <div class="card-body">
+              <h3  class="card-title"><?php echo $produto['nome'] ?></h3>
+              <p class="card-text" id="preco_avista" ><?php echo "<span style ='font-size:18px;'>R$ ".$produto['avista']."</span><span style='color:green;'> à vista no boleto</span>" ?></p>
+              <p  class="card-text" id="preco_parcelas"><?php echo "ou <span style='color:green;'>13x</span> de "."<span style='color:green;'>".$produto['parcelas']."</span>" ?></p>
+              <div class="item_links">
+                  <a class="comp" href="pagina_all.php?id=<?php echo $produto['id'] ?>" role="button">Comprar</a>
+                  <a class="fav" style="cursor:pointer" onclick="adicionado()" href="favorito.php?id=<?php echo $produto['id'] ?>&caminho=index.php" id="link"  name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
+              </div>
+          </div>
+          </div>
+          </div>
           <?php
         }
-         ?>
-      </div>
-      <div class="sem_slide">
-        <?php
-        $sql = "select * from produtos_airsoft where categoria='$produtos[categoria]'";
-        $sql = $pdo->query($sql);
-        if ($sql->rowCount()>0) {
-          foreach($sql -> fetchAll() as $sem_slide){
-            ?>
-            <div class="itens">
-            <div class="item">
-              <a href="pagina_all.php?id=<?php echo $sem_slide['id'] ?>"><img class="card-img-top" src="<?php echo $sem_slide['img']; ?>"></a>
-              <div class="card-body">
-                <h3  class="card-title"><?php echo $sem_slide['nome'] ?></h3>
-                <p class="card-text" id="preco_avista" ><?php echo "<span style ='font-size:18px;'>R$ ".$sem_slide['avista']."</span><span style='color:green;'> à vista no boleto</span>" ?></p>
-                <p  class="card-text" id="preco_parcelas"><?php echo "ou <span style='color:green;'>13x</span> de "."<span style='color:green;'>".$sem_slide['parcelas']."</span>" ?></p>
-                <div class="item_links">
-                    <a class="comp" href="pagina_all.php?id=<?php echo $sem_slide['id'] ?>" role="button">Comprar</a>
-                    <a class="fav" style="cursor:pointer" onclick="adicionado()" href="favorito.php?id=<?php echo $sem_slide['id'] ?>&caminho=<?php echo $url ?>" id="link"  name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
-                </div>
-            </div>
-            </div>
-            </div>
-            <?php
-          }
-        }
-         ?>
-      </div>
+      }
+       ?>
+       </div>
       <div class="produtos-cont2">
 
       </div>
@@ -260,27 +266,27 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
   <div class="col-md-12 py-5">
     <div class="mb-5 flex-center">
 
-      <a class="fb-ic" href="#">
+      <a class="fb-ic" href="https://www.facebook.com/ShooterSoft-113889746662685" target="_blank">
         <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
       </a>
-      <a class="tw-ic" href="#">
+      <a class="tw-ic" href="https://twitter.com/ShooterSoft" target="_blank">
         <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
       </a>
 
-      <a class="gplus-ic" href="#">
+      <a class="gplus-ic" href="#" target="_blank">
         <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
       </a>
 
-      <a class="li-ic" href="#">
+      <a class="li-ic" href="#" target="_blank">
         <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
       </a>
 
-      <a class="ins-ic" href="#">
+      <a class="ins-ic" href="https://www.instagram.com/shootersoft/?hl=pt-br" target="_blank">
         <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
       </a>
 
-      <a class="pin-ic" href="#">
-        <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+      <a class="pin-ic" href="#" target="_blank">
+        <i class="fas fa-envelope"></i>
       </a>
     </div>
   </div>
@@ -292,27 +298,40 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 <div class="container-2">
 <div class="respon">
   <div class="cont">
-    <h3>Quem somos nós ?</h3>
-    <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+    <div class="cont_primeiro">
+  <h3>Integrantes:</h3>
+  <h5>Flavio Henrique</h5>
+  <h5>Juliano Gomes Tosta</h5>
+  <h5>Ryan Henrique</h5>
+  <h5>Natã Tidioli</h5>
+  <h5>Lucius Muniz</h5>
   </div>
-  <div class="cont">
-    <h3>Quem somos nós ?</h3>
-    <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
   </div>
-  <div class="cont">
-    <div class="cont_ultimo">
-      <h3>Quem somos nós ?</h3>
-      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-    </div>
+<div class="cont">
+  <div class="cont_meio">
+    <h3>Quem somos nós ?</h3>
+    <p>Somos uma empresa<br> de armas de entreterimento<br> e caça dentre elas <br>tem airsoft, paintball<br> e arquearia.</p>
   </div>
 </div>
 
+<div class="cont">
+<div class="cont_ultimo">
+<h3>Categorias: </h3>
+<h5>Airsoft</h5>
+<h5>Paintball</h5>
+<h5>Arquearia</h5>
+<h5>Customização (em breve)</h5><br>
+</div>
+</div>
+</div>
+
 <div class="footer_risco"></div>
+
 <div class="footer_img">
-  <div class="respon">
-  <h3>Formas de pagamento</h3>
-  <img class="google" src="img/google-site-seguro.png" alt="">
-  <img src="img/credito.png" alt="">
+<div class="respon">
+<h3>Formas de pagamento</h3>
+<img class="google" src="img/google-site-seguro.png" alt="">
+<img class="credito" src="img/imagem.webp" alt="">
 </div>
 </div>
 </div>
@@ -331,6 +350,12 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.min.js" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js" charset="utf-8"></script>
 <script  src="js/slider.js"></script>
+<script type="text/javascript">
+ function adicionado()
+ {
+  alert("Seu produto foi adicionado com sucesso! ");
+  }
+</script>
 <script>
 function myFunction() {
 var x = document.getElementById("myLinks");

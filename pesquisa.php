@@ -142,125 +142,147 @@ $data = date("Y");
     $sql = $pdo-> query($sql);
 
   if ($sql -> rowCount() > 0) {
-      ?><h2 style="margin-top: 50px;padding-left:150px;padding-top: 10px;padding-bottom: 10px;background-color:#161C08;color:#E8FFC6;border-top:6px solid #7DDD00;"><span style="background:#41510f;padding:0 20px 0 20px;border-radius:10px;">Resultados da sua pesquisa por <span style="color:#7DDD00;">"<?php echo $pesquisa ?>"</span></span></h2><br><br> <?php
+      ?><h2 class="pes_resul"><span style="background:#41510f;padding:0 20px 0 20px;border-radius:10px;">Resultados da sua pesquisa por <span style="color:#7DDD00;">"<?php echo $pesquisa ?>"</span></span></h2><br><br>
+
+      <div class="borda">
+       <?php
       foreach ($sql -> fetchAll() as $produto) {
         $img = $produto['img'];
     ?>
-    <script type="text/javascript">
-     function adicionado()
-     {
-      alert("Seu produto foi adicionado com sucesso! ");
-      }
-    </script>
     <div class="itens">
     <div class="item">
-      <a href="pagina_all.php?id=<?php echo $produto['id'] ?>"><img class="card-img-top" src="<?php echo $img; ?>"></a>
+      <a href="pagina_all.php?id=<?php echo $produto['id'] ?>"><img class="card-img-top" src="<?php echo $produto['img']; ?>"></a>
       <div class="card-body">
         <h3  class="card-title"><?php echo $produto['nome'] ?></h3>
         <p class="card-text" id="preco_avista" ><?php echo "<span style ='font-size:18px;'>R$ ".$produto['avista']."</span><span style='color:green;'> à vista no boleto</span>" ?></p>
         <p  class="card-text" id="preco_parcelas"><?php echo "ou <span style='color:green;'>13x</span> de "."<span style='color:green;'>".$produto['parcelas']."</span>" ?></p>
         <div class="item_links">
             <a class="comp" href="pagina_all.php?id=<?php echo $produto['id'] ?>" role="button">Comprar</a>
-            <a class="fav" style="cursor:pointer" onclick="adicionado()" href="favorito.php?id=<?php echo $produto['id'] ?>&caminho = pesquisa" id="link"  name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
+            <a class="fav" style="cursor:pointer" onclick="adicionado()" href="favorito.php?id=<?php echo $produto['id'] ?>&caminho=<?php echo $url ?>" id="link"  name="favorito"><i class="fas fa-cart-plus"></i></a><br><br>
         </div>
     </div>
     </div>
     </div>
-       <?php
-       }
-     }
-     ?>
-    </div>
-    <!-- Footer -->
+    <?php
+  }
+}
+?>
+
+</div>
+   <!--Fechamento TODOS OS ITENS -->
+</div>
+</div>
+<!-- Footer -->
 <footer class="page-footer font-small cyan darken-3">
 
-  <!-- Footer Elements -->
-  <div class="container">
+<!-- Footer Elements -->
+<div class="container">
 
-    <!-- Grid row-->
-    <div class="row">
-      <div class="respon">
-      <!-- Grid column -->
-      <div class="col-md-12 py-5">
-        <div class="mb-5 flex-center">
+<!-- Grid row-->
+<div class="row">
+<div class="respon">
+<!-- Grid column -->
+<div class="col-md-12 py-5">
+  <div class="mb-5 flex-center">
 
-          <a class="fb-ic" href="#">
-            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <a class="tw-ic" href="#">
-            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
+    <a class="fb-ic" href="https://www.facebook.com/ShooterSoft-113889746662685" target="_blank">
+      <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+    </a>
+    <a class="tw-ic" href="https://twitter.com/ShooterSoft" target="_blank">
+      <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+    </a>
 
-          <a class="gplus-ic" href="#">
-            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
+    <a class="gplus-ic" href="#" target="_blank">
+      <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+    </a>
 
-          <a class="li-ic" href="#">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
+    <a class="li-ic" href="#" target="_blank">
+      <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+    </a>
 
-          <a class="ins-ic" href="#">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
+    <a class="ins-ic" href="https://www.instagram.com/shootersoft/?hl=pt-br" target="_blank">
+      <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+    </a>
 
-          <a class="pin-ic" href="#">
-            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-          </a>
-        </div>
-      </div>
-    </div>
-    </div>
-
-
+    <a class="pin-ic" href="#" target="_blank">
+      <i class="fas fa-envelope"></i>
+    </a>
   </div>
-  <div class="container-2">
-    <div class="respon">
-    <div class="cont">
-      <h3>Quem somos nós ?</h3>
-      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-    </div>
-    <div class="cont">
-      <h3>Quem somos nós ?</h3>
-      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-    </div>
-    <div class="cont">
-      <h3>Quem somos nós ?</h3>
-      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
-    </div>
-   </div>
+</div>
+</div>
+</div>
 
-  <div class="footer_risco"></div>
-  <div class="footer_img">
-    <div class="respon">
-    <h3>Formas de pagamento</h3>
-    <img style="height:100px;width:300px;margin-bottom:100px;margin-right:150px;" src="img/google-site-seguro.png" alt="">
-    <img src="img/credito.png" alt="">
+
+</div>
+<div class="container-2">
+<div class="respon">
+  <div class="cont">
+    <div class="cont_primeiro">
+  <h3>Integrantes:</h3>
+  <h5>Flavio Henrique</h5>
+  <h5>Juliano Gomes Tosta</h5>
+  <h5>Ryan Henrique</h5>
+  <h5>Natã Tidioli</h5>
+  <h5>Lucius Muniz</h5>
   </div>
   </div>
- </div>
-  <!-- Copyright -->
-  <div class="copy">
-    <div class="footer-copyright text-center py-3">© <?php echo $data ?> Copyright:
-      <a href="index.php"> ShooterSoft.com.br</a>
-    </div>
+<div class="cont">
+  <div class="cont_meio">
+    <h3>Quem somos nós ?</h3>
+    <p>Somos uma empresa<br> de armas de entreterimento<br> e caça dentre elas <br>tem airsoft, paintball<br> e arquearia.</p>
   </div>
+</div>
 
-  <!-- Copyright -->
+<div class="cont">
+<div class="cont_ultimo">
+<h3>Categorias: </h3>
+<h5>Airsoft</h5>
+<h5>Paintball</h5>
+<h5>Arquearia</h5>
+<h5>Customização (em breve)</h5><br>
+</div>
+</div>
+</div>
+
+<div class="footer_risco"></div>
+
+<div class="footer_img">
+<div class="respon">
+<h3>Formas de pagamento</h3>
+<img class="google" src="img/google-site-seguro.png" alt="">
+<img class="credito" src="img/imagem.webp" alt="">
+</div>
+</div>
+</div>
+<!-- Copyright -->
+<div class="copy">
+<div class="footer-copyright text-center py-3">© <?php echo $data ?> Copyright:
+<a href="index.php"> ShooterSoft.com.br</a>
+</div>
+</div>
+
+<!-- Copyright -->
 
 </footer>
-    <!-- Fechamento Foooter -->
-     <script src="http://code.jquery.com/jquery-3.4.1.min.js"
-   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-   crossorigin="anonymous"></script>
-   <script>
-function myFunction() {
- var x = document.getElementById("myLinks");
- if (x.style.display === "block") {
-   x.style.display = "none";
- } else {
-   x.style.display = "block";
- }
+<!-- Fechamento Foooter -->
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script type="text/javascript">
+function adicionado()
+{
+alert("Seu produto foi adicionado com sucesso! ");
 }
 </script>
- </body>
- </html>
+<script>
+function myFunction() {
+var x = document.getElementById("myLinks");
+if (x.style.display === "block") {
+x.style.display = "none";
+} else {
+x.style.display = "block";
+}
+}
+</script>
+</body>
+</html>

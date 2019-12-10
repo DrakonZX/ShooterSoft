@@ -358,20 +358,20 @@ header {
   background-color: #F9360E;
   margin-top: 50px;
 }
-.footer_img{
-  text-align: right;
-}
 .footer_img h3{
-  margin-left: 430px;
   border-bottom: 3px solid #F9360E;
-  width: 400px;
+  width: 100%;
   text-align: center;
   color: #E8FFC6;
 }
-.footer_img img{
-  height: 300px;
-  width: 540px;
-  margin-right: 50px;
+.footer_img .google{
+  width: 150px;
+  height: 50px;
+  margin-left: 100px;
+}
+.footer_img .credito{
+  width: 500px;
+  margin-left: 120px;
 }
 .container a {
   text-decoration: none;
@@ -539,16 +539,14 @@ header {
 .produtos{
   margin-bottom: 500px;
 }
-.outras-img{
+.img_lateral{
   margin-left: 100px;
   margin-top: 50px;
 }
-.outras-img img{
+.img_lateral img{
   border-bottom: 2px solid #89BF00;
-  height: 110px;
+  height: 90px;
   width: 90px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
 }
 .principal-img{
   margin-left: 250px;
@@ -699,18 +697,17 @@ header {
 .demo button{
    height: 100px;
    position: absolute;
-   width: 20px;
+   width: 30px;
    background-color: #161C08;
    border:2px solid #89BF00;
    color: #89BF00;
+   margin-top: -250px;
 }
-.demo .ante{
-  margin-top: -250px;
-  margin-left: -30px;
+.demo #goToPrevSlide{
+  margin-left: -40px;
 }
-.demo .prox{
+.demo #goToNextSlide{
   margin-left: 1010px;
-  margin-top: -250px;
 }
 .slide_links{
   display:inline-block;
@@ -733,6 +730,39 @@ header {
   color: #E8FFC6;
   text-decoration: none;
 }
+.semslide{
+  margin-left: 200px;
+}
+.itens-semslide{
+  display: none;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+.item-semslide{
+  border: 2px solid #131600;
+  text-align: center;
+  width: 250px;
+}
+.item-semslide img{
+  width: 150px;
+  height: 150px;
+}
+.item-semslide h3{
+  font-size: 14px;
+  height: 60px;
+  text-align: justify;
+  border-bottom: 1px solid #E8FFC6;
+  font-weight: bold;
+  color: #131600;
+  padding-left: 10px;
+}
+.item-semslide p{
+  margin: auto;
+  float: left;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
 /* FECHAMENTO DO CONTEUDO DA PAGINA_ALL */
 /* MENU MOBILE */
 .mobile-container {
@@ -774,6 +804,25 @@ header {
   background-color: #ddd;
   color: black;
 }
+.pes_resul{
+  margin-top: 50px;padding-left:150px;padding-top: 10px;padding-bottom: 10px;background-color:#161C08;color:#E8FFC6;border-top:6px solid #7DDD00;
+}
+.container i:hover{
+  color: #E8FFC6;
+}
+.cont_primeiro h5{
+  font-size: 16px;
+  color: #E8FFC6;
+  font-weight: lighter;
+}
+.cont_ultimo h5{
+  font-size: 16px;
+  color: #E8FFC6;
+  font-weight: lighter;
+}
+.cont{
+  height: 50px;
+}
 .clear
 {
     clear: both;
@@ -795,10 +844,16 @@ header {
   .descontos{
     margin-top: 650px;
   }
+  .principal-img{
+    margin-top: -300px;
+  }
 }
 @media only screen and (max-width:1920px) {
   .descontos{
     margin-top: 400px;
+  }
+  .principal-img{
+    margin-top: -320px;
   }
 }
 @media only screen and (max-width:1366px) {
@@ -869,6 +924,12 @@ header {
   .slide_links .comp{
     padding: 4px 20px 4px 20px;
   }
+  .demo #goToNextSlide{
+    margin-left: 905px;
+  }
+  .footer_img .credito{
+    margin-left: -20px;
+  }
 }
 @media only screen and (max-width:768px) {
   .pesquisa{
@@ -903,9 +964,6 @@ header {
     color:#F96F2A;
     width: 80px;
   }
-  .topnav a:hover{
-    color:
-  }
   .itens{
     margin-left:-40px;
     margin-right: 20px;
@@ -917,9 +975,6 @@ header {
   }
   .container-slideshow img{
     width: 500px;
-  }
-  .footer_img h3{
-    margin-left: 230px;
   }
   .container-2 p{
     font-size: 14px;
@@ -954,9 +1009,6 @@ header {
   .perfil{
     margin-right: 10px;
   }
-  .demo{
-    display: none;
-  }
   .principal-img img{
     height: 200px;
     width: 200px;
@@ -985,6 +1037,37 @@ header {
   .descontos{
     margin-top: 200px;
   }
+  .demo{
+    width: 650px;
+    margin-left:50px;
+  }
+  .demo img{
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+  }
+  .slide p{
+    width: 100%;
+    margin-left: 0;
+  }
+  .slide_links .comp{
+    padding: 2px 6px 2px 6px;
+    margin-left: -5px;
+  }
+  .slide_links .fav{
+    padding: 5px 10px 5px 10px;
+  }
+  .demo #goToNextSlide{
+    margin-left: 660px;
+  }
+  .footer_img .credito{
+    width: 400px;
+    margin-left: 80px;
+  }
+  .footer_img .google{
+    margin-left: 10px;
+    margin-top: -50px;
+  }
 }
 @media only screen and (max-width:425px) {
   .caminho{
@@ -998,9 +1081,12 @@ header {
   }
   .descontos{
     margin-top: 100px;
+    width: 200px;
+    margin-left: 100px;
   }
   .descontos img{
     height:50px;
+    width: 200px;
   }
   .logo img{
     margin-top: -10px;
@@ -1050,15 +1136,8 @@ header {
     margin-left: 100px;
     width: 200px;
   }
-  .footer_img h3{
-    margin-left: 10px;
-  }
-  .footer_img img{
-    height: 200px;
-    width: 240px;
-  }
   .footer_img .google{
-    width: 200px;
+    width: 100px;
   }
   .login-cadas{
     height: 80px;
@@ -1087,22 +1166,77 @@ header {
   .itens h3{
     height: 80px;
   }
-  .google{
-    display: none;
-  }
-  .outras-img{
-    margin-left: 50px;
+  .img_lateral img{
+    height: 80px;
+    width: 80px;
   }
   .principal-img{
-    margin-left: 150px;
+    margin-left: 90px;
+    margin-top: -350px;
+  }
+  .produtos-img .img_lateral{
+    margin-top: 300px;
+  }
+  .img_lateral{
+    margin-left: 85px;
+  }
+  .img_lateral .outras-img2{
+    margin-top: -90px;
+    margin-left: 90px;
+  }
+  .img_lateral .outras-img3{
+    margin-top: -90px;
+    margin-left: 180px;
   }
   .produtos-cont{
     margin-left: 50px;
-    margin-top: 50px;
+    margin-top: 100px;
   }
   .tipo h3{
     width: 100%;
     margin-left: 0;
+  }
+  .demo li{
+    width: 200px;
+  }
+  .demo{
+    display: none;
+  }
+  .itens-semslide{
+    display: inline-block;
+  }
+  .semslide{
+    margin-left: 10px;
+  }
+  .item-semslide{
+    width: 200px;
+    margin-left: -100px;
+  }
+  .item-semslide p{
+    height: 60px;
+    text-align: left;
+  }
+  .item-semslide .item_links .comp{
+    padding: 12px 20px 12px 20px;
+  }
+  .item-semslide .item_links .fav{
+    padding: 10px 20px 10px 20px
+  }
+  .item-semslide h3{
+    padding-bottom: 10px;
+    height: 70px;
+  }
+  .pes_resul{
+    padding-left: 0;
+    font-size: 20px;
+  }
+  .footer_img .credito{
+    width: 250px;
+    margin-left: 0px;
+  }
+  .footer_img .google{
+    width: 80px;
+    height: 30px;
   }
 }
 @media only screen and (max-width:375px) {
@@ -1119,10 +1253,6 @@ header {
   header{
     height: 250px;
   }
-  .footer_img h3{
-    margin-left: 0;
-    width: 375px;
-  }
   .container-2 .cont{
     margin-left: 100px;
   }
@@ -1130,17 +1260,17 @@ header {
     margin-left: 0;
     width: 200px;
   }
-  .item{
-    margin-left: 40px;
+  .item-semslide{
     width: 175px;
   }
-  .item .comp{
-    padding: 7px 15px 7px 15px;
+  .item-semslide .item_links .comp{
+    padding: 5px 15px 5px 15px;
+
   }
-  .item .fav{
-    padding: 5px 10px 5px 10px;
+  .item-semslide .item_links .fav{
+    padding: 3px 8px 3px 8px;
   }
-  .item p{
+  .item-semslide p{
     font-size: 14px;
     width: 150px;
   }
@@ -1148,11 +1278,38 @@ header {
     height: 160px;
     width: 160px;
   }
+  .img_lateral{
+    margin-left: 65px;
+  }
   .principal-img{
     width: 200px;
   }
   .produtos-cont{
     margin-top: 100px;
+  }
+  .item{
+    width: 175px;
+  }
+  .item .item_links .comp{
+    padding: 5px 15px 5px 15px;
+
+  }
+  .item .item_links .fav{
+    padding: 3px 8px 3px 8px;
+  }
+  .item p{
+    font-size: 14px;
+    width: 150px;
+  }
+  .pes_resul{
+    padding-left: 0;
+    font-size: 18px;
+  }
+  .footer_img .credito{
+    margin-left: -10px;
+  }
+  .descontos{
+    margin-left: 80px;
   }
 }
 @media only screen and (max-width:320px) {
@@ -1174,10 +1331,30 @@ header {
   .container-2 .cont{
     margin-left: 60px;
   }
-  .outras-img{
-    margin-left: 20px;
+  .img_lateral{
+    margin-left: 30px;
+  }
+  .produtos-cont{
+    margin-left: 10px;
   }
   .principal-img{
+    margin-left: 65px;
+  }
+  .item{
     margin-left: 110px;
+  }
+  .item-semslide{
+    margin-left: -35px;
+  }
+  .pes_resul{
+    padding-left: 0;
+    font-size: 16px;
+  }
+  .footer_img .credito{
+    width: 200px;
+    margin-left: 0px;
+  }
+  .descontos{
+    margin-left: 70px;
   }
 }

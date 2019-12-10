@@ -136,7 +136,12 @@ $data = date("Y");
       $sql = "SELECT * FROM carrinho WHERE cliente_id = '$u_id'";
       $sql = $pdo->query($sql);
       if ($sql -> rowCount()<1) {
-        echo "<h1 style='font-size:20px;text-align:center;'>Sem produtos Cadastrados</h1>";
+        ?>
+        <div class="respon">
+          <h1 style='font-size:20px;text-align:center;'>Sem produtos Cadastrados</h1>
+          <a style="margin-left:550px;color:#161C08;" href="index.php">Deseja voltar para a loja</a>
+        </div>
+        <?php
       }
       else {
         ?>
@@ -176,9 +181,8 @@ $data = date("Y");
                    <div class="respon">
                      <table>
                        <tr>
-                         <div class="produto">
                          <td><a href="pagina_all.php?id=<?php echo $p['id'] ?>"><img src="<?php echo $p['img'] ?>" alt=""></a> </td>
-                         <td class="produto_nome"><?php echo $p['nome'] ?></td>
+                         <td class="produto_nome"><p><?php echo $p['nome'] ?></p></td>
                          <form class="" id="qtd_<?php echo $p['id']; ?>" action="calculo.php?id=<?php echo $p['id']; ?>" method="post">
                            <td class="produto_quant">
                              <select class="" name="quantidade" onchange="document.getElementById('qtd_<?php echo $p['id']; ?>').submit()">
@@ -194,9 +198,8 @@ $data = date("Y");
                            </select>
                           </td>
                          </form>
-                         <td class="produto_preco"><?php echo "R$ ".$preco ?></td>
+                         <td class="produto_preco"><p><?php echo "R$ ".$preco ?></p> </td>
                          <td><a style="cursor:pointer" onclick="au(<?php echo $p['id'] ?>)"  ><i class="fas fa-times"></i></a></td>
-                         </div>
                        </tr>
                      </table>
                    </div>
@@ -270,27 +273,27 @@ $data = date("Y");
       <div class="col-md-12 py-5">
         <div class="mb-5 flex-center">
 
-          <a class="fb-ic" href="#">
+          <a class="fb-ic" href="https://www.facebook.com/ShooterSoft-113889746662685" target="_blank">
             <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-          <a class="tw-ic" href="#">
+          <a class="tw-ic" href="https://twitter.com/ShooterSoft" target="_blank">
             <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
 
-          <a class="gplus-ic" href="#">
+          <a class="gplus-ic" href="#" target="_blank">
             <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
 
-          <a class="li-ic" href="#">
+          <a class="li-ic" href="#" target="_blank">
             <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
 
-          <a class="ins-ic" href="#">
+          <a class="ins-ic" href="https://www.instagram.com/shootersoft/?hl=pt-br" target="_blank">
             <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
 
-          <a class="pin-ic" href="#">
-            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+          <a class="pin-ic" href="#" target="_blank">
+            <i class="fas fa-envelope"></i>
           </a>
         </div>
       </div>
@@ -300,30 +303,49 @@ $data = date("Y");
 
   </div>
   <div class="container-2">
-    <div class="respon">
-    <div class="container-2-2">
-      <h3>Quem somos nós ?</h3>
-      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+  <div class="respon">
+    <div class="cont">
+      <div class="cont_primeiro">
+    <h3>Integrantes:</h3>
+    <h5>Flavio Henrique</h5>
+    <h5>Juliano Gomes Tosta</h5>
+    <h5>Ryan Henrique</h5>
+    <h5>Natã Tidioli</h5>
+    <h5>Lucius Muniz</h5>
     </div>
-    <div class="container-2-2">
-      <h3>Quem somos nós ?</h3>
-      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
     </div>
-    <div class="container-2-2">
+  <div class="cont">
+    <div class="cont_meio">
       <h3>Quem somos nós ?</h3>
-      <p>Somos uma empresa de armas de entreterimento e caça dentre elas tem airsoft, paintball e arquearia.</p>
+      <p>Somos uma empresa<br> de armas de entreterimento<br> e caça dentre elas <br>tem airsoft, paintball<br> e arquearia.</p>
     </div>
-   </div>
+  </div>
+
+  <div class="cont">
+  <div class="cont_ultimo">
+  <h3>Categorias: </h3>
+  <h5>Airsoft</h5>
+  <h5>Paintball</h5>
+  <h5>Arquearia</h5>
+  <h5>Customização (em breve)</h5><br>
+  </div>
+  </div>
+  </div>
 
   <div class="footer_risco"></div>
+
   <div class="footer_img">
-    <div class="respon">
-    <h3 style="color:#E8FFC6;">Formas de pagamento</h3>
-    <img class="google" src="img/google-site-seguro.png" alt="">
-    <img src="img/credito.png" alt="">
+  <div class="respon">
+  <h3>Formas de pagamento</h3>
+  <div class="google2">
+    <img class="google" src="img/google-site-seguro.png" alt=""><br>
+  </div>
+  <div class="credito2">
+     <img class="credito" src="img/imagem.webp" alt="">
   </div>
   </div>
- </div>
+  </div>
+  </div>
   <!-- Copyright -->
   <div class="copy">
     <div class="footer-copyright text-center py-3">© <?php echo $data ?> Copyright:
