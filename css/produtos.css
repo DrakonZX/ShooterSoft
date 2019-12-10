@@ -367,12 +367,12 @@ header {
 .footer_img .google{
   width: 150px;
   height: 50px;
- margin-left: 250px;
+  margin-left: 250px;
 }
 
 .footer_img .credito{
   width: 500px;
-  margin-left: -60px;
+  margin-left: -55px;
   margin-bottom: 30px;
 }
 .container a {
