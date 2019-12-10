@@ -482,6 +482,10 @@ header {
   font-weight: normal;
   padding: 0px 10px 10px 10px;
 }
+.produtos-cont2{
+  margin-left:150px;
+  margin-top: -300px;
+}
 /*  */
 .caminho
 {
@@ -828,6 +832,38 @@ header {
 .clear
 {
     clear: both;
+}
+.equipe_cont{
+  margin-top: 20px;
+}
+.equipe_cont .p{
+  margin-left: 500px;
+}
+.equipe_cont img{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin-left: 150px;
+  border: 5px solid #89BF00;
+}
+.equipe_cont p{
+  width: 200px;
+  margin-left:300px;
+  font-size: 20px;
+}
+.equipe_cont h3{
+  margin-left: 300px;
+  margin-top:-50px;
+  border-bottom: 2px solid #89BF00;
+  width: 300px;
+  font-size: 24px;
+}
+.equipe_cont span{
+  color: #89BF00;
+}
+.equipe_cont h2{
+  text-align:center;
+  margin-bottom: 50px;
 }
 @media only screen and (max-width: 6000px) {
   .mobile-container{

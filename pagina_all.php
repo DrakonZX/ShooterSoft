@@ -111,7 +111,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
       </li>
       <li><a href="pagina_produtos.php?tipo=Paintball">Paintball</a></li>
       <li><a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a></li>
-      <li><a href="#">Equipe</a></li>
+      <li><a href="equipe.php">Equipe</a></li>
     </ul>
 </div>
 <div class="mobile-container">
@@ -121,7 +121,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
       <a href="pagina_produtos.php?tipo=Airsoft">Airsoft</a>
       <a href="pagina_produtos.php?tipo=Paintball">Paintball</a>
       <a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a>
-      <a href="#">Equipe</a>
+      <a href="equipe.php">Equipe</a>
     </div>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
@@ -184,6 +184,19 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
           </div>
         </div>
       </div>
+      <div class="produtos-cont2">
+        <div class="respon">
+          <h3 style="border-bottom:2px solid #89BF00;">Especificações do produto: <span style="color:#89BF00;text-decoration:underline;"><?php echo $produtos['nome'] ?><span></h3>
+          <p>Categoria: <?php echo $produtos['categoria'] ?></p>
+          <p>Peso: <?php echo $produtos['peso'] ?>g</p>
+          <p>Sistema: <?php echo $produtos['sistema'] ?></p>
+          <p>Tipo de Disparo: <?php echo $produtos['disparo'] ?></p>
+          <p>Calibre: <?php echo $produtos['calibre'] ?></p>
+          <p>Comprimento: <?php echo $produtos['comprimento'] ?>cm</p>
+          <p>Material: <?php echo $produtos['material'] ?></p>
+          <p>Tipo: <?php echo $produtos['tipo'] ?></p>
+        </div>
+      </div><br><br><br><br><br><br>
       <div class="tipo">
         <h3>Outros produtos do tipo <span>"<?php echo $produtos['tipo'] ?>"</span> </h3>
       </div>
@@ -247,9 +260,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
       }
        ?>
        </div>
-      <div class="produtos-cont2">
-        
-      </div>
+
        <!--Fechamento TODOS OS ITENS -->
   </div>
 </div>
@@ -277,16 +288,18 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
       </a>
 
-      <a class="li-ic" href="#" target="_blank">
-        <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+      <a class="li-ic" href="https://github.com/DrakonZX/ShooterSoft" target="_blank">
+        <i class="fab fa-github"></i>
       </a>
 
       <a class="ins-ic" href="https://www.instagram.com/shootersoft/?hl=pt-br" target="_blank">
         <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
       </a>
 
-      <a class="pin-ic" href="#" target="_blank">
-        <i class="fas fa-envelope"></i>
+      <a class="pin-ic" href="equipe.php" target="_blank">
+
+        <i class="fas fa-question"></i>
+
       </a>
     </div>
   </div>

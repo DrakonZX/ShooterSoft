@@ -112,7 +112,7 @@ $data = date("Y");
       </li>
       <li><a href="pagina_produtos.php?tipo=Paintball">Paintball</a></li>
       <li><a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a></li>
-      <li><a href="#">Equipe</a></li>
+      <li><a href="equipe.php">Equipe</a></li>
     </ul>
 </div>
 <div class="mobile-container">
@@ -122,7 +122,7 @@ $data = date("Y");
       <a href="pagina_produtos.php?tipo=Airsoft">Airsoft</a>
       <a href="pagina_produtos.php?tipo=Paintball">Paintball</a>
       <a href="pagina_produtos.php?tipo=Arquearia">Arquearia</a>
-      <a href="#">Equipe</a>
+      <a href="equipe.php">Equipe</a>
     </div>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
@@ -284,17 +284,20 @@ $data = date("Y");
             <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
 
-          <a class="li-ic" href="#" target="_blank">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          <a class="li-ic" href="https://github.com/DrakonZX/ShooterSoft" target="_blank">
+            <i class="fab fa-github"></i>
           </a>
 
           <a class="ins-ic" href="https://www.instagram.com/shootersoft/?hl=pt-br" target="_blank">
             <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
 
-          <a class="pin-ic" href="#" target="_blank">
-            <i class="fas fa-envelope"></i>
+          <a class="pin-ic" href="equipe.php" target="_blank">
+
+            <i class="fas fa-question"></i>
+
           </a>
+
         </div>
       </div>
     </div>
