@@ -122,34 +122,73 @@
     </div>
     </div>
     <div class="respon">
-      <div class="equipe_cont">
-          <h2>Seja bem vindo <span>"<?php echo $usuario['nome'] ?>"</span> essa é nossa equipe </h2>
-        <div class="p">
-          <img src="img/bandido.jpg" alt="">
-          <h3>Flavio Henrique</h3>
-          <p>A pessoa de equipe focada em preparar toda a documentação do site.</p>
+      <?php
+      if (isset($_SESSION['usuario'])) {
+        ?>
+        <div class="equipe_cont">
+            <h2>Seja bem vindo <span>"<?php echo $usuario['nome'] ?>"</span> essa é nossa equipe </h2>
+          <div class="p">
+            <img src="img/bandido.jpg" alt="">
+            <h3>Flavio Henrique</h3>
+            <p>A pessoa de equipe focada em preparar toda a documentação do site.</p>
+          </div>
+          <div class="s">
+            <img src="img/cheideolho.jpg" alt="">
+            <h3>Natã Tidioli</h3>
+            <p>Formatação do CSS e imagens.</p>
+          </div>
+          <div class="p">
+            <img src="img/ryan.jpg" alt="">
+            <h3>Ryan Henrique</h3>
+            <p>Criador do Banco de Dados de nossa equipe, cadastro/login,barra de pesquisa.</p>
+          </div>
+          <div class="q">
+            <img src="img/lucius.jpg" alt="">
+            <h3>Lucius Muniz</h3>
+            <p>Marketing do nosso site e ajudante em horas vagas.</p>
+          </div>
+          <div class="p">
+            <img src="img/eu.jpg" alt="">
+            <h3>Juliano Gomes Tosta</h3>
+            <p>Programador e coordenador do grupo</p>
+          </div>
         </div>
-        <div class="s">
-          <img src="img/cheideolho.jpg" alt="">
-          <h3>Natã Tidioli</h3>
-          <p>Formatação do CSS e imagens.</p>
+        <?php
+      }
+      else {
+        ?>
+        <div class="equipe_cont">
+            <h2>Seja bem vindo ! essa é nossa equipe</h2>
+          <div class="p">
+            <img src="img/bandido.jpg" alt="">
+            <h3>Flavio Henrique</h3>
+            <p>A pessoa de equipe focada em preparar toda a documentação do site.</p>
+          </div>
+          <div class="s">
+            <img src="img/cheideolho.jpg" alt="">
+            <h3>Natã Tidioli</h3>
+            <p>Formatação do CSS e imagens.</p>
+          </div>
+          <div class="p">
+            <img src="img/ryan.jpg" alt="">
+            <h3>Ryan Henrique</h3>
+            <p>Criador do Banco de Dados de nossa equipe, cadastro/login,barra de pesquisa.</p>
+          </div>
+          <div class="q">
+            <img src="img/lucius.jpg" alt="">
+            <h3>Lucius Muniz</h3>
+            <p>Marketing do nosso site e ajudante em horas vagas.</p>
+          </div>
+          <div class="p">
+            <img src="img/eu.jpg" alt="">
+            <h3>Juliano Gomes Tosta</h3>
+            <p>Programador e coordenador do grupo</p>
+          </div>
         </div>
-        <div class="p">
-          <img src="img/ryan.jpg" alt="">
-          <h3>Ryan Henrique</h3>
-          <p>Criador do Banco de Dados de nossa equipe, cadastro/login,barra de pesquisa.</p>
-        </div>
-        <div class="q">
-          <img src="img/lucius.jpg" alt="">
-          <h3>Lucius Muniz</h3>
-          <p>Marketing do nosso site e ajudante em horas vagas.</p>
-        </div>
-        <div class="p">
-          <img src="img/eu.jpg" alt="">
-          <h3>Juliano Gomes Tosta</h3>
-          <p>Programador e coordenador do grupo</p>
-        </div>
-      </div>
+        <?php
+      }
+       ?>
+
     </div>
 
     <footer class="page-footer font-small cyan darken-3">
