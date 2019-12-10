@@ -44,6 +44,7 @@ header ('Content-type: text/html; charset=UTF-8');
             <input type="password" name="senha" maxlength="16" placeholder="Senha" required><br>
 
             <button type="submit" name="btnLogin" value="Acessar">Concluir</button>
+            <p><a style="color:#131600;" href="cadastro.php">Não tenho<span style="color:#89BF00;"> "conta"</span></a></p>
             </form>
         </div>
         </div>
