@@ -313,9 +313,10 @@
 
    <div class="footer_img">
    <div class="respon">
-   <h3>Formas de pagamento</h3>
+   <h3>Formas de pagamento</h3><div class="respon">
    <img class="google" src="img/google-site-seguro.png" alt="">
    <img class="credito" src="img/imagem.webp" alt="">
+ </div>
    </div>
    </div>
    </div>

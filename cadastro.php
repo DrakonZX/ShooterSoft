@@ -137,7 +137,9 @@ if($button){
         <div class="cadas">
           <div class="background">
                 <div class="img">
-    <a href="index.php"><img src="img/logo_veridico2.png" alt=""></a>
+    					<div class="respon">
+								<a href="index.php"><img src="img/logo_veridico2.png" alt=""></a>
+    					</div>
       </div>
           </div>
           <div class="respon">

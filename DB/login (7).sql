@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Dez-2019 às 16:03
+-- Generation Time: 10-Dez-2019 às 13:33
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.1
 
@@ -42,11 +42,7 @@ CREATE TABLE `carrinho` (
 --
 
 INSERT INTO `carrinho` (`id`, `quantidade`, `produto_id`, `cliente_id`) VALUES
-(13, 1, 2, 1),
-(14, 1, 6, 1),
-(15, 1, 3, 1),
-(16, 1, 4, 1),
-(17, 1, 5, 1);
+(12, 1, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -90,7 +86,24 @@ INSERT INTO `datas` (`id`, `data`, `email`, `hora`, `estado`) VALUES
 (8, '2019-12-01', 'TheDrakonZXD@gmail.com', '12:44:54', 'logado'),
 (9, '2019-12-01', 'TheDrakonZXD@gmail.com', '19:10:33', 'logado'),
 (10, '2019-12-02', 'TheDrakonZXD@gmail.com', '13:13:30', 'logado'),
-(11, '2019-12-04', 'TheDrakonZXD@gmail.com', '21:50:40', 'logado');
+(11, '2019-12-04', 'TheDrakonZXD@gmail.com', '21:50:40', 'logado'),
+(12, '2019-12-07', 'TheDrakonZXD@gmail.com', '13:47:57', 'logado'),
+(13, '2019-12-07', 'TheDrakonZXD@gmail.com', '15:37:36', 'deslogado'),
+(14, '2019-12-07', 'TheDrakonZXD@gmail.com', '15:38:09', 'logado'),
+(15, '2019-12-07', 'TheDrakonZXD@gmail.com', '16:15:42', 'deslogado'),
+(16, '2019-12-07', 'TheDrakonZXD@gmail.com', '16:16:12', 'logado'),
+(17, '2019-12-07', 'TheDrakonZXD@gmail.com', '16:17:33', 'deslogado'),
+(18, '2019-12-07', 'TheDrakonZXD@gmail.com', '16:17:50', 'logado'),
+(19, '2019-12-08', 'TheDrakonZXD@gmail.com', '03:26:44', 'logado'),
+(20, '2019-12-08', 'TheDrakonZXD@gmail.com', '03:57:12', 'logado'),
+(21, '2019-12-09', 'TheDrakonZXD@gmail.com', '04:10:11', 'logado'),
+(22, '2019-12-09', 'TheDrakonZXD@gmail.com', '04:11:13', 'deslogado'),
+(23, '2019-12-09', 'TheDrakonZXD@gmail.com', '04:18:36', 'logado'),
+(24, '2019-12-09', 'TheDrakonZXD@gmail.com', '05:31:15', 'logado'),
+(25, '2019-12-09', 'TheDrakonZXD@gmail.com', '20:36:53', 'logado'),
+(26, '2019-12-10', 'TheDrakonZXD@gmail.com', '01:29:14', 'logado'),
+(27, '2019-12-10', 'TheDrakonZXD@gmail.com', '10:22:35', 'deslogado'),
+(28, '2019-12-10', 'TheDrakonZXD@gmail.com', '10:24:53', 'logado');
 
 -- --------------------------------------------------------
 
@@ -162,11 +175,11 @@ INSERT INTO `produtos_airsoft` (`id`, `nome`, `preco`, `preco_antigo`, `parcelas
 (6, 'BERETTA AEP UMAREX', '890.00', '1250.00', '89.00', '801.00', 'slin', 'img_produtos/Imagens_correta/10.jpg', 'img_produtos/Imagens_correta/10_2.jpg', 'img_produtos/Imagens_correta/10_3.jpg', 'Pistolas', 0, 0, '0.00', '524.00', 'Elétrico', 'Semi-automático', '6mm', '24.00', '', '', 'Polímero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Pistolas&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
 (7, 'SNIPER GREEN GAS G86B', '3799.00', '4591.20', '379.00', '3419.10', 'slin', 'img_produtos/Imagens_correta/16.jpg', 'img_produtos/Imagens_correta/16_2.jpg', 'img_produtos/Imagens_correta/16_3.jpg', 'Rifles', 1, 1, '0.00', '4030.00', 'Gás GBB', 'Single-Shot', '6mm', '127.00', 'Red-Dot', '', 'Polímero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Rifles&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 1, 'img/b.png'),
 (8, 'RIFLE M62', '719.10', '1199.00', '79.90', '719.10', 'slin', 'img_produtos/Imagens_correta/15.jpg', 'img_produtos/Imagens_correta/15_2.jpg', 'img_produtos/Imagens_correta/15_3.jpg', 'Rifles', 0, 0, '0.00', '2120.00', 'Pressão', 'Single-Shot', '6mm', '111.00', '', '', 'Polímero e Metal', 'Airsoft', 'pagina_produtos.php?categoria=Rifles&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
-(9, 'MARCADOR PAINTBALL RIFLE LASER TAG EAGLE  EYE SYSTEM – PRETO', '4850.40', '0.00', '485.04', '4122.84', 'slin', 'img_produtos/Imagens_correta/8.jpg', 'img_produtos/Imagens_correta/8_2.jpg', 'img_produtos/Imagens_correta/8_3.jpg', 'Marcadores', 0, 1, '0.00', '0.00', 'Gás CO2', '', '', '0.00', '', '', '', 'Paintball', 'pagina_produtos.php?tipo=Paintball', 'pagina_produtos.php?tipo=Paintball', 0, ''),
-(10, 'MARCADOR PAINTBALL PISTOLA RAP4 DESERT EAGLE - PRETO', '1527.00', '0.00', '152.74', '1298.26', 'slin', 'img_produtos/Imagens_correta/7_3.jpg', 'img_produtos/Imagens_correta/7.jpg', 'img_produtos/Imagens_correta/7_2.jpg', 'Marcadores', 0, 0, '0.00', '0.00', 'Gás CO2', 'Semi-Automático', '0.43mm', '0.00', '', '', '', 'Paintball', 'pagina_produtos.php?tipo=Paintball', 'pagina_produtos.php?tipo=Paintball', 0, ''),
+(9, 'MARCADOR PAINTBALL RIFLE LASER TAG EAGLE  EYE SYSTEM ', '4850.40', '0.00', '485.04', '4122.84', 'slin', 'img_produtos/Imagens_correta/8.jpg', 'img_produtos/Imagens_correta/8_2.jpg', 'img_produtos/Imagens_correta/8_3.jpg', 'Marcadores', 0, 1, '0.00', '0.00', 'Gás CO2', '', '', '0.00', '', '', '', 'Paintball', 'pagina_produtos.php?tipo=Paintball', 'pagina_produtos.php?tipo=Paintball', 0, ''),
+(10, 'MARCADOR PAINTBALL PISTOLA RAP4 DESERT EAGLE', '1527.00', '0.00', '152.74', '1298.26', 'slin', 'img_produtos/Imagens_correta/7_3.jpg', 'img_produtos/Imagens_correta/7.jpg', 'img_produtos/Imagens_correta/7_2.jpg', 'Marcadores', 0, 0, '0.00', '0.00', 'Gás CO2', 'Semi-Automático', '0.43mm', '0.00', '', '', '', 'Paintball', 'pagina_produtos.php?tipo=Paintball', 'pagina_produtos.php?tipo=Paintball', 0, ''),
 (11, 'ESCOPETA M300 WESSON', '800.00', '0.00', '51.00', '642.00', 'slin', 'img_produtos/Imagens_correta/6.jpg', 'img_produtos/Imagens_correta/6_2.jpg', 'img_produtos/Imagens_correta/6_3.jpg', 'Escopetas', 1, 1, '0.00', '590.00', 'Pressão', 'Pump', '6mm', '57.00', '', '', '', 'Airsoft', 'pagina_produtos.php?categoria=Escopetas&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
 (12, 'CILINDRO AIRSOFT CO2 - 12G', '6.29', '8.30', '6.29', '5.32', 'slin', 'img_produtos/Imagens_correta/1.jpg', 'img_produtos/Imagens_correta/1_2.jpg', 'img_produtos/Imagens_correta/1_3.jpg', 'Acessórios', 1, 0, '0.00', '0.00', '', '', '', '0.00', '', '', '', 'Airsoft', 'pagina_produtos.php?categoria=Acessorios&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
-(13, 'MUNIÇÃO AIRSOFT TOKYO MARUI BBS 0.25g - 1300 UNIDADES', '62.91', '0.00', '6.29', '53.47', 'slin', 'img_produtos/Imagens_correta/2.jpg', 'img_produtos/Imagens_correta/2_2.jpg', 'img_produtos/Imagens_correta/2_3.jpg', 'Acessórios', 1, 1, '0.00', '0.00', '', '', '', '0.00', '', '', '', 'Airsoft', 'pagina_produtos.php?categoria=Acessorios&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
+(13, 'MUNIÇÃO AIRSOFT TOKYO MARUI BBS 0.25g - 1300 unidades', '62.91', '0.00', '6.29', '53.47', 'slin', 'img_produtos/Imagens_correta/2.jpg', 'img_produtos/Imagens_correta/2_2.jpg', 'img_produtos/Imagens_correta/2_3.jpg', 'Acessórios', 1, 1, '0.00', '0.00', '', '', '', '0.00', '', '', '', 'Airsoft', 'pagina_produtos.php?categoria=Acessorios&tipo=Airsoft', 'pagina_produtos.php?tipo=Airsoft', 0, ''),
 (14, 'ARCO CRUZ JANDÃO CROSSBOW HWXR - 33 35 - 60 180', '2839.94', '0.00', '283.99', '2413.94', 'slin', 'img_produtos/Imagens_correta/3.jpg', 'img_produtos/Imagens_correta/3_2.jpg', 'img_produtos/Imagens_correta/3_3.jpg', 'Arcos', 0, 0, '0.00', '0.00', '', '', '', '0.00', '', '', '', 'Arquearia', 'pagina_produtos.php?tipo=Arquearia', 'pagina_produtos.php?tipo=Arquearia', 0, ''),
 (15, 'BALESTRA CHACE SUN JANDÃO 2009F - 176', '2404.56', '0.00', '240.56', '2043.88', 'slin', 'img_produtos/Imagens_correta/4.jpg', 'img_produtos/Imagens_correta/4_2.jpg', 'img_produtos/Imagens_correta/4_3.jpg', 'Balestras', 0, 0, '0.00', '0.00', '', '', '', '0.00', '', '', '', 'Arquearia', 'pagina_produtos.php?tipo=Arquearia', 'pagina_produtos.php?tipo=Arquearia', 0, '');
 
@@ -188,11 +201,7 @@ CREATE TABLE `soma_total` (
 --
 
 INSERT INTO `soma_total` (`id`, `cliente_id`, `produto_id`, `soma`) VALUES
-(30, 1, 2, '999.00'),
-(31, 1, 6, '890.00'),
-(32, 1, 3, '299.00'),
-(33, 1, 4, '999.00'),
-(34, 1, 5, '999.00');
+(14, 1, 7, '3799.00');
 
 -- --------------------------------------------------------
 
@@ -283,7 +292,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `compras`
@@ -295,7 +304,7 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT for table `datas`
 --
 ALTER TABLE `datas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `filtro`
@@ -307,7 +316,7 @@ ALTER TABLE `filtro`
 -- AUTO_INCREMENT for table `soma_total`
 --
 ALTER TABLE `soma_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `usuario`

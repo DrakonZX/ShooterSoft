@@ -248,7 +248,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
        ?>
        </div>
       <div class="produtos-cont2">
-
+        
       </div>
        <!--Fechamento TODOS OS ITENS -->
   </div>
