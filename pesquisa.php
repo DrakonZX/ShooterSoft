@@ -2,7 +2,8 @@
 
   include_once("valida.php");
   include_once("conexao.php");
-$data = date("Y");
+  $data = date("Y");
+  $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
  ?>
 
 <!DOCTYPE html>
@@ -52,7 +53,7 @@ $data = date("Y");
                           </div>
                           <div class="conteudo">
                             <h3><?php echo $usuario['nome'] ?></h3>
-                            <a href="logout.php">Logout</a><br>
+                            <a href="logout.php?id=<?php echo $usuario['id'] ?>&&url=<?php echo $url ?>">Logout</a><br>
                             <a href="editar_perfil.php?id=<?php echo $usuario['id'] ?>.php">Editar perfil</a>
                           </div>
                           <?php
@@ -67,7 +68,7 @@ $data = date("Y");
                 <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
               </div>
               <div class="login">
-                <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+                <a href="login.php?url=<?php echo $url ?>"><i class="fas fa-user-circle"> Login</i></a>
               </div>
               <?php
           }
@@ -130,19 +131,14 @@ $data = date("Y");
   </div>
   <div class="respon">
 <?php
-    require 'conexao.php';
-    $pesquisa = $_POST['pesquisa'];
-	$select = "SELECT * FROM produtos_airsoft WHERE nome LIKE '%$pesquisa%' OR categoria LIKE'%$pesquisa%' OR tipo LIKE'%$pesquisa%'";
-	//$select_all = mysqli_query($conexao, $select);
-
     require "conexao.php";
+    $pesquisa = $_POST['pesquisa'];
     $pdo = new PDO($dns,$dbuser,$dbpass,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-
     $sql = "SELECT * FROM produtos_airsoft WHERE nome LIKE '%$pesquisa%' OR categoria LIKE'%$pesquisa%' OR tipo LIKE'%$pesquisa%'";
     $sql = $pdo-> query($sql);
-
   if ($sql -> rowCount() > 0) {
-      ?><h2 class="pes_resul"><span style="background:#41510f;padding:0 20px 0 20px;border-radius:10px;">Resultados da sua pesquisa por <span style="color:#7DDD00;">"<?php echo $pesquisa ?>"</span></span></h2><br><br>
+      $linhas = $sql->rowCount();
+      ?><h2 class="pes_resul"><span style="background:#41510f;padding:0 20px 0 20px;border-radius:10px;"><span style="color:#7DDD00;">"<?php echo $linhas ?>"</span>  Resultados da sua pesquisa por <span style="color:#7DDD00;">"<?php echo $pesquisa ?>"</span></span></h2><br><br>
 
       <div class="borda">
        <?php
@@ -165,6 +161,11 @@ $data = date("Y");
     </div>
     <?php
   }
+}
+else {
+  ?>
+  <h2 class="pes_resul"><span style="background:#41510f;padding:0 20px 0 20px;border-radius:10px;"> <span style="color:#7DDD00;">"<?php echo $linhas ?>"</span> resultados de sua pesquisa para</span> <span style="color:#7DDD00;">"<?php echo $pesquisa ?>"</span></h2>
+  <?php
 }
 ?>
 

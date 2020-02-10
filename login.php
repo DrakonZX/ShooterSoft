@@ -35,17 +35,36 @@ header ('Content-type: text/html; charset=UTF-8');
 				echo $_SESSION['msgcad'];
 				unset($_SESSION['msgcad']);
             }
+            if (isset($_GET['url'])) {
+              ?>
+              <form method="POST" action="valida.php?url=<?php echo $_GET['url'] ?>">
+                  <label>Email</label><br>
+              <input type="email" name="email" placeholder="Email" required><br><br>
+
+              <label>Senha</label><br>
+              <input type="password" name="senha" maxlength="16" placeholder="Senha" required><br>
+
+              <button type="submit" name="btnLogin" value="Acessar">Concluir</button>
+              <p><a style="color:#131600;" href="cadastro.php">Não tenho<span style="color:#89BF00;"> "conta"</span></a></p>
+              </form>
+              <?php
+            }
+            else {
+              ?>
+              <form method="POST" action="valida.php">
+                  <label>Email</label><br>
+              <input type="email" name="email" placeholder="Email" required><br><br>
+
+              <label>Senha</label><br>
+              <input type="password" name="senha" maxlength="16" placeholder="Senha" required><br>
+
+              <button type="submit" name="btnLogin" value="Acessar">Concluir</button>
+              <p><a style="color:#131600;" href="cadastro.php">Não tenho<span style="color:#89BF00;"> "conta"</span></a></p>
+              </form>
+              <?php
+            }
             ?>
-            <form method="POST" action="valida.php">
-                <label>Email</label><br>
-            <input type="email" name="email" placeholder="Email" required><br><br>
 
-            <label>Senha</label><br>
-            <input type="password" name="senha" maxlength="16" placeholder="Senha" required><br>
-
-            <button type="submit" name="btnLogin" value="Acessar">Concluir</button>
-            <p><a style="color:#131600;" href="cadastro.php">Não tenho<span style="color:#89BF00;"> "conta"</span></a></p>
-            </form>
         </div>
         </div>
         </div>

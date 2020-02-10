@@ -67,10 +67,11 @@ if($button){
 			$dire = 'perfil/img/';
 
 			move_uploaded_file($_FILES['arquivo']['tmp_name'],$dire.$novo_nome);
-			$result_usuario = "INSERT INTO usuario (nome, sobrenome,sem_img, cpf, email, senha, cep, endereco, num, bairro , cidade, uf,refe,comple)
+			$result_usuario = "INSERT INTO usuario (nome, sobrenome,age,sem_img, cpf, email, senha, cep, endereco, num, bairro , cidade, uf,refe,comple)
 	    VALUES (
 							'" .$dados['nome']. "',
 	            '" .$dados['sobrenome']. "',
+							'" .$dados['age']. "',
 							'perfil/img/sem.png',
 	            '" .$dados['cpf']. "',
 							'" .$dados['email']. "',
@@ -89,10 +90,11 @@ if($button){
 		$sql = $pdo->query($sql);
 		}
 		else {
-			$result_usuario = "INSERT INTO usuario (nome, sobrenome,img,sem_img, cpf, email, senha, cep, endereco, num, bairro , cidade, uf,comple,refe)
+			$result_usuario = "INSERT INTO usuario (nome, sobrenome,age,img,sem_img, cpf, email, senha, cep, endereco, num, bairro , cidade, uf,comple,refe)
 			VALUES (
 							'" .$dados['nome']. "',
 							'" .$dados['sobrenome']. "',
+							'" .$dados['age']. "',
 							'perfil/img/$dados[cpf].jpg',
 							'perfil/img/sem.png',
 							'" .$dados['cpf']. "',
@@ -167,6 +169,9 @@ if($button){
 
                 <label for="sobrenome">Sobrenome</label><br>
                 <input type="text" name="sobrenome" placeholder="Sobrenome" value="<?php echo isset($_POST['sobrenome']) ? $_POST['sobrenome'] : ''; ?>" required><br><br>
+
+								<label for="age">Data:</label><br>
+                <input type="date" name="age" placeholder="Sua data de nascimento" value="<?php echo isset($_POST['age']) ? $_POST['age'] : ''; ?>" required><br><br>
 
                 <label for="cpf">CPF</label><br>
                 <input type="text" name="cpf" placeholder="000.000.000-00" value="<?php echo isset($_POST['cpf']) ? $_POST['cpf'] : ''; ?>" required><br><br>

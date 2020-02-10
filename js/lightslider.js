@@ -4,7 +4,7 @@
 (function ($, undefined) {
     'use strict';
     var defaults = {
-        item: 3,
+        item: 4,
         autoWidth: false,
         slideMove: 1,
         slideMargin: 10,

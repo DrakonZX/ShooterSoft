@@ -1,18 +1,25 @@
 <?php
   include 'valida.php';
   include 'conexao.php';
+  include 'valida_equi.php';
   $data = date("Y");
+  $datas = date("Y/m/d");
+
+  $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+  $path_equi = "$url?qnt_equi=1";
+  $path_equi3 = "$url?qnt_equi=3";
+  $path_equi5 = "$url?qnt_equi=5";
  ?>
 <!DOCTYPE html>
 <html lang="pt" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,inicial-scale=1.0;maximum-scale=1.0">
-      <link rel="icon" type="image/png" href="img/logo_veridico.png" sizes="64x64">
-    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="icon" type="image/png" href="img/logo_veridico.png" sizes="64x64">
+    <link rel="stylesheet" href="css/equipe.css">
     <link href="https://fonts.googleapis.com/css?family=Hind+Guntur|Merriweather+Sans|Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>Equipe - Airsoft</title>
+    <title>Equipe - Monte a sua</title>
   </head>
   <body>
     <header>
@@ -48,7 +55,7 @@
                               </div>
                               <div class="conteudo">
                                 <h3><?php echo $usuario['nome'] ?></h3>
-                                <a href="logout.php?id=<?php echo $usuario['id'] ?>">Logout</a><br>
+                                <a href="logout.php?id=<?php echo $usuario['id'] ?>&&url=<?php echo $url ?>">Logout</a><br>
                                 <a href="editar_perfil.php?id=<?php echo $usuario['id'] ?>.php">Editar perfil</a>
                               </div>
                               <?php
@@ -64,7 +71,7 @@
                       <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
                     </div>
                     <div class="login">
-                      <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+                      <a href="login.php?url=<?php echo $url ?>"><i class="fas fa-user-circle"> Login</i></a>
                     </div>
                   </div>
                   <?php
@@ -121,76 +128,110 @@
     <!-- End smartphone / tablet look -->
     </div>
     </div>
-    <div class="respon">
       <?php
-      if (isset($_SESSION['usuario'])) {
-        ?>
-        <div class="equipe_cont">
-            <h2>Seja bem vindo <span>"<?php echo $usuario['nome'] ?>"</span> essa é nossa equipe </h2>
-          <div class="p">
-            <img src="img/bandido.jpg" alt="">
-            <h3>Flavio Henrique</h3>
-            <p>A pessoa de equipe focada em preparar toda a documentação do site.</p>
+        if (isset($_SESSION['usuario'])) {
+            $sql = "select * from equipe where id_usuario = '$usuario[id]'";
+          $sql = $pdo->query($sql);
+          if ($sql->rowCount()==0) {
+          ?>
+          <div class="borda">
+            <h2>Equipe</h2>
           </div>
-          <div class="s">
-            <img src="img/cheideolho.jpg" alt="">
-            <h3>Natã Tidioli</h3>
-            <p>Formatação do CSS e imagens.</p>
+          <div class="cadas_equi">
+            <div class="cobertura-top">
+                <img style="height:150px;" src="img/prancheta.png" alt="">
+            </div>
+            <div class="padding_equi">
+              <form class="" action="valida_equi.php" method="post">
+                <input type="hidden" name="id_usuario" value="<?php echo $usuario['id'] ?>">
+                <label>Apelido: </label><br>
+                <input type="text" name="ndg" placeholder="Apelido"><br><br>
+                <label>Especificação: </label><br>
+                <select name="espec_equi">
+                  <option value="Sniper">Sniper</option>
+                  <option value="Assault">Assault</option>
+                  <option value="Suporte">Suporte</option>
+                </select><br><br>
+                <label for="country">Pais:</label><br>
+                <input type="text" name="country" placeholder="Seu país"><br><br>
+                <button type="submit" name="button">Cadastre-se</button>
+              </form>
+            </div>
           </div>
-          <div class="p">
-            <img src="img/ryan.jpg" alt="">
-            <h3>Ryan Henrique</h3>
-            <p>Criador do Banco de Dados de nossa equipe, cadastro/login,barra de pesquisa.</p>
-          </div>
-          <div class="q">
-            <img src="img/lucius.jpg" alt="">
-            <h3>Lucius Muniz</h3>
-            <p>Marketing do nosso site e ajudante em horas vagas.</p>
-          </div>
-          <div class="p">
-            <img src="img/eu.jpg" alt="">
-            <h3>Juliano Gomes Tosta</h3>
-            <p>Programador e coordenador do grupo</p>
-          </div>
-        </div>
-        <?php
+          <?php
+        }
+        else {
+          $sql ="select * from equipe where id_usuario=$usuario[id]";
+          $sql=$pdo->query($sql);
+          if ($sql->rowCount()>0) {
+            $data_resul =(int)$datas-(int)$usuario['age'];
+            foreach ($sql->fetchAll() as $dados_equi) {
+              ?>
+              <div class="borda">
+                <h2>Equipe</h2>
+              </div>
+              <div class="sem_equi">
+                <h3>Suas caracteristícas: <?php echo $usuario['nome'] ?></h3><br>
+                <ul>
+                  <li><span>Nome de guerra:</span>  <?php echo $dados_equi['nick'] ?></li>
+                  <li><span>Especificação:</span> <?php echo $dados_equi['class'] ?></li>
+                  <li><span>Idade:</span> <?php echo $data_resul ?></li>
+                  <li><span>Pais:</span> <?php echo $dados_equi['country'] ?></li>
+                </ul>
+                <?php
+                if (isset($_GET['equipe'])) {
+                  if ($_GET['equipe'] == true) {
+                    ?>
+                <br> <a href="equipe.php">Voltar</a><br>
+                    <?php
+                  }
+                }
+                else {
+                  ?>
+                  <br><a href="equipe.php?equipe=true">Deseja formar uma equipe ?</a><br>
+                  <?php
+                }
+                 ?>
+              </div>
+              <div class="placar">
+                <h3>Placar dos Jogadores</h3>
+                <table>
+                  <tr>
+                    <th>Nick</th>
+                    <th>Pontuação</th>
+                  </tr>
+
+                    <?php
+                    $sql="select * from placar_equipe order by pontuacao desc";
+                    $sql = $pdo->query($sql);
+                    if ($sql->rowCount()>0) {
+                      $linhas = $sql->rowCount();
+                        foreach ($sql->fetchAll() as $placar_equi) {
+                            ?>
+                            <tr>
+                                <td><?php echo $placar_equi['nick_cliente'] ?></td>
+                                <td><?php echo $placar_equi['pontuacao'] ?></td>
+                            </tr>
+                            <?php
+                      }
+                    }
+                     ?>
+                  </table>
+              </div>
+              <div class="">
+
+              </div>
+              <?php
+            }
+          }
+        }
       }
       else {
         ?>
-        <div class="equipe_cont">
-            <h2>Seja bem vindo ! essa é nossa equipe</h2>
-          <div class="p">
-            <img src="img/bandido.jpg" alt="">
-            <h3>Flavio Henrique</h3>
-            <p>A pessoa de equipe focada em preparar toda a documentação do site.</p>
-          </div>
-          <div class="s">
-            <img src="img/cheideolho.jpg" alt="">
-            <h3>Natã Tidioli</h3>
-            <p>Formatação do CSS e imagens.</p>
-          </div>
-          <div class="p">
-            <img src="img/ryan.jpg" alt="">
-            <h3>Ryan Henrique</h3>
-            <p>Criador do Banco de Dados de nossa equipe, cadastro/login,barra de pesquisa.</p>
-          </div>
-          <div class="q">
-            <img src="img/lucius.jpg" alt="">
-            <h3>Lucius Muniz</h3>
-            <p>Marketing do nosso site e ajudante em horas vagas.</p>
-          </div>
-          <div class="p">
-            <img src="img/eu.jpg" alt="">
-            <h3>Juliano Gomes Tosta</h3>
-            <p>Programador e coordenador do grupo</p>
-          </div>
-        </div>
+        <h1>Faça o login para continuar sua exploração</h1>
         <?php
       }
        ?>
-
-    </div>
-
     <footer class="page-footer font-small cyan darken-3">
 
       <!-- Footer Elements -->
@@ -286,7 +327,25 @@
 
     </footer>
   </body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  var slider = $('#lightSlider').lightSlider({
+      controls: false,
+      loop:true,
+      item:1,
+      pager:false,
+  });
+  $('#goToPrevSlide').on('click', function () {
+      slider.goToPrevSlide();
+  });
+  $('#goToNextSlide').on('click', function () {
+      slider.goToNextSlide();
+  });
+  </script>
   <script>
+
   function myFunction() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
@@ -295,5 +354,16 @@
   x.style.display = "block";
   }
   }
-  </script>
+
+
+  function drop() {
+  var x = document.getElementById("drop");
+  if (x.style.display == "block") {
+  x.style.display = "block";
+  } else {
+  x.style.display = "block";
+  }
+  }
+</script>
+
 </html>

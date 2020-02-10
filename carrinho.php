@@ -3,9 +3,9 @@ include_once("valida.php");
 include_once("conexao.php");
 include_once("conexao2.php");
   $pdo = new PDO($dns,$dbuser,$dbpass,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-
-$data = date("Y");
-
+  $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+  $data = date("Y");
+  $datas = date("Y/m/d");
 
 
 
@@ -58,7 +58,7 @@ $data = date("Y");
                           </div>
                           <div class="conteudo">
                             <h3><?php echo $usuario['nome'] ?></h3>
-                            <a href="logout.php">Logout</a><br>
+                            <a href="logout.php?id=<?php echo $usuario['id'] ?>&&url=<?php echo $url ?>">Logout</a><br>
                             <a href="editar_perfil.php?id=<?php echo $usuario['id'] ?>.php">Editar perfil</a>
                           </div>
                           <?php
@@ -74,7 +74,7 @@ $data = date("Y");
                   <a href="cadastro.php"><i class="fas fa-sign-in-alt"> Cadastro</i></a>
                 </div>
                 <div class="login">
-                  <a href="login.php"><i class="fas fa-user-circle"> Login</i></a>
+                  <a href="login.php?url=<?php echo $url ?>"><i class="fas fa-user-circle"> Login</i></a>
                 </div>
               </div>
               <?php
@@ -241,6 +241,9 @@ $data = date("Y");
           $parcelas = $soma / 13;
           $parcelas2 = number_format($parcelas,2);
         }
+        if (isset($usuario['age'])) {
+          $data_resul = (int)$datas - (int)$usuario['age'];
+        }
         ?>
      </div>
         <br> <a style="cursor:pointer" onclick="limpar(<?php echo $u_id ?>)" class="limpar">Limpar o carrinho</a>
@@ -251,7 +254,18 @@ $data = date("Y");
                   <p>Preço da compra à vista:<div class="spano"><span>R$ <?php echo $avista ?></span></div> </p>
                   <p>Preço da compra no cartão: <div class="spano"><span>R$ <?php echo $parcelas2 ?> 13x</span></div></p>
                   <div class="finalizar">
-                    <a style="cursor:pointer" href="finalizar.php?id=<?php echo $u_id ?>">Finalizar compra</a>
+                    <?php
+                    if ($data_resul >= 18) {
+                      ?>
+                      <a style="cursor:pointer" href="finalizar.php?id=<?php echo $u_id ?>">Finalizar compra</a>
+                      <?php
+                    }
+                    else {
+                      ?>
+                      <a style="cursor:pointer" href="finalizar.php?id=<?php echo $u_id ?>&&age=ajdsiajdisajdiaojsdijasdjisjivjd59659659s54fd6f4s545das1as5d4asd484f8sd4f">Finalizar compra</a>
+                      <?php
+                    }
+                     ?>
                   </div>
             </div>
           </div>

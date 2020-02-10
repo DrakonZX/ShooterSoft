@@ -14,10 +14,14 @@ if($btnLogin){
 	$row = mysqli_num_rows($result);
 	if($row == 1) {
 	$_SESSION['usuario'] = $email;
-
 	$sql = "INSERT INTO datas SET data = CURRENT_DATE(), email = '$_SESSION[usuario]', hora = CURRENT_TIME()";
 	$sql = $pdo->query($sql);
-	header('Location: index.php');
+	if (isset($_GET['url'])) {
+			header("Location: $_GET[url]");
+	}
+	else {
+			header("Location:index.php");
+	}
 	} else {
 	$_SESSION['nao_autenticado'] = true;
 	$_SESSION['msg'] = "<h1 style='border:2px solid #F9360E;text-align:center;padding:10px 0 10px 0;background-color:#161C08;;font-weight: bold;font-size:18px;color:#F9360E;margin-top:-50px;margin-bottom:50px;'>Login ou senha incorreto!</h1>";
